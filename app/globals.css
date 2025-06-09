@@ -49,10 +49,10 @@
 .footer-decoration {
   position: absolute;
   inset: 0;
-  background-image: url('/blue_dotes.png');
+  background-image: url('/yellow_dotes.webp');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: center -170px;
+  background-position: center -120px;
 }
 
 /* Smooth transitions and focus states */

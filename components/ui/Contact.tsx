@@ -7,6 +7,7 @@ import InstagramIcon from '../icons/InstagramIcon';
 import FacebookIcon from '../icons/FacebookIcon';
 import TiktokIcon from '../icons/TiktokIcon';
 import YoutubeIcon from '../icons/YoutubeIcon';
+import Footer from './Footer';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -525,6 +526,7 @@ export default function Contact() {
           </motion.div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 } 

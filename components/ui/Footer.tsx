@@ -13,7 +13,7 @@ export default function Footer() {
      ];
 
      return (
-          <footer className="footer-wrapper">
+          <footer className="footer-wrapper bg-gradient-to-br from-[#FDF7EC] to-orange-50">
                <div className="footer-decoration" />
 
                <div className="relative z-10">
@@ -29,8 +29,8 @@ export default function Footer() {
                                                   rel="noopener noreferrer"
                                                   aria-label={label}
                                                   className="group size-12 rounded-full border-2 border-gray-600 
-                             flex items-center justify-center text-gray-200
-                             hover:border-white hover:bg-white hover:text-gray-900 
+                             flex items-center justify-center text-[#b65d37]
+                             hover:border-white hover:bg-[#b65d37] hover:text-white 
                              focus-ring transition-all duration-300"
                                              >
                                                   <Icon width="20" height="20" />
@@ -44,21 +44,21 @@ export default function Footer() {
                          <div className="bg-black/70 backdrop-blur-sm rounded-2xl lg:rounded-3xl p-6 lg:p-8">
                               <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
 
-                                   <div className="text-gray-400 text-center lg:text-left">
+                                   <div className="text-gray-200 text-center lg:text-left">
                                         © Copyrights 2025. All rights reserved.
                                    </div>
 
                                    <nav className="flex flex-wrap justify-center gap-6 lg:gap-8">
                                         <a
-                                             href="#"
-                                             className="text-gray-400 hover:text-[#b65d37] hover:underline 
+                                             href="/terms-conditions"
+                                             className="text-gray-200 hover:text-[#b65d37] hover:underline 
                            focus-ring transition-colors duration-300"
                                         >
                                              Terms and Conditions
                                         </a>
                                         <a
-                                             href="#"
-                                             className="text-gray-400 hover:text-[#b65d37] hover:underline 
+                                             href="/privacy-policy"
+                                             className="text-gray-200 hover:text-[#b65d37] hover:underline 
                            focus-ring transition-colors duration-300"
                                         >
                                              Privacy Policy

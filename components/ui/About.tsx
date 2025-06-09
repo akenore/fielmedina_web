@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Heart, Target, Users, Award, MapPin, Calendar } from 'lucide-react';
 import Image from 'next/image';
+import Footer from './Footer';
 
 export default function About() {
   const fadeInUp = {
@@ -388,6 +389,7 @@ export default function About() {
           </motion.div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 } 
