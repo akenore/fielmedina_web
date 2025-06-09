@@ -1,0 +1,73 @@
+import Image from "next/image";
+import InstagramIcon from "../icons/InstagramIcon";
+import FacebookIcon from "../icons/FacebookIcon";
+import TiktokIcon from "../icons/TiktokIcon";
+import YoutubeIcon from "../icons/YoutubeIcon";
+
+export default function Footer() {
+     const socialLinks = [
+          { icon: InstagramIcon, href: "http://instagram.com/fielmedina.officiel", label: "Instagram" },
+          { icon: FacebookIcon, href: "https://www.facebook.com/fielmedina.officiel/", label: "Facebook" },
+          { icon: TiktokIcon, href: "https://www.tiktok.com/@fielmedina.officiel", label: "TikTok" },
+          { icon: YoutubeIcon, href: "https://www.youtube.com/@fielmedina.officiel", label: "Youtube" },
+     ];
+
+     return (
+          <footer className="footer-wrapper">
+               <div className="footer-decoration" />
+
+               <div className="relative z-10">
+                    <div className="container mx-auto px-4 py-16 lg:py-20 max-w-7xl">
+                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-12">
+                              <div className="space-y-8 text-center lg:text-left">
+                                   <div className="flex justify-center lg:justify-start gap-4">
+                                        {socialLinks.map(({ icon: Icon, href, label }) => (
+                                             <a
+                                                  key={label}
+                                                  href={href}
+                                                  target="_blank"
+                                                  rel="noopener noreferrer"
+                                                  aria-label={label}
+                                                  className="group size-12 rounded-full border-2 border-gray-600 
+                             flex items-center justify-center text-gray-200
+                             hover:border-white hover:bg-white hover:text-gray-900 
+                             focus-ring transition-all duration-300"
+                                             >
+                                                  <Icon width="20" height="20" />
+                                             </a>
+                                        ))}
+                                   </div>
+                              </div>
+
+                         </div>
+
+                         <div className="bg-black/70 backdrop-blur-sm rounded-2xl lg:rounded-3xl p-6 lg:p-8">
+                              <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
+
+                                   <div className="text-gray-400 text-center lg:text-left">
+                                        © Copyrights 2025. All rights reserved.
+                                   </div>
+
+                                   <nav className="flex flex-wrap justify-center gap-6 lg:gap-8">
+                                        <a
+                                             href="#"
+                                             className="text-gray-400 hover:text-[#b65d37] hover:underline 
+                           focus-ring transition-colors duration-300"
+                                        >
+                                             Terms and Conditions
+                                        </a>
+                                        <a
+                                             href="#"
+                                             className="text-gray-400 hover:text-[#b65d37] hover:underline 
+                           focus-ring transition-colors duration-300"
+                                        >
+                                             Privacy Policy
+                                        </a>
+                                   </nav>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </footer>
+     );
+}

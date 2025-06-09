@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* Modern CSS using Tailwind 4.1 best practices */
+
+/* Section background decoration - Responsive with CSS Grid */
+.section-decoration {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.section-decoration::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  background-image: url('/yellow_dotes.webp');
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: contain;
+  width: 370px;
+  height: 369px;
+}
+
+@media (min-width: 640px) {
+  .section-decoration::before {
+    width: 760px;
+    height: 757px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-decoration::before {
+    width: 1250px;
+    height: 1000px;
+  }
+}
+
+/* Footer with full-width background - Modern approach */
+.footer-wrapper {
+  width: 100%;
+  background-color: #181a22;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-decoration {
+  position: absolute;
+  inset: 0;
+  background-image: url('/blue_dotes.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center -170px;
+}
+
+/* Smooth transitions and focus states */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgb(59 130 246 / 50%);
+  border-radius: 0.375rem;
+}
+
+/* Modern hover effects */
+.hover-lift {
+  transition: all 0.3s ease-in-out;
+}
+
+.hover-lift:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  transform: translateY(-0.25rem);
+}
+
+/* Responsive text utilities */
+.text-responsive-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .text-responsive-xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-responsive-xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.text-responsive-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 640px) {
+  .text-responsive-2xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .text-responsive-2xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .text-responsive-2xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
