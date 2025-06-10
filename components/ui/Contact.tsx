@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Clock, MessageCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Clock, MessageCircle, CheckCircle, XCircle } from 'lucide-react';
 import { useState } from 'react';
 import InstagramIcon from '../icons/InstagramIcon';
 import FacebookIcon from '../icons/FacebookIcon';
@@ -18,6 +18,7 @@ export default function Contact() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
@@ -95,20 +96,39 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-    setIsSubmitting(false);
-    
-    alert('Thank you for your message! We\'ll get back to you soon.');
+    try {
+      const response = await fetch('https://formspree.io/f/xjkrylyj', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      if (response.ok) {
+        // Reset form on success
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        setSubmitStatus('success');
+        
+        // Auto-hide success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus('idle');
+        }, 5000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -195,6 +215,42 @@ export default function Contact() {
                   </h2>
                 </div>
                 
+                {/* Success Message */}
+                {submitStatus === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <CheckCircle className="size-6 text-green-600" />
+                      <div>
+                        <h4 className="text-green-800 font-semibold">Message Sent Successfully!</h4>
+                        <p className="text-green-600 text-sm">Thank you for your message. We'll get back to you within 24 hours.</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Error Message */}
+                {submitStatus === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <XCircle className="size-6 text-red-600" />
+                      <div>
+                        <h4 className="text-red-800 font-semibold">Message Failed to Send</h4>
+                        <p className="text-red-600 text-sm">There was an error sending your message. Please try again or contact us directly.</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
