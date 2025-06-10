@@ -28,7 +28,7 @@ export default function Header() {
             <Link href="/">
               <Image
                 src="/logo.svg"
-                alt="Fielmedina"
+                alt={useTranslations('header')('logo')}
                 width={180}
                 height={40}
                 className="h-8 lg:h-10 w-auto"
@@ -69,7 +69,7 @@ export default function Header() {
                        hover:bg-[#a0542f] transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <Download className="size-4" />
-              <span className="font-medium">Download</span>
+              <span className="font-medium">{useTranslations('header')('download')}</span>
             </motion.a>
           </div>
 
@@ -77,7 +77,7 @@ export default function Header() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-            aria-label="Toggle menu"
+            aria-label={useTranslations('aria')('toggleNavigation')}
           >
             {isMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
           </button>
@@ -121,7 +121,7 @@ export default function Header() {
                          hover:bg-[#a0542f] transition-colors w-full justify-center"
           >
             <Download className="size-4" />
-            <span>Download App</span>
+            <span>{useTranslations('header')('downloadApp')}</span>
           </a>
         </div>
       </motion.div>

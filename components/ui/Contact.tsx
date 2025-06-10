@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Clock, MessageCircle, CheckCircle, XCircle } from 'lucide-react';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import InstagramIcon from '../icons/InstagramIcon';
 import FacebookIcon from '../icons/FacebookIcon';
 import TiktokIcon from '../icons/TiktokIcon';
@@ -10,6 +11,7 @@ import YoutubeIcon from '../icons/YoutubeIcon';
 import Footer from './Footer';
 
 export default function Contact() {
+  const t = useTranslations();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,23 +39,23 @@ export default function Contact() {
   const contactInfo = [
     {
       icon: Mail,
-      title: "Email Us",
-      details: "info@fielmedina.com",
-      description: "Send us an email anytime",
+      title: t('contact.contactInfo.email.title'),
+      details: t('contact.contactInfo.email.details'),
+      description: t('contact.contactInfo.email.description'),
       gradient: "from-blue-500 to-cyan-600"
     },
     {
       icon: Phone,
-      title: "Call Us",
-      details: "+216 55 000 359",
-      description: "Mon-Fri from 9am to 6pm",
+      title: t('contact.contactInfo.phone.title'),
+      details: t('contact.contactInfo.phone.details'),
+      description: t('contact.contactInfo.phone.description'),
       gradient: "from-green-500 to-emerald-600"
     },
     {
       icon: MapPin,
-      title: "Visit Us",
-      details: "Sousse, Tunisia",
-      description: "Heart of the medina",
+      title: t('contact.contactInfo.location.title'),
+      details: t('contact.contactInfo.location.details'),
+      description: t('contact.contactInfo.location.description'),
       gradient: "from-[#b65d37] to-orange-600"
     }
   ];
@@ -61,25 +63,25 @@ export default function Contact() {
   const socialLinks = [
     {
       icon: InstagramIcon,
-      name: "Instagram",
+      name: t('contact.socialMedia.instagram'),
       url: "https://instagram.com/fielmedina",
       gradient: "from-pink-500 to-rose-600"
     },
     {
       icon: FacebookIcon,
-      name: "Facebook", 
+      name: t('contact.socialMedia.facebook'), 
       url: "https://facebook.com/fielmedina",
       gradient: "from-blue-600 to-blue-700"
     },
     {
       icon: TiktokIcon,
-      name: "TikTok",
+      name: t('contact.socialMedia.tiktok'),
       url: "https://tiktok.com/@fielmedina",
       gradient: "from-gray-800 to-gray-900"
     },
     {
       icon: YoutubeIcon,
-      name: "YouTube",
+      name: t('contact.socialMedia.youtube'),
       url: "https://youtube.com/@fielmedina",
       gradient: "from-red-500 to-red-600"
     }
@@ -143,15 +145,14 @@ export default function Contact() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Get In Touch
+              {t('contact.hero.title')}
             </h1>
             <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8">
-              Have questions about FielMedina? Want to collaborate or share feedback? 
-              We'd love to hear from you!
+              {t('contact.hero.subtitle')}
             </p>
             <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
               <Clock className="size-4" />
-              <span>We typically respond within 24 hours</span>
+              <span>{t('contact.hero.responseTime')}</span>
             </div>
           </motion.div>
         </div>
@@ -211,7 +212,7 @@ export default function Contact() {
                     <MessageCircle className="size-5 text-white" />
                   </div>
                   <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
-                    Send us a Message
+                    {t('contact.form.title')}
                   </h2>
                 </div>
                 
@@ -226,8 +227,8 @@ export default function Contact() {
                     <div className="flex items-center space-x-3">
                       <CheckCircle className="size-6 text-green-600" />
                       <div>
-                        <h4 className="text-green-800 font-semibold">Message Sent Successfully!</h4>
-                        <p className="text-green-600 text-sm">Thank you for your message. We'll get back to you within 24 hours.</p>
+                        <h4 className="text-green-800 font-semibold">{t('contact.form.success.title')}</h4>
+                        <p className="text-green-600 text-sm">{t('contact.form.success.message')}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -244,8 +245,8 @@ export default function Contact() {
                     <div className="flex items-center space-x-3">
                       <XCircle className="size-6 text-red-600" />
                       <div>
-                        <h4 className="text-red-800 font-semibold">Message Failed to Send</h4>
-                        <p className="text-red-600 text-sm">There was an error sending your message. Please try again or contact us directly.</p>
+                        <h4 className="text-red-800 font-semibold">{t('contact.form.error.title')}</h4>
+                        <p className="text-red-600 text-sm">{t('contact.form.error.message')}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -255,7 +256,7 @@ export default function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                        Full Name
+                        {t('contact.form.fields.name')}
                       </label>
                       <input
                         type="text"
@@ -265,12 +266,12 @@ export default function Contact() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#b65d37] focus:border-transparent transition-colors"
-                        placeholder="Your full name"
+                        placeholder={t('contact.form.placeholders.name')}
                       />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                        Email Address
+                        {t('contact.form.fields.email')}
                       </label>
                       <input
                         type="email"
@@ -280,14 +281,14 @@ export default function Contact() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#b65d37] focus:border-transparent transition-colors"
-                        placeholder="your@email.com"
+                        placeholder={t('contact.form.placeholders.email')}
                       />
                     </div>
                   </div>
                   
                   <div>
                     <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Subject
+                      {t('contact.form.fields.subject')}
                     </label>
                     <input
                       type="text"
@@ -297,13 +298,13 @@ export default function Contact() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#b65d37] focus:border-transparent transition-colors"
-                      placeholder="What's this about?"
+                      placeholder={t('contact.form.placeholders.subject')}
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Message
+                      {t('contact.form.fields.message')}
                     </label>
                     <textarea
                       id="message"
@@ -313,7 +314,7 @@ export default function Contact() {
                       required
                       rows={6}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#b65d37] focus:border-transparent transition-colors resize-none"
-                      placeholder="Tell us more about your inquiry..."
+                      placeholder={t('contact.form.placeholders.message')}
                     />
                   </div>
                   
@@ -329,12 +330,12 @@ export default function Contact() {
                     {isSubmitting ? (
                       <>
                         <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                        <span>Sending...</span>
+                        <span>{t('contact.form.submitting')}</span>
                       </>
                     ) : (
                       <>
                         <Send className="size-5" />
-                        <span>Send Message</span>
+                        <span>{t('contact.form.submit')}</span>
                       </>
                     )}
                   </motion.button>
@@ -352,12 +353,12 @@ export default function Contact() {
             >
               {/* Map placeholder */}
               <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Our Location</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{t('contact.location.title')}</h3>
                 <div className="bg-gradient-to-br from-[#b65d37]/10 to-orange-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
                   <div className="text-center">
                     <MapPin className="size-12 text-[#b65d37] mx-auto mb-4" />
-                    <h4 className="text-lg font-semibold text-gray-900 mb-2">Sousse Medina</h4>
-                    <p className="text-gray-600">Historic heart of Sousse, Tunisia</p>
+                    <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('contact.location.medina')}</h4>
+                    <p className="text-gray-600">{t('contact.location.description')}</p>
                   </div>
                   
                   {/* Decorative elements */}
@@ -371,42 +372,35 @@ export default function Contact() {
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <div className="flex items-center space-x-3 mb-4">
                   <Clock className="size-6 text-[#b65d37]" />
-                  <h3 className="text-xl font-bold text-gray-900">Business Hours</h3>
+                  <h3 className="text-xl font-bold text-gray-900">{t('contact.businessHours.title')}</h3>
                 </div>
                 <div className="space-y-2 text-gray-600">
                   <div className="flex justify-between">
-                    <span>Monday - Friday</span>
-                    <span className="font-semibold">9:00 AM - 6:00 PM</span>
+                    <span>{t('contact.businessHours.weekdays')}</span>
+                    <span className="font-semibold">{t('contact.businessHours.weekdaysTime')}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Saturday</span>
-                    <span className="font-semibold">10:00 AM - 4:00 PM</span>
+                    <span>{t('contact.businessHours.saturday')}</span>
+                    <span className="font-semibold">{t('contact.businessHours.saturdayTime')}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Sunday</span>
-                    <span className="font-semibold">Closed</span>
+                    <span>{t('contact.businessHours.sunday')}</span>
+                    <span className="font-semibold">{t('contact.businessHours.sundayTime')}</span>
                   </div>
                 </div>
               </div>
 
               {/* Quick Links */}
               <div className="bg-white rounded-2xl p-6 shadow-lg">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Quick Links</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{t('contact.quickLinks.title')}</h3>
                 <div className="space-y-3">
                   <a 
                     href="mailto:info@fielmedina.com"
                     className="flex items-center space-x-3 text-gray-600 hover:text-[#b65d37] transition-colors"
                   >
                     <Mail className="size-5" />
-                    <span>Send us an email</span>
+                    <span>{t('contact.quickLinks.email')}</span>
                   </a>
-                  {/* <a 
-                    href="tel:+21655000359"
-                    className="flex items-center space-x-3 text-gray-600 hover:text-[#b65d37] transition-colors"
-                  >
-                    <Phone className="size-5" />
-                    <span>Call us directly</span>
-                  </a> */}
                   <a 
                     href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
                     target="_blank"
@@ -414,7 +408,7 @@ export default function Contact() {
                     className="flex items-center space-x-3 text-gray-600 hover:text-[#b65d37] transition-colors"
                   >
                     <MapPin className="size-5" />
-                    <span>Download our app</span>
+                    <span>{t('contact.quickLinks.download')}</span>
                   </a>
                 </div>
               </div>
@@ -434,11 +428,10 @@ export default function Contact() {
             className="text-center mb-12 max-w-3xl mx-auto"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Follow Our Journey
+              {t('contact.socialSection.title')}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-              Stay connected with us on social media for the latest updates, 
-              behind-the-scenes content, and cultural insights from Sousse.
+              {t('contact.socialSection.subtitle')}
             </p>
           </motion.div>
 
@@ -486,30 +479,30 @@ export default function Contact() {
             className="text-center mb-12 max-w-3xl mx-auto"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Frequently Asked Questions
+              {t('contact.faq.title')}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-              Quick answers to common questions about FielMedina
+              {t('contact.faq.subtitle')}
             </p>
           </motion.div>
 
           <div className="max-w-4xl mx-auto space-y-6">
             {[
               {
-                question: "Is FielMedina free to use?",
-                answer: "Yes! FielMedina is completely free to download and use. We believe cultural heritage should be accessible to everyone."
+                question: t('contact.faq.questions.free.question'),
+                answer: t('contact.faq.questions.free.answer')
               },
               {
-                question: "Does the app work offline?",
-                answer: "Absolutely! Once you download the content, you can explore the medina and access stories even without an internet connection."
+                question: t('contact.faq.questions.offline.question'),
+                answer: t('contact.faq.questions.offline.answer')
               },
               {
-                question: "How accurate is the GPS navigation?",
-                answer: "Our GPS system is highly accurate within the medina. We've carefully mapped every location to ensure precise navigation through the historic streets."
+                question: t('contact.faq.questions.gps.question'),
+                answer: t('contact.faq.questions.gps.answer')
               },
               {
-                question: "Can I contribute my own stories or photos?",
-                answer: "We love community contributions! Please contact us through this form to discuss how you can share your knowledge and experiences."
+                question: t('contact.faq.questions.contribute.question'),
+                answer: t('contact.faq.questions.contribute.answer')
               }
             ].map((faq, index) => (
               <motion.div
@@ -538,7 +531,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="text-3xl lg:text-4xl font-bold mb-6"
           >
-            Ready to Explore?
+            {t('contact.cta.title')}
           </motion.h2>
           
           <motion.p
@@ -548,7 +541,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto leading-relaxed opacity-90"
           >
-            Download FielMedina now and start discovering the hidden stories of Sousse
+            {t('contact.cta.subtitle')}
           </motion.p>
           
           <motion.div
@@ -567,7 +560,7 @@ export default function Contact() {
               className="inline-flex items-center space-x-2 bg-white text-[#b65d37] px-8 py-4 rounded-full text-lg font-semibold 
                        hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
             >
-              <span>Download Now</span>
+              <span>{t('contact.cta.downloadButton')}</span>
             </motion.a>
             
             <motion.a
@@ -577,7 +570,7 @@ export default function Contact() {
               className="inline-flex items-center space-x-2 border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold 
                        hover:bg-white hover:text-[#b65d37] transition-colors"
             >
-              <span>Back to Home</span>
+              <span>{t('contact.cta.backHome')}</span>
             </motion.a>
           </motion.div>
         </div>

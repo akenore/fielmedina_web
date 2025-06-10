@@ -3,9 +3,12 @@
 import { motion } from 'framer-motion';
 import { Heart, Target, Users, Award, MapPin, Calendar } from 'lucide-react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import Footer from './Footer';
 
 export default function About() {
+  const t = useTranslations();
+  
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
     animate: { opacity: 1, y: 0 },
@@ -23,71 +26,71 @@ export default function About() {
   const values = [
     {
       icon: Heart,
-      title: "Passion for Heritage",
-      description: "We're deeply passionate about preserving and sharing Tunisia's rich cultural heritage with the world.",
+      title: t('about.values.heritage.title'),
+      description: t('about.values.heritage.description'),
       gradient: "from-red-500 to-pink-600"
     },
     {
       icon: Target,
-      title: "Innovation & Tradition",
-      description: "Bridging the gap between ancient wisdom and modern technology to create meaningful experiences.",
+      title: t('about.values.innovation.title'),
+      description: t('about.values.innovation.description'),
       gradient: "from-[#b65d37] to-orange-600"
     },
     {
       icon: Users,
-      title: "Community First",
-      description: "Building connections between travelers and local communities for authentic cultural exchange.",
+      title: t('about.values.community.title'),
+      description: t('about.values.community.description'),
       gradient: "from-blue-500 to-indigo-600"
     },
     {
       icon: Award,
-      title: "Excellence in Experience",
-      description: "Committed to delivering exceptional user experiences that exceed expectations every time.",
+      title: t('about.values.excellence.title'),
+      description: t('about.values.excellence.description'),
       gradient: "from-purple-500 to-pink-600"
     }
   ];
 
   const teamMembers = [
     {
-      name: "Muhammad Aslan",
-      role: "Founder & CEO",
-      description: "Passionate about technology and cultural preservation with 10+ years in mobile app development.",
+      name: t('about.team.muhammad.name'),
+      role: t('about.team.muhammad.role'),
+      description: t('about.team.muhammad.description'),
       image: "/team/founder.jpg"
     },
     {
-      name: "Sarah Ben Ali",
-      role: "Cultural Consultant",
-      description: "Local historian and storyteller specializing in Sousse's rich heritage and traditions.",
+      name: t('about.team.sarah.name'),
+      role: t('about.team.sarah.role'),
+      description: t('about.team.sarah.description'),
       image: "/team/cultural.jpg"
     },
     {
-      name: "Ahmed Karray",
-      role: "Lead Developer",
-      description: "Expert in mobile technologies and GPS systems, bringing technical excellence to every feature.",
+      name: t('about.team.ahmed.name'),
+      role: t('about.team.ahmed.role'),
+      description: t('about.team.ahmed.description'),
       image: "/team/developer.jpg"
     }
   ];
 
   const milestones = [
     {
-      year: "2023",
-      title: "The Vision",
-      description: "Conceived the idea to digitally preserve and share Sousse's medina heritage"
+      year: t('about.timeline.vision.year'),
+      title: t('about.timeline.vision.title'),
+      description: t('about.timeline.vision.description')
     },
     {
-      year: "2024",
-      title: "Development Begins",
-      description: "Started working with local historians and community members to map the medina"
+      year: t('about.timeline.development.year'),
+      title: t('about.timeline.development.title'),
+      description: t('about.timeline.development.description')
     },
     {
-      year: "2024",
-      title: "Beta Launch",
-      description: "Released the first version to local testers and cultural enthusiasts"
+      year: t('about.timeline.beta.year'),
+      title: t('about.timeline.beta.title'),
+      description: t('about.timeline.beta.description')
     },
     {
-      year: "2025",
-      title: "Global Launch",
-      description: "Officially launched FielMedina Sousse on Google Play Store"
+      year: t('about.timeline.launch.year'),
+      title: t('about.timeline.launch.title'),
+      description: t('about.timeline.launch.description')
     }
   ];
 
@@ -103,20 +106,19 @@ export default function About() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Our Story
+              {t('about.hero.title')}
             </h1>
             <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8">
-              Born from a passion for preserving Tunisia's cultural heritage, 
-              FielMedina brings the historic medina of Sousse to life through innovative technology.
+              {t('about.hero.subtitle')}
             </p>
             <div className="flex items-center justify-center space-x-8 text-sm text-gray-500">
               <div className="flex items-center space-x-2">
                 <MapPin className="size-4" />
-                <span>Sousse, Tunisia</span>
+                <span>{t('about.hero.location')}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Calendar className="size-4" />
-                <span>Founded 2023</span>
+                <span>{t('about.hero.founded')}</span>
               </div>
             </div>
           </motion.div>
@@ -134,18 +136,13 @@ export default function About() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                Our Mission
+                {t('about.mission.title')}
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                We believe that cultural heritage should be accessible to everyone. 
-                Our mission is to use technology as a bridge between the past and present, 
-                helping visitors and locals alike discover the hidden stories behind 
-                every door, every stone, and every corner of Sousse's magnificent medina.
+                {t('about.mission.paragraph1')}
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Through immersive storytelling, interactive maps, and authentic local insights, 
-                we're not just creating an app – we're preserving a living piece of history 
-                for future generations to explore and cherish.
+                {t('about.mission.paragraph2')}
               </p>
             </motion.div>
             
@@ -157,23 +154,23 @@ export default function About() {
               className="relative"
             >
               <div className="bg-gradient-to-r from-[#b65d37] to-orange-500 rounded-2xl p-8 text-white">
-                <h3 className="text-2xl font-bold mb-4">Why FielMedina?</h3>
+                <h3 className="text-2xl font-bold mb-4">{t('about.whyFielmedina.title')}</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-orange-200 rounded-full mt-2 flex-shrink-0" />
-                    <span>Authentic stories from local historians</span>
+                    <span>{t('about.whyFielmedina.feature1')}</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-orange-200 rounded-full mt-2 flex-shrink-0" />
-                    <span>GPS-guided exploration of hidden gems</span>
+                    <span>{t('about.whyFielmedina.feature2')}</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-orange-200 rounded-full mt-2 flex-shrink-0" />
-                    <span>Offline access for uninterrupted discovery</span>
+                    <span>{t('about.whyFielmedina.feature3')}</span>
                   </li>
                   <li className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-orange-200 rounded-full mt-2 flex-shrink-0" />
-                    <span>Cultural preservation through technology</span>
+                    <span>{t('about.whyFielmedina.feature4')}</span>
                   </li>
                 </ul>
               </div>
@@ -193,10 +190,10 @@ export default function About() {
             className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Our Values
+              {t('about.values.title')}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-              The principles that guide everything we do at FielMedina
+              {t('about.values.subtitle')}
             </p>
           </motion.div>
 
@@ -241,10 +238,10 @@ export default function About() {
             className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Meet Our Team
+              {t('about.team.title')}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-              The passionate individuals behind FielMedina's vision
+              {t('about.team.subtitle')}
             </p>
           </motion.div>
 
@@ -294,10 +291,10 @@ export default function About() {
             className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Our Journey
+              {t('about.timeline.title')}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-              From vision to reality - the milestones that shaped FielMedina
+              {t('about.timeline.subtitle')}
             </p>
           </motion.div>
 
@@ -345,7 +342,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-3xl lg:text-4xl font-bold mb-6"
           >
-            Join Our Mission
+            {t('about.cta.title')}
           </motion.h2>
           
           <motion.p
@@ -355,7 +352,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto leading-relaxed opacity-90"
           >
-            Help us preserve and share the cultural heritage of Sousse with the world
+            {t('about.cta.subtitle')}
           </motion.p>
           
           <motion.div
@@ -373,7 +370,7 @@ export default function About() {
                        hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl
                        flex items-center space-x-2"
             >
-              <span>Back to Home</span>
+              <span>{t('about.cta.backHome')}</span>
             </motion.a>
             
             <motion.a
@@ -384,7 +381,7 @@ export default function About() {
                        hover:bg-white hover:text-[#b65d37] transition-colors
                        flex items-center space-x-2"
             >
-              <span>Get In Touch</span>
+              <span>{t('about.cta.getInTouch')}</span>
             </motion.a>
           </motion.div>
         </div>

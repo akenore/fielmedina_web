@@ -2,9 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { Shield, Eye, Lock, Users, Clock, Mail } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Footer from './Footer';
 
 export default function PrivacyPolicy() {
+  const t = useTranslations();
+  
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
     animate: { opacity: 1, y: 0 },
@@ -16,26 +19,26 @@ export default function PrivacyPolicy() {
   const keyPoints = [
     {
       icon: Shield,
-      title: "Data Protection",
-      description: "We use industry-standard security measures to protect your personal information.",
+      title: t('legal.privacyPolicy.keyPoints.dataProtection.title'),
+      description: t('legal.privacyPolicy.keyPoints.dataProtection.description'),
       gradient: "from-green-500 to-emerald-600"
     },
     {
       icon: Eye,
-      title: "Transparency",
-      description: "We're transparent about what data we collect and how we use it.",
+      title: t('legal.privacyPolicy.keyPoints.transparency.title'),
+      description: t('legal.privacyPolicy.keyPoints.transparency.description'),
       gradient: "from-blue-500 to-cyan-600"
     },
     {
       icon: Lock,
-      title: "Privacy First",
-      description: "Your privacy is our priority - we only collect what's necessary for the app to function.",
+      title: t('legal.privacyPolicy.keyPoints.privacyFirst.title'),
+      description: t('legal.privacyPolicy.keyPoints.privacyFirst.description'),
       gradient: "from-purple-500 to-pink-600"
     },
     {
       icon: Users,
-      title: "No Sale of Data",
-      description: "We never sell your personal information to third parties.",
+      title: t('legal.privacyPolicy.keyPoints.noSale.title'),
+      description: t('legal.privacyPolicy.keyPoints.noSale.description'),
       gradient: "from-[#b65d37] to-orange-600"
     }
   ];
@@ -55,15 +58,14 @@ export default function PrivacyPolicy() {
               <Shield className="size-8 text-white" />
             </div>
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Privacy Policy
+              {t('legal.privacyPolicy.title')}
             </h1>
             <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8">
-              Your privacy matters to us. This policy explains how we collect, use, and protect 
-              your information when you use FielMedina.
+              {t('legal.privacyPolicy.subtitle')}
             </p>
             <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
               <Clock className="size-4" />
-              <span>Last updated: {policyUpdated}</span>
+              <span>{t('legal.privacyPolicy.lastUpdated')}</span>
             </div>
           </motion.div>
         </div>
@@ -80,10 +82,10 @@ export default function PrivacyPolicy() {
             className="text-center mb-16 max-w-3xl mx-auto"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Our Privacy Commitments
+              {t('legal.privacyPolicy.keyPoints.title')}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-              Here's what you need to know about how we handle your data
+              {t('legal.privacyPolicy.keyPoints.subtitle')}
             </p>
           </motion.div>
 
@@ -126,17 +128,12 @@ export default function PrivacyPolicy() {
               transition={{ duration: 0.6 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.introduction.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                This Privacy Policy applies to the FielMedina mobile application (the "Application") 
-                developed by Fielmedina (the "Service Provider") as a free service. This service 
-                is provided "AS IS" and is designed to help users navigate and explore the historic 
-                medina of Sousse, Tunisia.
+                {t('legal.privacyPolicy.sections.introduction.content1')}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                By using our Application, you agree to the collection and use of information in 
-                accordance with this policy. We are committed to protecting your privacy and ensuring 
-                you have a positive experience on our app.
+                {t('legal.privacyPolicy.sections.introduction.content2')}
               </p>
             </motion.div>
 
@@ -148,30 +145,30 @@ export default function PrivacyPolicy() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Information We Collect</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.informationCollection.title')}</h2>
               
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">User Provided Information</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{t('legal.privacyPolicy.sections.informationCollection.userProvidedTitle')}</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                The Application may collect information you provide when you:
+                {t('legal.privacyPolicy.sections.informationCollection.userProvidedContent')}
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6 ml-4">
-                <li>Download and use the Application</li>
-                <li>Contact us through the app or our support channels</li>
-                <li>Provide feedback or reviews</li>
-                <li>Participate in surveys or promotional activities</li>
+                <li>{t('legal.privacyPolicy.sections.informationCollection.userProvided1')}</li>
+                <li>{t('legal.privacyPolicy.sections.informationCollection.userProvided2')}</li>
+                <li>{t('legal.privacyPolicy.sections.informationCollection.userProvided3')}</li>
+                <li>{t('legal.privacyPolicy.sections.informationCollection.userProvided4')}</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Automatically Collected Information</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{t('legal.privacyPolicy.sections.informationCollection.automaticTitle')}</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                The Application may automatically collect certain information, including:
+                {t('legal.privacyPolicy.sections.informationCollection.automaticContent')}
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4 ml-4">
-                <li>Device type and mobile operating system</li>
-                <li>Unique device identifier</li>
-                <li>IP address</li>
-                <li>Mobile browser type</li>
-                <li>App usage patterns and navigation data</li>
-                <li>Crash logs and performance data</li>
+                <li>{t('legal.privacyPolicy.sections.informationCollection.automatic1')}</li>
+                <li>{t('legal.privacyPolicy.sections.informationCollection.automatic2')}</li>
+                <li>{t('legal.privacyPolicy.sections.informationCollection.automatic3')}</li>
+                <li>{t('legal.privacyPolicy.sections.informationCollection.automatic4')}</li>
+                <li>{t('legal.privacyPolicy.sections.informationCollection.automatic5')}</li>
+                <li>{t('legal.privacyPolicy.sections.informationCollection.automatic6')}</li>
               </ul>
             </motion.div>
 
@@ -183,21 +180,19 @@ export default function PrivacyPolicy() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Location Information</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.locationInformation.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                FielMedina is a navigation app that requires location services to function properly. 
-                Here's how we handle your location data:
+                {t('legal.privacyPolicy.sections.locationInformation.content1')}
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4 ml-4">
-                <li><strong>GPS Navigation:</strong> We use your location to provide turn-by-turn navigation through the medina</li>
-                <li><strong>Nearby Points of Interest:</strong> Location data helps us show relevant attractions and shops near you</li>
-                <li><strong>Improved Experience:</strong> We analyze aggregated, anonymized location patterns to improve our maps and recommendations</li>
-                <li><strong>Offline Functionality:</strong> Location data is processed locally on your device when using offline features</li>
+                <li><strong>{t('legal.privacyPolicy.sections.locationInformation.gpsNavigation')}</strong></li>
+                <li><strong>{t('legal.privacyPolicy.sections.locationInformation.nearbyPOI')}</strong></li>
+                <li><strong>{t('legal.privacyPolicy.sections.locationInformation.improvedExperience')}</strong></li>
+                <li><strong>{t('legal.privacyPolicy.sections.locationInformation.offlineFunctionality')}</strong></li>
               </ul>
               <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
                 <p className="text-blue-800 font-medium">
-                  Important: You can disable location services at any time through your device settings, 
-                  but this may limit the app's navigation functionality.
+                  {t('legal.privacyPolicy.sections.locationInformation.important')}
                 </p>
               </div>
             </motion.div>
@@ -210,23 +205,22 @@ export default function PrivacyPolicy() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Third-Party Services</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.thirdPartyServices.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                The Application uses the following third-party services that may collect information:
+                {t('legal.privacyPolicy.sections.thirdPartyServices.content1')}
               </p>
               <div className="space-y-4">
                 <div className="border-l-4 border-[#b65d37] pl-4">
-                  <h4 className="font-semibold text-gray-900">Google Play Services</h4>
-                  <p className="text-gray-600 text-sm">For app distribution, updates, and core Android functionality</p>
+                  <h4 className="font-semibold text-gray-900">{t('legal.privacyPolicy.sections.thirdPartyServices.googlePlay')}</h4>
+                  <p className="text-gray-600 text-sm">{t('legal.privacyPolicy.sections.thirdPartyServices.googlePlayDesc')}</p>
                 </div>
                 <div className="border-l-4 border-[#b65d37] pl-4">
-                  <h4 className="font-semibold text-gray-900">Google Analytics for Firebase</h4>
-                  <p className="text-gray-600 text-sm">For app performance monitoring and user analytics</p>
+                  <h4 className="font-semibold text-gray-900">{t('legal.privacyPolicy.sections.thirdPartyServices.firebase')}</h4>
+                  <p className="text-gray-600 text-sm">{t('legal.privacyPolicy.sections.thirdPartyServices.firebaseDesc')}</p>
                 </div>
               </div>
               <p className="text-gray-600 leading-relaxed mt-4">
-                These services have their own privacy policies that govern their data collection practices. 
-                We only share anonymized, aggregated data with these services.
+                {t('legal.privacyPolicy.sections.thirdPartyServices.content2')}
               </p>
             </motion.div>
 
@@ -238,22 +232,22 @@ export default function PrivacyPolicy() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Data Security & Retention</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.dataSecurity.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                We implement appropriate security measures to protect your information:
+                {t('legal.privacyPolicy.sections.dataSecurity.content1')}
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6 ml-4">
-                <li>Encryption of data in transit and at rest</li>
-                <li>Regular security audits and updates</li>
-                <li>Limited access to personal data on a need-to-know basis</li>
-                <li>Secure data centers with physical and digital protection</li>
+                <li>{t('legal.privacyPolicy.sections.dataSecurity.measure1')}</li>
+                <li>{t('legal.privacyPolicy.sections.dataSecurity.measure2')}</li>
+                <li>{t('legal.privacyPolicy.sections.dataSecurity.measure3')}</li>
+                <li>{t('legal.privacyPolicy.sections.dataSecurity.measure4')}</li>
               </ul>
               
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Data Retention</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{t('legal.privacyPolicy.sections.dataSecurity.dataRetentionTitle')}</h3>
               <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4 ml-4">
-                <li>User data is retained only as long as necessary for app functionality</li>
-                <li>Analytics data is retained for up to 24 months</li>
-                <li>You can request deletion of your data by contacting us at info@fielmedina.com</li>
+                <li>{t('legal.privacyPolicy.sections.dataSecurity.retention1')}</li>
+                <li>{t('legal.privacyPolicy.sections.dataSecurity.retention2')}</li>
+                <li>{t('legal.privacyPolicy.sections.dataSecurity.retention3')}</li>
               </ul>
             </motion.div>
 
@@ -265,22 +259,21 @@ export default function PrivacyPolicy() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Your Rights & Choices</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.userRights.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                You have several rights regarding your personal information:
+                {t('legal.privacyPolicy.sections.userRights.content1')}
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6 ml-4">
-                <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
-                <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
-                <li><strong>Deletion:</strong> Request deletion of your personal data</li>
-                <li><strong>Opt-out:</strong> Uninstall the app to stop all data collection</li>
-                <li><strong>Location Services:</strong> Disable location access through device settings</li>
+                <li><strong>{t('legal.privacyPolicy.sections.userRights.access')}</strong></li>
+                <li><strong>{t('legal.privacyPolicy.sections.userRights.correction')}</strong></li>
+                <li><strong>{t('legal.privacyPolicy.sections.userRights.deletion')}</strong></li>
+                <li><strong>{t('legal.privacyPolicy.sections.userRights.optOut')}</strong></li>
+                <li><strong>{t('legal.privacyPolicy.sections.userRights.locationServices')}</strong></li>
               </ul>
               
               <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
                 <p className="text-green-800 font-medium">
-                  To exercise any of these rights, contact us at info@fielmedina.com. 
-                  We will respond within a reasonable timeframe.
+                  {t('legal.privacyPolicy.sections.userRights.exerciseRights')}
                 </p>
               </div>
             </motion.div>
@@ -293,15 +286,12 @@ export default function PrivacyPolicy() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Children's Privacy</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.childrensPrivacy.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                FielMedina does not knowingly collect personal information from children under 13 years of age. 
-                If we discover that a child under 13 has provided personal information, we will immediately 
-                delete this information from our servers.
+                {t('legal.privacyPolicy.sections.childrensPrivacy.content1')}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                If you are a parent or guardian and believe your child has provided personal information, 
-                please contact us at info@fielmedina.com so we can take appropriate action.
+                {t('legal.privacyPolicy.sections.childrensPrivacy.content2')}
               </p>
             </motion.div>
 
@@ -313,26 +303,23 @@ export default function PrivacyPolicy() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="bg-white rounded-2xl p-8 shadow-lg"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Updates & Contact</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.updates.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                This Privacy Policy may be updated periodically to reflect changes in our practices 
-                or for legal and regulatory reasons. We will notify users of significant changes 
-                through the app or by updating this page.
+                {t('legal.privacyPolicy.sections.updates.content1')}
               </p>
               
               <div className="flex items-start space-x-4 bg-[#b65d37]/10 p-4 rounded-lg">
                 <Mail className="size-6 text-[#b65d37] mt-1" />
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Questions or Concerns?</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">{t('legal.privacyPolicy.sections.updates.contactTitle')}</h3>
                   <p className="text-gray-600 mb-2">
-                    If you have any questions about this Privacy Policy or our data practices, 
-                    please contact us:
+                    {t('legal.privacyPolicy.sections.updates.contactContent')}
                   </p>
                   <a 
                     href="mailto:info@fielmedina.com" 
                     className="text-[#b65d37] font-medium hover:underline"
                   >
-                    info@fielmedina.com
+                    {t('legal.privacyPolicy.sections.updates.email')}
                   </a>
                 </div>
               </div>
@@ -351,7 +338,7 @@ export default function PrivacyPolicy() {
             transition={{ duration: 0.6 }}
             className="text-responsive-2xl font-bold mb-6"
           >
-            Ready to Explore Sousse?
+            {t('legal.privacyPolicy.cta.title')}
           </motion.h2>
           
           <motion.p
@@ -361,8 +348,7 @@ export default function PrivacyPolicy() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto leading-relaxed opacity-90"
           >
-            Download Fielmedina now and start your unforgettable journey through 
-            the historic medina of Sousse.
+            {t('legal.privacyPolicy.cta.subtitle')}
           </motion.p>
           
           <motion.a
@@ -379,7 +365,7 @@ export default function PrivacyPolicy() {
                      hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl
                      inline-flex items-center space-x-2"
           >
-            <span>Download for Android</span>
+            <span>{t('legal.privacyPolicy.cta.downloadButton')}</span>
           </motion.a>
         </div>
 

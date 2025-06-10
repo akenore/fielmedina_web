@@ -1,15 +1,18 @@
 import Image from "next/image";
+import { useTranslations } from 'next-intl';
 import InstagramIcon from "../icons/InstagramIcon";
 import FacebookIcon from "../icons/FacebookIcon";
 import TiktokIcon from "../icons/TiktokIcon";
 import YoutubeIcon from "../icons/YoutubeIcon";
 
 export default function Footer() {
+     const t = useTranslations('footer');
+     
      const socialLinks = [
-          { icon: InstagramIcon, href: "http://instagram.com/fielmedina.officiel", label: "Instagram" },
-          { icon: FacebookIcon, href: "https://www.facebook.com/fielmedina.officiel/", label: "Facebook" },
-          { icon: TiktokIcon, href: "https://www.tiktok.com/@fielmedina.officiel", label: "TikTok" },
-          { icon: YoutubeIcon, href: "https://www.youtube.com/@fielmedina.officiel", label: "Youtube" },
+          { icon: InstagramIcon, href: "http://instagram.com/fielmedina.officiel", label: t('socialMedia.instagram') },
+          { icon: FacebookIcon, href: "https://www.facebook.com/fielmedina.officiel/", label: t('socialMedia.facebook') },
+          { icon: TiktokIcon, href: "https://www.tiktok.com/@fielmedina.officiel", label: t('socialMedia.tiktok') },
+          { icon: YoutubeIcon, href: "https://www.youtube.com/@fielmedina.officiel", label: t('socialMedia.youtube') },
      ];
 
      return (
@@ -45,7 +48,7 @@ export default function Footer() {
                               <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
 
                                    <div className="text-gray-200 text-center lg:text-left">
-                                        © Copyrights 2025. All rights reserved.
+                                        {t('copyright')}
                                    </div>
 
                                    <nav className="flex flex-wrap justify-center gap-6 lg:gap-8">
@@ -54,14 +57,14 @@ export default function Footer() {
                                              className="text-gray-200 hover:text-[#b65d37] hover:underline 
                            focus-ring transition-colors duration-300"
                                         >
-                                             Terms and Conditions
+                                             {t('links.terms')}
                                         </a>
                                         <a
                                              href="/privacy-policy"
                                              className="text-gray-200 hover:text-[#b65d37] hover:underline 
                            focus-ring transition-colors duration-300"
                                         >
-                                             Privacy Policy
+                                             {t('links.privacy')}
                                         </a>
                                    </nav>
                               </div>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Download, Star, Play, Quote } from 'lucide-react';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import Header from './Header';
 import UsersIcon from '../icons/UsersIcon';
 import BubbleIcon from '../icons/BubbleIcon';
@@ -11,6 +12,7 @@ import WorldIcon from '../icons/WorldIcon';
 import NavigatorIcon from '../icons/NavigatorIcon';
 
 export default function Home() {
+  const t = useTranslations();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const fadeInUp = {
@@ -36,47 +38,46 @@ export default function Home() {
   const features = [
     {
       icon: NavigatorIcon,
-      title: "Smart Navigation",
-      description: "Advanced GPS technology that helps you navigate through the historic medina with precision and ease.",
+      title: t('home.features.smartNavigation.title'),
+      description: t('home.features.smartNavigation.description'),
       gradient: "from-gray-700 to-[#b65d37]"
     },
     {
       icon: BubbleIcon,
-      title: "Local Insights", 
-      description: "Get authentic recommendations from locals and discover hidden gems that tourists usually miss.",
+      title: t('home.features.localInsights.title'), 
+      description: t('home.features.localInsights.description'),
       gradient: "from-[#b65d37] to-gray-800"
     },
     {
       icon: WorldIcon,
-      title: "Cultural Guide",
-      description: "Learn about the rich history and culture of Sousse with our interactive storytelling features.",
+      title: t('home.features.culturalGuide.title'),
+      description: t('home.features.culturalGuide.description'),
       gradient: "from-gray-700 to-[#b65d37]"
     }
   ];
 
   const stats = [
-    // { number: "2K+", label: "Active Users" },
-    { number: "4.8", label: "App Rating" },
-    { number: "30+", label: "Locations" }
+    { number: t('home.stats.rating'), label: t('home.stats.ratingLabel') },
+    { number: t('home.stats.locations'), label: t('home.stats.locationsLabel') }
   ];
 
   const testimonials = [
     {
-      name: "Ahmed Ben Salem",
-      role: "Travel Blogger",
-      text: "Fielmedina transformed my visit to Sousse. The navigation was spot-on and I discovered places I never would have found otherwise.",
+      name: t('home.testimonials.ahmed.name'),
+      role: t('home.testimonials.ahmed.role'),
+      text: t('home.testimonials.ahmed.text'),
       rating: 5
     },
     {
-      name: "Sarah Johnson", 
-      role: "Tourist Guide",
-      text: "As a professional guide, I recommend this app to all my clients. It's incredibly accurate and user-friendly.",
+      name: t('home.testimonials.sarah.name'), 
+      role: t('home.testimonials.sarah.role'),
+      text: t('home.testimonials.sarah.text'),
       rating: 5
     },
     {
-      name: "Mohamed Triki",
-      role: "Local Resident", 
-      text: "Even as a local, I learned new things about my own city. The cultural insights are fascinating.",
+      name: t('home.testimonials.mohamed.name'),
+      role: t('home.testimonials.mohamed.role'), 
+      text: t('home.testimonials.mohamed.text'),
       rating: 5
     }
   ];
@@ -98,24 +99,23 @@ export default function Home() {
                 variants={fadeInUp}
                 className="inline-block bg-[#b65d37]/10 text-[#b65d37] px-4 py-2 rounded-full text-md font-medium mb-6"
               >
-                🧭 Your Digital Guide to Sousse Medina
+                {t('home.hero.badge')}
               </motion.div>
               
               <motion.h1 
                 variants={fadeInUp}
                 className="text-responsive-2xl font-bold text-gray-900 leading-tight mb-6"
               >
-                Navigate the Historic
-                <span className="text-[#b65d37] block">Medina of Sousse</span>
-                with Confidence
+                {t('home.hero.title.line1')}
+                <span className="text-[#b65d37] block">{t('home.hero.title.line2')}</span>
+                {t('home.hero.title.line3')}
               </motion.h1>
               
               <motion.p 
                 variants={fadeInUp}
                 className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0"
               >
-                Discover hidden treasures, navigate ancient streets, and immerse yourself in 
-                the rich culture of Tunisia's historic medina with our smart mobile guide.
+                {t('home.hero.subtitle')}
               </motion.p>
 
               {/* CTA Buttons */}
@@ -134,19 +134,8 @@ export default function Home() {
                            flex items-center justify-center space-x-2"
                 >
                   <Download className="size-5" />
-                  <span>Download Free</span>
+                  <span>{t('home.hero.downloadButton')}</span>
                 </motion.a>
-                
-                {/* <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border-2 border-[#b65d37] text-[#b65d37] px-8 py-4 rounded-full text-lg font-semibold 
-                           hover:bg-[#b65d37] hover:text-white transition-all duration-300
-                           flex items-center justify-center space-x-2"
-                >
-                  <Play className="size-5" />
-                  <span>Watch Demo</span>
-                </motion.button> */}
               </motion.div>
 
               {/* Stats */}
@@ -184,7 +173,7 @@ export default function Home() {
                   
                   {/* Status bar */}
                   <div className="bg-white px-6 py-3 flex justify-between items-center text-black text-sm flex-shrink-0">
-                    <span className="font-medium">9:41</span>
+                    <span className="font-medium">{t('home.phoneUI.time')}</span>
                     <div className="flex items-center space-x-1">
                       <div className="w-6 h-3 border border-black rounded-sm">
                         <div className="w-4 h-2 bg-black rounded-sm ml-0.5 mt-0.5" />
@@ -202,7 +191,7 @@ export default function Home() {
                         <div key={index} className="w-full h-full flex-shrink-0 relative">
                           <Image
                             src={image}
-                            alt={`FielMedina App Screenshot ${index + 1}`}
+                            alt={t('home.phoneUI.screenshotAlt', {number: index + 1})}
                             fill
                             className="object-cover"
                             priority={index === 0}
@@ -224,7 +213,7 @@ export default function Home() {
                               ? 'bg-white shadow-lg' 
                               : 'bg-white/50 hover:bg-white/70'
                           }`}
-                          aria-label={`Go to slide ${index + 1}`}
+                          aria-label={t('common.goToSlide', {number: index + 1})}
                         />
                       ))}
                     </div>
@@ -232,8 +221,8 @@ export default function Home() {
                     {/* App branding overlay */}
                     <div className="absolute top-4 left-4 right-4">
                       <div className="bg-black/50 backdrop-blur-sm rounded-2xl px-4 py-3 text-white">
-                        <h3 className="text-lg font-bold">FielMedina</h3>
-                        <p className="text-white/80 text-sm">Sousse Medina Guide</p>
+                        <h3 className="text-lg font-bold">{t('home.appBranding.title')}</h3>
+                        <p className="text-white/80 text-sm">{t('home.appBranding.subtitle')}</p>
                       </div>
                     </div>
                   </div>
@@ -253,11 +242,10 @@ export default function Home() {
             className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto"
           >
             <h2 className="text-responsive-2xl font-bold text-gray-900 mb-6">
-              Why Choose Fielmedina?
+              {t('home.features.title')}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-              Experience the medina like never before with our cutting-edge features designed 
-              to enhance your journey through Sousse's historic heart.
+              {t('home.features.subtitle')}
             </p>
           </motion.div>
 
@@ -297,7 +285,7 @@ export default function Home() {
             className="text-center mb-16 lg:mb-20"
           >
             <h2 className="text-responsive-2xl font-bold text-gray-900 mb-6">
-              What Our Users Say
+              {t('home.testimonials.title')}
             </h2>
             <div className="flex items-center justify-center space-x-2 mb-4">
               <div className="flex">
@@ -305,9 +293,9 @@ export default function Home() {
                   <Star key={i} className="size-6 text-yellow-400 fill-current" />
                 ))}
               </div>
-              <span className="text-xl font-bold text-gray-900">4.8/5.0</span>
+              <span className="text-xl font-bold text-gray-900">{t('home.testimonials.rating')}</span>
             </div>
-            <p className="text-gray-600">Based on 20+ reviews</p>
+            <p className="text-gray-600">{t('home.testimonials.basedOn')}</p>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -358,7 +346,7 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-responsive-2xl font-bold mb-6"
           >
-            Ready to Explore Sousse?
+            {t('home.cta.title')}
           </motion.h2>
           
           <motion.p
@@ -368,8 +356,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto leading-relaxed opacity-90"
           >
-            Download Fielmedina now and start your unforgettable journey through 
-            the historic medina of Sousse.
+            {t('home.cta.subtitle')}
           </motion.p>
           
           <motion.div
@@ -379,17 +366,6 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            {/* <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-[#b65d37] px-8 py-4 rounded-full text-lg font-semibold 
-                       hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl
-                       flex items-center space-x-2"
-            >
-              <Download className="size-5" />
-              <span>Download for iOS</span>
-            </motion.button> */}
-            
             <motion.a
               href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
               target="_blank"
@@ -401,7 +377,7 @@ export default function Home() {
                        flex items-center space-x-2"
             >
               <Download className="size-5" />
-              <span>Download for Android</span>
+              <span>{t('home.cta.downloadButton')}</span>
             </motion.a>
           </motion.div>
         </div>

@@ -2,40 +2,41 @@
 
 import { motion } from 'framer-motion';
 import { FileText, Users, Shield, AlertTriangle, Clock, Mail } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import Footer from './Footer';
 
 export default function TermsConditions() {
+  const t = useTranslations();
+  
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6 }
   };
 
-  const termsUpdated = "June 5, 2025";
-
   const keyPoints = [
     {
       icon: FileText,
-      title: "Free Service",
-      description: "FielMedina is provided as a free service for exploring Sousse's medina.",
+      title: t('legal.termsConditions.keyPoints.freeService.title'),
+      description: t('legal.termsConditions.keyPoints.freeService.description'),
       gradient: "from-blue-500 to-cyan-600"
     },
     {
       icon: Users,
-      title: "User Responsibility",
-      description: "Users are responsible for their safety and following local laws and regulations.",
+      title: t('legal.termsConditions.keyPoints.userResponsibility.title'),
+      description: t('legal.termsConditions.keyPoints.userResponsibility.description'),
       gradient: "from-green-500 to-emerald-600"
     },
     {
       icon: Shield,
-      title: "Limitation of Liability",
-      description: "The app is provided 'as is' without warranties of any kind.",
+      title: t('legal.termsConditions.keyPoints.limitation.title'),
+      description: t('legal.termsConditions.keyPoints.limitation.description'),
       gradient: "from-purple-500 to-pink-600"
     },
     {
       icon: AlertTriangle,
-      title: "Acceptable Use",
-      description: "Use the app responsibly and in accordance with applicable laws.",
+      title: t('legal.termsConditions.keyPoints.acceptableUse.title'),
+      description: t('legal.termsConditions.keyPoints.acceptableUse.description'),
       gradient: "from-[#b65d37] to-orange-600"
     }
   ];
@@ -55,15 +56,14 @@ export default function TermsConditions() {
               <FileText className="size-8 text-white" />
             </div>
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Terms & Conditions
+              {t('legal.termsConditions.title')}
             </h1>
             <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8">
-              Please read these terms carefully before using FielMedina. 
-              By using our app, you agree to these terms and conditions.
+              {t('legal.termsConditions.subtitle')}
             </p>
             <div className="flex items-center justify-center space-x-2 text-sm text-gray-500">
               <Clock className="size-4" />
-              <span>Last updated: {termsUpdated}</span>
+              <span>{t('legal.termsConditions.lastUpdated')}</span>
             </div>
           </motion.div>
         </div>
@@ -80,10 +80,10 @@ export default function TermsConditions() {
             className="text-center mb-16 max-w-3xl mx-auto"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Key Terms Overview
+              {t('legal.termsConditions.keyPoints.title')}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-              Essential points about using FielMedina responsibly
+              {t('legal.termsConditions.keyPoints.subtitle')}
             </p>
           </motion.div>
 
@@ -126,15 +126,12 @@ export default function TermsConditions() {
               transition={{ duration: 0.6 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Acceptance of Terms</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.acceptance.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                By downloading, installing, or using the FielMedina mobile application ("the App"), 
-                you agree to be bound by these Terms and Conditions ("Terms"). If you do not agree 
-                to these Terms, please do not use the App.
+                {t('legal.termsConditions.sections.acceptance.content1')}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                These Terms constitute a legal agreement between you and Fielmedina ("we," "us," or "our"), 
-                the developer and operator of FielMedina.
+                {t('legal.termsConditions.sections.acceptance.content2')}
               </p>
             </motion.div>
 
@@ -146,19 +143,18 @@ export default function TermsConditions() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">2. App Description & Service</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.appDescription.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                FielMedina is a free mobile navigation and cultural guide application designed to help 
-                users explore the historic medina of Sousse, Tunisia. The App provides:
+                {t('legal.termsConditions.sections.appDescription.content1')}
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4 ml-4">
-                <li>GPS navigation and mapping services within the medina</li>
-                <li>Cultural and historical information about locations</li>
-                <li>Local recommendations and points of interest</li>
-                <li>Offline functionality for downloaded content</li>
+                <li>{t('legal.termsConditions.sections.appDescription.feature1')}</li>
+                <li>{t('legal.termsConditions.sections.appDescription.feature2')}</li>
+                <li>{t('legal.termsConditions.sections.appDescription.feature3')}</li>
+                <li>{t('legal.termsConditions.sections.appDescription.feature4')}</li>
               </ul>
               <p className="text-gray-600 leading-relaxed">
-                The service is provided "AS IS" and may be updated, modified, or discontinued at our discretion.
+                {t('legal.termsConditions.sections.appDescription.content2')}
               </p>
             </motion.div>
 
@@ -170,23 +166,22 @@ export default function TermsConditions() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">3. User Responsibilities & Acceptable Use</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.userResponsibilities.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                By using FielMedina, you agree to:
+                {t('legal.termsConditions.sections.userResponsibilities.content1')}
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6 ml-4">
-                <li>Use the App only for lawful purposes and in accordance with local laws</li>
-                <li>Respect local customs, traditions, and private property</li>
-                <li>Exercise personal responsibility for your safety while navigating</li>
-                <li>Not use the App for any commercial purposes without permission</li>
-                <li>Not attempt to reverse engineer, hack, or interfere with the App</li>
-                <li>Provide accurate information when contacting our support team</li>
+                <li>{t('legal.termsConditions.sections.userResponsibilities.responsibility1')}</li>
+                <li>{t('legal.termsConditions.sections.userResponsibilities.responsibility2')}</li>
+                <li>{t('legal.termsConditions.sections.userResponsibilities.responsibility3')}</li>
+                <li>{t('legal.termsConditions.sections.userResponsibilities.responsibility4')}</li>
+                <li>{t('legal.termsConditions.sections.userResponsibilities.responsibility5')}</li>
+                <li>{t('legal.termsConditions.sections.userResponsibilities.responsibility6')}</li>
               </ul>
               
               <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
                 <p className="text-red-800 font-medium">
-                  <strong>Safety Notice:</strong> Always prioritize your personal safety. Be aware of your 
-                  surroundings, follow local safety guidelines, and use common sense when exploring unfamiliar areas.
+                  <strong>{t('legal.termsConditions.sections.userResponsibilities.safetyNotice.title')}</strong> {t('legal.termsConditions.sections.userResponsibilities.safetyNotice.content')}
                 </p>
               </div>
             </motion.div>
@@ -199,21 +194,18 @@ export default function TermsConditions() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Privacy & Data Collection</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.privacy.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Your privacy is important to us. By using the App, you consent to the collection 
-                and use of information as described in our Privacy Policy, which is incorporated 
-                into these Terms by reference.
+                {t('legal.termsConditions.sections.privacy.content1')}
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                The App requires location services to provide navigation functionality. 
-                You can control location permissions through your device settings.
+                {t('legal.termsConditions.sections.privacy.content2')}
               </p>
               <a 
                 href="/privacy-policy" 
                 className="text-[#b65d37] font-medium hover:underline"
               >
-                Read our full Privacy Policy →
+                {t('legal.termsConditions.sections.privacy.linkText')}
               </a>
             </motion.div>
 
@@ -225,21 +217,15 @@ export default function TermsConditions() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">5. Intellectual Property Rights</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.intellectualProperty.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                All content within the FielMedina app, including but not limited to text, graphics, 
-                images, logos, audio clips, digital downloads, and software, is the property of 
-                Fielmedina or its content suppliers and is protected by copyright and other 
-                intellectual property laws.
+                {t('legal.termsConditions.sections.intellectualProperty.content1')}
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                You may not modify, copy, distribute, transmit, display, perform, reproduce, 
-                publish, license, create derivative works from, transfer, or sell any content 
-                obtained from the App without explicit permission.
+                {t('legal.termsConditions.sections.intellectualProperty.content2')}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                The FielMedina name and logo are trademarks of Fielmedina and may not be 
-                used without permission.
+                {t('legal.termsConditions.sections.intellectualProperty.content3')}
               </p>
             </motion.div>
 
@@ -251,30 +237,29 @@ export default function TermsConditions() {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">6. Disclaimers & Limitation of Liability</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.disclaimers.title')}</h2>
               
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Disclaimers</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{t('legal.termsConditions.sections.disclaimers.disclaimersTitle')}</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                The App is provided "AS IS" and "AS AVAILABLE" without warranties of any kind, 
-                either express or implied, including but not limited to:
+                {t('legal.termsConditions.sections.disclaimers.disclaimersContent')}
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6 ml-4">
-                <li>Accuracy, reliability, or completeness of navigation or location data</li>
-                <li>Uninterrupted or error-free operation</li>
-                <li>Fitness for a particular purpose</li>
-                <li>Non-infringement of third-party rights</li>
+                <li>{t('legal.termsConditions.sections.disclaimers.disclaimer1')}</li>
+                <li>{t('legal.termsConditions.sections.disclaimers.disclaimer2')}</li>
+                <li>{t('legal.termsConditions.sections.disclaimers.disclaimer3')}</li>
+                <li>{t('legal.termsConditions.sections.disclaimers.disclaimer4')}</li>
               </ul>
 
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Limitation of Liability</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{t('legal.termsConditions.sections.disclaimers.liabilityTitle')}</h3>
               <p className="text-gray-600 leading-relaxed mb-4">
-                To the maximum extent permitted by law, Fielmedina shall not be liable for:
+                {t('legal.termsConditions.sections.disclaimers.liabilityContent')}
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4 ml-4">
-                <li>Any direct, indirect, incidental, special, or consequential damages</li>
-                <li>Personal injury or property damage resulting from app use</li>
-                <li>Getting lost or navigation errors</li>
-                <li>Loss of data or business interruption</li>
-                <li>Any damages exceeding the amount paid for the App (which is free)</li>
+                <li>{t('legal.termsConditions.sections.disclaimers.liability1')}</li>
+                <li>{t('legal.termsConditions.sections.disclaimers.liability2')}</li>
+                <li>{t('legal.termsConditions.sections.disclaimers.liability3')}</li>
+                <li>{t('legal.termsConditions.sections.disclaimers.liability4')}</li>
+                <li>{t('legal.termsConditions.sections.disclaimers.liability5')}</li>
               </ul>
             </motion.div>
 
@@ -286,19 +271,17 @@ export default function TermsConditions() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">7. Third-Party Services & Content</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.thirdParty.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                The App may integrate with or contain links to third-party services, websites, 
-                or content. These third-party services have their own terms and privacy policies, 
-                and we are not responsible for their content or practices.
+                {t('legal.termsConditions.sections.thirdParty.content1')}
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Third-party services used by FielMedina include:
+                {t('legal.termsConditions.sections.thirdParty.content2')}
               </p>
               <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4 ml-4">
-                <li>Google Play Services</li>
-                <li>Google Analytics for Firebase</li>
-                <li>Mapping and location services</li>
+                <li>{t('legal.termsConditions.sections.thirdParty.service1')}</li>
+                <li>{t('legal.termsConditions.sections.thirdParty.service2')}</li>
+                <li>{t('legal.termsConditions.sections.thirdParty.service3')}</li>
               </ul>
             </motion.div>
 
@@ -310,15 +293,12 @@ export default function TermsConditions() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">8. Termination</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.termination.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                You may stop using the App at any time by uninstalling it from your device. 
-                We reserve the right to terminate or suspend access to the App at our discretion, 
-                without notice, for any reason including breach of these Terms.
+                {t('legal.termsConditions.sections.termination.content1')}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Upon termination, your right to use the App will cease immediately, but the 
-                provisions of these Terms that by their nature should survive will remain in effect.
+                {t('legal.termsConditions.sections.termination.content2')}
               </p>
             </motion.div>
 
@@ -330,15 +310,12 @@ export default function TermsConditions() {
               transition={{ duration: 0.6, delay: 0.8 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">9. Governing Law & Dispute Resolution</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.governingLaw.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                These Terms shall be governed by and construed in accordance with the laws of Tunisia, 
-                without regard to its conflict of law provisions.
+                {t('legal.termsConditions.sections.governingLaw.content1')}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Any disputes arising from these Terms or your use of the App shall be resolved 
-                through good faith negotiations. If a resolution cannot be reached, disputes may 
-                be submitted to the appropriate courts in Sousse, Tunisia.
+                {t('legal.termsConditions.sections.governingLaw.content2')}
               </p>
             </motion.div>
 
@@ -350,15 +327,12 @@ export default function TermsConditions() {
               transition={{ duration: 0.6, delay: 0.9 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">10. Changes to Terms</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.changes.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                We reserve the right to modify these Terms at any time. When we make changes, 
-                we will update the "Last updated" date at the top of this page and notify users 
-                through the App or other appropriate means.
+                {t('legal.termsConditions.sections.changes.content1')}
               </p>
               <p className="text-gray-600 leading-relaxed">
-                Your continued use of the App after any changes indicates your acceptance of 
-                the modified Terms. If you do not agree to the changes, you should stop using the App.
+                {t('legal.termsConditions.sections.changes.content2')}
               </p>
             </motion.div>
 
@@ -370,21 +344,21 @@ export default function TermsConditions() {
               transition={{ duration: 0.6, delay: 1.0 }}
               className="bg-white rounded-2xl p-8 shadow-lg"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">11. Contact Information</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.contact.title')}</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                If you have any questions about these Terms and Conditions, please contact us:
+                {t('legal.termsConditions.sections.contact.content1')}
               </p>
               
               <div className="flex items-start space-x-4 bg-[#b65d37]/10 p-4 rounded-lg">
                 <Mail className="size-6 text-[#b65d37] mt-1" />
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Questions or Concerns?</h3>
-                  <p className="text-gray-600 mb-2">If you have any questions about this Terms and Conditions, please contact us:</p>
+                  <h3 className="font-semibold text-gray-900 mb-2">{t('legal.termsConditions.sections.contact.contactTitle')}</h3>
+                  <p className="text-gray-600 mb-2">{t('legal.termsConditions.sections.contact.contactMessage')}</p>
                   <a 
                     href="mailto:info@fielmedina.com" 
                     className="text-[#b65d37] font-medium hover:underline"
                   >
-                    info@fielmedina.com
+                    {t('legal.termsConditions.sections.contact.email')}
                   </a>
                 </div>
               </div>
@@ -403,7 +377,7 @@ export default function TermsConditions() {
             transition={{ duration: 0.6 }}
             className="text-responsive-2xl font-bold mb-6"
           >
-            Ready to Explore Sousse?
+            {t('legal.termsConditions.cta.title')}
           </motion.h2>
           
           <motion.p
@@ -413,8 +387,7 @@ export default function TermsConditions() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto leading-relaxed opacity-90"
           >
-            Download Fielmedina now and start your unforgettable journey through 
-            the historic medina of Sousse.
+            {t('legal.termsConditions.cta.subtitle')}
           </motion.p>
           
           <motion.a
@@ -431,7 +404,7 @@ export default function TermsConditions() {
                      hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl
                      inline-flex items-center space-x-2"
           >
-            <span>Download for Android</span>
+            <span>{t('legal.termsConditions.cta.downloadButton')}</span>
           </motion.a>
         </div>
 
