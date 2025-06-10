@@ -13,6 +13,26 @@ export default function Header() {
   const t = useTranslations('navigation');
   const locale = useLocale();
 
+  const handleNavClick = (href: string, key: string) => {
+    // If it's a hash link (anchor), handle it specially
+    if (href.startsWith('/#')) {
+      const anchor = href.substring(2); // Remove '/#'
+      
+      // If we're not on the home page, navigate to home first then scroll
+      if (window.location.pathname !== `/${locale}` && window.location.pathname !== '/') {
+        window.location.href = `/${locale}${href}`;
+      } else {
+        // We're on home page, just scroll to the element
+        const element = document.getElementById(anchor);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+    // For mobile menu, close it
+    setIsMenuOpen(false);
+  };
+
   return (
     <motion.header 
       initial={{ opacity: 0, y: -20 }}
@@ -43,15 +63,30 @@ export default function Header() {
               { name: t('about'), href: '/about', key: 'about' },
               { name: t('reviews'), href: '/#reviews', key: 'reviews' },
               { name: t('contact'), href: '/contact', key: 'contact' }
-            ].map((item) => (
-              <a 
-                key={item.key}
-                href={item.href} 
-                className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300"
-              >
-                {item.name}
-              </a>
-            ))}
+            ].map((item) => {
+              // For hash links, use button with onClick handler
+              if (item.href.startsWith('/#')) {
+                return (
+                  <button
+                    key={item.key}
+                    onClick={() => handleNavClick(item.href, item.key)}
+                    className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300"
+                  >
+                    {item.name}
+                  </button>
+                );
+              }
+              // For regular pages, use Link component
+              return (
+                <Link
+                  key={item.key}
+                  href={item.href}
+                  className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300"
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Language Switcher & Download Button */}
@@ -98,16 +133,31 @@ export default function Header() {
             { name: t('about'), href: '/about', key: 'about' },
             { name: t('reviews'), href: '/#reviews', key: 'reviews' },
             { name: t('contact'), href: '/contact', key: 'contact' }
-          ].map((item) => (
-            <a 
-              key={item.key}
-              href={item.href} 
-              className="block text-gray-700 hover:text-[#b65d37] font-medium py-2 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {item.name}
-            </a>
-          ))}
+          ].map((item) => {
+            // For hash links, use button with onClick handler
+            if (item.href.startsWith('/#')) {
+              return (
+                <button
+                  key={item.key}
+                  onClick={() => handleNavClick(item.href, item.key)}
+                  className="block text-gray-700 hover:text-[#b65d37] font-medium py-2 transition-colors text-left w-full"
+                >
+                  {item.name}
+                </button>
+              );
+            }
+            // For regular pages, use Link component
+            return (
+              <Link
+                key={item.key}
+                href={item.href}
+                className="block text-gray-700 hover:text-[#b65d37] font-medium py-2 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
           
           {/* Language Switcher in Mobile */}
           <div className="pt-2 border-t border-gray-200">
