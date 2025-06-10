@@ -26,6 +26,14 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: 'metadata.home'});
 
+  // Set canonical URL based on the actual routing configuration
+  const canonicalPath = locale === 'en' ? '/' : `/${locale}`;
+  
+  // Only include alternate languages in hreflang, not the current language
+  const alternateLanguages = locale === 'en' 
+    ? { 'fr': '/fr' } 
+    : { 'en': '/' };
+  
   return {
     title: t('title'),
     description: t('description'),
@@ -40,11 +48,8 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     },
     metadataBase: new URL('https://www.fielmedina.com'),
     alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        'en': '/en',
-        'fr': '/fr',
-      },
+      canonical: canonicalPath,
+      languages: alternateLanguages,
     },
     openGraph: {
       title: t('title'),

@@ -37,12 +37,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Generate sitemap entries for all routes and locales
   const sitemapEntries = routes.flatMap(route => 
-    locales.map(locale => ({
-      url: `${baseUrl}/${locale}${route.path}`,
-      lastModified: currentDate,
-      changeFrequency: route.changeFreq,
-      priority: route.priority,
-    }))
+    locales.map(locale => {
+      // English routes don't have locale prefix, French routes have /fr prefix
+      const localePrefix = locale === 'en' ? '' : `/${locale}`;
+      return {
+        url: `${baseUrl}${localePrefix}${route.path}`,
+        lastModified: currentDate,
+        changeFrequency: route.changeFreq,
+        priority: route.priority,
+      };
+    })
   )
 
   // Add the root URL redirect
