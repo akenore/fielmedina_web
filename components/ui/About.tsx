@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Heart, Target, Users, Award, MapPin, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import {Link} from '../../i18n/navigation';
 import Footer from './Footer';
 
 export default function About() {
@@ -362,27 +363,35 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <motion.a
+            <Link
               href="/"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              scroll={false}
               className="bg-white text-[#b65d37] px-8 py-4 rounded-full text-lg font-semibold 
                        hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl
                        flex items-center space-x-2"
             >
-              <span>{t('about.cta.backHome')}</span>
-            </motion.a>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>{t('about.cta.backHome')}</span>
+              </motion.div>
+            </Link>
             
-            <motion.a
+            <Link
               href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              scroll={false}
               className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold 
                        hover:bg-white hover:text-[#b65d37] transition-colors
                        flex items-center space-x-2"
             >
-              <span>{t('about.cta.getInTouch')}</span>
-            </motion.a>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>{t('about.cta.getInTouch')}</span>
+              </motion.div>
+            </Link>
           </motion.div>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, Clock, MessageCircle, CheckCircle, XCircle } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import {Link} from '../../i18n/navigation';
 import InstagramIcon from '../icons/InstagramIcon';
 import FacebookIcon from '../icons/FacebookIcon';
 import TiktokIcon from '../icons/TiktokIcon';
@@ -563,15 +564,19 @@ export default function Contact() {
               <span>{t('contact.cta.downloadButton')}</span>
             </motion.a>
             
-            <motion.a
+            <Link
               href="/"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              scroll={false}
               className="inline-flex items-center space-x-2 border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold 
                        hover:bg-white hover:text-[#b65d37] transition-colors"
             >
-              <span>{t('contact.cta.backHome')}</span>
-            </motion.a>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>{t('contact.cta.backHome')}</span>
+              </motion.div>
+            </Link>
           </motion.div>
         </div>
       </section>

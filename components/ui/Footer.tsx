@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
+import {Link} from '../../i18n/navigation';
 import InstagramIcon from "../icons/InstagramIcon";
 import FacebookIcon from "../icons/FacebookIcon";
 import TiktokIcon from "../icons/TiktokIcon";
@@ -52,20 +53,22 @@ export default function Footer() {
                                    </div>
 
                                    <nav className="flex flex-wrap justify-center gap-6 lg:gap-8">
-                                        <a
+                                        <Link
                                              href="/terms-conditions"
+                                             scroll={false}
                                              className="text-gray-200 hover:text-[#b65d37] hover:underline 
                            focus-ring transition-colors duration-300"
                                         >
                                              {t('links.terms')}
-                                        </a>
-                                        <a
+                                        </Link>
+                                        <Link
                                              href="/privacy-policy"
+                                             scroll={false}
                                              className="text-gray-200 hover:text-[#b65d37] hover:underline 
                            focus-ring transition-colors duration-300"
                                         >
                                              {t('links.privacy')}
-                                        </a>
+                                        </Link>
                                    </nav>
                               </div>
                          </div>

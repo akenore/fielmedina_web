@@ -193,6 +193,7 @@ export default function Home() {
                             src={image}
                             alt={t('home.phoneUI.screenshotAlt', {number: index + 1})}
                             fill
+                            sizes="(max-width: 768px) 288px, 320px"
                             className="object-cover"
                             priority={index === 0}
                           />

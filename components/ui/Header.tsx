@@ -45,13 +45,13 @@ export default function Header() {
           
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/">
+            <Link href="/" scroll={false}>
               <Image
                 src="/logo.svg"
                 alt={useTranslations('header')('logo')}
                 width={180}
                 height={40}
-                className="h-8 lg:h-10 w-auto"
+                className="h-8 lg:h-10 w-auto object-contain"
                 priority
               />
             </Link>
@@ -76,11 +76,12 @@ export default function Header() {
                   </button>
                 );
               }
-              // For regular pages, use Link component
+              // For regular pages, use Link component with scroll={false} to prevent auto-scroll warnings
               return (
                 <Link
                   key={item.key}
                   href={item.href}
+                  scroll={false}
                   className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300"
                 >
                   {item.name}
@@ -146,11 +147,12 @@ export default function Header() {
                 </button>
               );
             }
-            // For regular pages, use Link component
+            // For regular pages, use Link component with scroll={false} to prevent auto-scroll warnings
             return (
               <Link
                 key={item.key}
                 href={item.href}
+                scroll={false}
                 className="block text-gray-700 hover:text-[#b65d37] font-medium py-2 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
