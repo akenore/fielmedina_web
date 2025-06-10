@@ -761,5 +761,32 @@
     "pauseVideo": "Mettre en pause la vidéo",
     "muteVideo": "Couper le son de la vidéo",
     "unmuteVideo": "Remettre le son de la vidéo"
+  },
+  "metadata": {
+    "home": {
+      "title": "FielMedina - Découvrir la Médina de Sousse",
+      "description": "Votre guide alimenté par l'IA pour explorer le site du patrimoine mondial de l'UNESCO avec des histoires interactives, la navigation GPS et des aperçus culturels.",
+      "keywords": "FielMedina, Sousse, Tunisie, médina, UNESCO, patrimoine, navigation, guide culturel, GPS, voyage"
+    },
+    "about": {
+      "title": "À Propos de Nous - FielMedina Sousse",
+      "description": "Découvrez la mission de FielMedina pour préserver et partager le patrimoine culturel de la médina historique de Sousse grâce à une technologie innovante.",
+      "keywords": "FielMedina, Sousse, Tunisie, médina, patrimoine culturel, à propos de nous, mission, équipe"
+    },
+    "contact": {
+      "title": "Contactez-Nous - FielMedina Sousse",
+      "description": "Entrez en contact avec l'équipe FielMedina. Nous aimerions avoir de vos nouvelles concernant notre application de guide culturel de la médina de Sousse.",
+      "keywords": "FielMedina, contact, support, Sousse, Tunisie, médina, guide culturel, nous contacter"
+    },
+    "termsConditions": {
+      "title": "Conditions Générales - FielMedina Sousse",
+      "description": "Lisez les conditions générales d'utilisation de FielMedina, votre guide pour explorer la médina historique de Sousse.",
+      "keywords": "FielMedina, conditions générales, légal, Sousse, Tunisie, médina, conditions d'application"
+    },
+    "privacyPolicy": {
+      "title": "Politique de Confidentialité - FielMedina Sousse",
+      "description": "Découvrez comment FielMedina protège votre vie privée et traite vos données pendant que vous explorez la médina historique de Sousse.",
+      "keywords": "FielMedina, politique de confidentialité, protection des données, Sousse, Tunisie, médina, confidentialité de l'application"
+    }
   }
 } 

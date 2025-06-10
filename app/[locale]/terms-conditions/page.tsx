@@ -1,5 +1,22 @@
 import TermsConditions from '@/components/ui/TermsConditions';
 import Header from '@/components/ui/Header';
+import {getTranslations} from 'next-intl/server';
+import {Metadata} from 'next';
+
+type Props = {
+  params: Promise<{locale: string}>;
+};
+
+export async function generateMetadata({params}: Props): Promise<Metadata> {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'metadata.termsConditions'});
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    keywords: t('keywords'),
+  };
+}
 
 export default function TermsConditionsPage() {
   return (
@@ -8,10 +25,4 @@ export default function TermsConditionsPage() {
       <TermsConditions />
     </>
   );
-}
-
-export const metadata = {
-  title: 'Terms & Conditions - FielMedina Sousse',
-  description: 'Read the terms and conditions for using FielMedina, your guide to exploring Sousse\'s historic medina.',
-  keywords: 'FielMedina, terms and conditions, legal, Sousse, Tunisia, medina, app terms',
-}; 
+} 

@@ -1,5 +1,22 @@
 import About from '@/components/ui/About';
 import Header from '@/components/ui/Header';
+import {getTranslations} from 'next-intl/server';
+import {Metadata} from 'next';
+
+type Props = {
+  params: Promise<{locale: string}>;
+};
+
+export async function generateMetadata({params}: Props): Promise<Metadata> {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'metadata.about'});
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    keywords: t('keywords'),
+  };
+}
 
 export default function AboutPage() {
   return <>
@@ -7,9 +24,3 @@ export default function AboutPage() {
   <About />
   </>;
 }
-
-export const metadata = {
-  title: 'About Us - FielMedina Sousse',
-  description: 'Learn about FielMedina\'s mission to preserve and share the cultural heritage of Sousse\'s historic medina through innovative technology.',
-  keywords: 'FielMedina, Sousse, Tunisia, medina, cultural heritage, about us, mission, team',
-};

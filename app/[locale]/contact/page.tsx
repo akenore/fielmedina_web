@@ -1,5 +1,22 @@
 import Contact from '@/components/ui/Contact';
 import Header from '@/components/ui/Header';
+import {getTranslations} from 'next-intl/server';
+import {Metadata} from 'next';
+
+type Props = {
+  params: Promise<{locale: string}>;
+};
+
+export async function generateMetadata({params}: Props): Promise<Metadata> {
+  const {locale} = await params;
+  const t = await getTranslations({locale, namespace: 'metadata.contact'});
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    keywords: t('keywords'),
+  };
+}
 
 export default function ContactPage() {
      return <>
@@ -7,9 +24,3 @@ export default function ContactPage() {
      <Contact />
      </>;
 }
-
-export const metadata = {
-  title: 'Contact Us - FielMedina Sousse',
-  description: 'Get in touch with the FielMedina team. We\'d love to hear from you about our Sousse medina cultural guide app.',
-  keywords: 'FielMedina, contact, support, Sousse, Tunisia, medina, cultural guide, get in touch',
-};

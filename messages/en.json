@@ -770,5 +770,32 @@
     "pauseVideo": "Pause video",
     "muteVideo": "Mute video",
     "unmuteVideo": "Unmute video"
+  },
+  "metadata": {
+    "home": {
+      "title": "FielMedina - Discover Sousse Medina",
+      "description": "Your AI-powered guide to explore the UNESCO World Heritage site with interactive stories, GPS navigation, and cultural insights.",
+      "keywords": "FielMedina, Sousse, Tunisia, medina, UNESCO, heritage, navigation, cultural guide, GPS, travel"
+    },
+    "about": {
+      "title": "About Us - FielMedina Sousse",
+      "description": "Learn about FielMedina's mission to preserve and share the cultural heritage of Sousse's historic medina through innovative technology.",
+      "keywords": "FielMedina, Sousse, Tunisia, medina, cultural heritage, about us, mission, team"
+    },
+    "contact": {
+      "title": "Contact Us - FielMedina Sousse", 
+      "description": "Get in touch with the FielMedina team. We'd love to hear from you about our Sousse medina cultural guide app.",
+      "keywords": "FielMedina, contact, support, Sousse, Tunisia, medina, cultural guide, get in touch"
+    },
+    "termsConditions": {
+      "title": "Terms & Conditions - FielMedina Sousse",
+      "description": "Read the terms and conditions for using FielMedina, your guide to exploring Sousse's historic medina.",
+      "keywords": "FielMedina, terms and conditions, legal, Sousse, Tunisia, medina, app terms"
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy - FielMedina Sousse",
+      "description": "Learn how FielMedina protects your privacy and handles your data while you explore Sousse's historic medina.",
+      "keywords": "FielMedina, privacy policy, data protection, Sousse, Tunisia, medina, app privacy"
+    }
   }
 } 
