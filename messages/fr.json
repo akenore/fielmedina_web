@@ -503,34 +503,32 @@
         "locationInformation": {
           "title": "Informations de Localisation",
           "content1": "FielMedina est une application de navigation qui nécessite des services de localisation pour fonctionner correctement. Voici comment nous gérons vos données de localisation :",
-          "features": [
-            "Navigation GPS : Nous utilisons votre localisation pour fournir une navigation étape par étape dans la médina",
-            "Points d'Intérêt Proches : Les données de localisation nous aident à montrer les attractions et boutiques pertinentes près de vous",
-            "Expérience Améliorée : Nous analysons les modèles de localisation agrégés et anonymisés pour améliorer nos cartes et recommandations",
-            "Fonctionnalité Hors Ligne : Les données de localisation sont traitées localement sur votre appareil lors de l'utilisation des fonctionnalités hors ligne"
-          ],
+          "gpsNavigation": "Navigation GPS : Nous utilisons votre localisation pour fournir une navigation étape par étape dans la médina",
+          "nearbyPOI": "Points d'Intérêt Proches : Les données de localisation nous aident à montrer les attractions et boutiques pertinentes près de vous",
+          "improvedExperience": "Expérience Améliorée : Nous analysons les modèles de localisation agrégés et anonymisés pour améliorer nos cartes et recommandations",
+          "offlineFunctionality": "Fonctionnalité Hors Ligne : Les données de localisation sont traitées localement sur votre appareil lors de l'utilisation des fonctionnalités hors ligne",
           "important": "Important : Vous pouvez désactiver les services de localisation à tout moment via les paramètres de votre appareil, mais cela peut limiter la fonctionnalité de navigation de l'application."
         },
         "thirdPartyServices": {
           "title": "Services de Tiers",
           "content1": "L'Application utilise les services tiers suivants qui peuvent collecter des informations :",
-          "services": [
-            "Google Play Services : Pour la distribution d'applications, les mises à jour et les fonctionnalités Android de base",
-            "Google Analytics pour Firebase : Pour la surveillance des performances de l'application et l'analyse des utilisateurs"
-          ],
+          "googlePlay": "Google Play Services",
+          "googlePlayDesc": "Pour la distribution d'applications, les mises à jour et les fonctionnalités Android de base",
+          "firebase": "Google Analytics pour Firebase",
+          "firebaseDesc": "Pour la surveillance des performances de l'application et l'analyse des utilisateurs",
           "content2": "Ces services ont leurs propres politiques de confidentialité qui régissent leurs pratiques de collecte de données. Nous ne partageons que des données anonymisées et agrégées avec ces services."
         },
         "dataSecurity": {
           "title": "Sécurité et Rétention des Données",
           "content1": "Nous mettons en place des mesures de sécurité appropriées pour protéger vos informations :",
-          "securityMeasures": [
+          "dataRetentionTitle": "Rétention des Données",
+          "measures": [
             "Chiffrement des données en transit et au repos",
             "Audits de sécurité et mises à jour réguliers",
             "Accès limité aux données personnelles selon le principe du besoin de savoir",
             "Centres de données sécurisés avec protection physique et numérique"
           ],
-          "retentionTitle": "Rétention des Données",
-          "retentionList": [
+          "retentionPolicies": [
             "Les données utilisateur ne sont conservées que le temps nécessaire pour le fonctionnement de l'application",
             "Les données d'analyse sont conservées jusqu'à 24 mois",
             "Vous pouvez demander la suppression de vos données en nous contactant à info@fielmedina.com"
@@ -539,14 +537,12 @@
         "userRights": {
           "title": "Vos Droits et Choix",
           "content1": "Vous avez plusieurs droits concernant vos informations personnelles :",
-          "rights": [
-            "Accès : Demander une copie des données personnelles que nous détenons sur vous",
-            "Correction : Demander la correction de données inexactes ou incomplètes",
-            "Suppression : Demander la suppression de vos données personnelles",
-            "Désinscription : Désinstaller l'application pour arrêter toute collecte de données",
-            "Services de Localisation : Désactiver l'accès à la localisation via les paramètres de l'appareil"
-          ],
-          "contact": "Pour exercer ces droits, contactez-nous à info@fielmedina.com. Nous répondrons dans un délai raisonnable."
+          "access": "Accès : Demander une copie des données personnelles que nous détenons sur vous",
+          "correction": "Correction : Demander la correction de données inexactes ou incomplètes",
+          "deletion": "Suppression : Demander la suppression de vos données personnelles",
+          "optOut": "Désinscription : Désinstaller l'application pour arrêter toute collecte de données",
+          "locationServices": "Services de Localisation : Désactiver l'accès à la localisation via les paramètres de l'appareil",
+          "exerciseRights": "Pour exercer ces droits, contactez-nous à info@fielmedina.com. Nous répondrons dans un délai raisonnable."
         },
         "childrensPrivacy": {
           "title": "Confidentialité des Enfants",
@@ -589,9 +585,24 @@
     "english": "🇬🇧 English",
     "french": "🇫🇷 Français"
   },
-  "maintenanceMode": {
-    "title": "Maintenance en Cours",
-    "message": "Nous effectuons actuellement une maintenance sur notre site. Veuillez revenir bientôt.",
-    "backSoon": "Nous reviendrons bientôt !"
+  "maintenance": {
+    "title": "Site en Construction",
+    "titleHighlight": "En Construction",
+    "subtitle": "Des choses passionnantes sont en cours ! Notre site fait actuellement l'objet de rénovations pour vous apporter une expérience améliorée.",
+    "message": "Restez à l'écoute pour un nouveau look et des mises à jour passionnantes.",
+    "thankYou": "Merci pour votre patience !"
+  },
+  "aria": {
+    "toggleNavigation": "Basculer la navigation",
+    "closeMenu": "Fermer le menu",
+    "openMenu": "Ouvrir le menu",
+    "languageSelector": "Sélecteur de langue",
+    "socialLinks": "Liens des réseaux sociaux",
+    "downloadApp": "Télécharger l'application mobile",
+    "scrollToTop": "Retour en haut",
+    "playVideo": "Lire la vidéo",
+    "pauseVideo": "Mettre en pause la vidéo",
+    "muteVideo": "Couper le son de la vidéo",
+    "unmuteVideo": "Remettre le son de la vidéo"
   }
 } 
