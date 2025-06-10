@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, Clock, MessageCircle, CheckCircle, XCircle } from 'lucide-react';
+import { Mail, MapPin, Send, Clock, MessageCircle, CheckCircle, XCircle } from 'lucide-react';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import {Link} from '../../i18n/navigation';
@@ -37,29 +37,7 @@ export default function Contact() {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: t('contact.contactInfo.email.title'),
-      details: t('contact.contactInfo.email.details'),
-      description: t('contact.contactInfo.email.description'),
-      gradient: "from-blue-500 to-cyan-600"
-    },
-    {
-      icon: Phone,
-      title: t('contact.contactInfo.phone.title'),
-      details: t('contact.contactInfo.phone.details'),
-      description: t('contact.contactInfo.phone.description'),
-      gradient: "from-green-500 to-emerald-600"
-    },
-    {
-      icon: MapPin,
-      title: t('contact.contactInfo.location.title'),
-      details: t('contact.contactInfo.location.details'),
-      description: t('contact.contactInfo.location.description'),
-      gradient: "from-[#b65d37] to-orange-600"
-    }
-  ];
+
 
   const socialLinks = [
     {
@@ -127,7 +105,7 @@ export default function Contact() {
       } else {
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);

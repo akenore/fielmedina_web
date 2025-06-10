@@ -3,16 +3,11 @@
 import { motion } from 'framer-motion';
 import { FileText, Users, Shield, AlertTriangle, Clock, Mail } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import {Link} from '../../i18n/navigation';
 import Footer from './Footer';
 
 export default function TermsConditions() {
   const t = useTranslations();
-  
-  const fadeInUp = {
-    initial: { opacity: 0, y: 40 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
 
   const keyPoints = [
     {
@@ -201,12 +196,13 @@ export default function TermsConditions() {
               <p className="text-gray-600 leading-relaxed mb-4">
                 {t('legal.termsConditions.sections.privacy.content2')}
               </p>
-              <a 
+              <Link 
                 href="/privacy-policy" 
+                scroll={false}
                 className="text-[#b65d37] font-medium hover:underline"
               >
                 {t('legal.termsConditions.sections.privacy.linkText')}
-              </a>
+              </Link>
             </motion.div>
 
             {/* Intellectual Property */}

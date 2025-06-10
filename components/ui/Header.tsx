@@ -13,7 +13,7 @@ export default function Header() {
   const t = useTranslations('navigation');
   const locale = useLocale();
 
-  const handleNavClick = (href: string, key: string) => {
+  const handleNavClick = (href: string) => {
     // If it's a hash link (anchor), handle it specially
     if (href.startsWith('/#')) {
       const anchor = href.substring(2); // Remove '/#'
@@ -69,7 +69,7 @@ export default function Header() {
                 return (
                   <button
                     key={item.key}
-                    onClick={() => handleNavClick(item.href, item.key)}
+                    onClick={() => handleNavClick(item.href)}
                     className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300"
                   >
                     {item.name}
@@ -140,7 +140,7 @@ export default function Header() {
               return (
                 <button
                   key={item.key}
-                  onClick={() => handleNavClick(item.href, item.key)}
+                  onClick={() => handleNavClick(item.href)}
                   className="block text-gray-700 hover:text-[#b65d37] font-medium py-2 transition-colors text-left w-full"
                 >
                   {item.name}

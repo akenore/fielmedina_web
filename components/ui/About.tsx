@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { Heart, Target, Users, Award, MapPin, Calendar } from 'lucide-react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import {Link} from '../../i18n/navigation';
 import Footer from './Footer';

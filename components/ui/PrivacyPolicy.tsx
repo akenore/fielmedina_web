@@ -8,13 +8,7 @@ import Footer from './Footer';
 export default function PrivacyPolicy() {
   const t = useTranslations();
   
-  const fadeInUp = {
-    initial: { opacity: 0, y: 40 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
 
-  const policyUpdated = "June 5, 2025";
 
   const keyPoints = [
     {

@@ -1,12 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Download, Star, Play, Quote } from 'lucide-react';
+import { Download, Star, Quote } from 'lucide-react';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import Header from './Header';
-import UsersIcon from '../icons/UsersIcon';
 import BubbleIcon from '../icons/BubbleIcon';
 import WorldIcon from '../icons/WorldIcon';
 import NavigatorIcon from '../icons/NavigatorIcon';
@@ -318,7 +317,7 @@ export default function Home() {
                 <Quote className="size-8 text-[#b65d37] mb-4" />
                 
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
                 
                 <div className="flex items-center">

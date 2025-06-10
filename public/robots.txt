@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Block access to private directories
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://www.fielmedina.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent overwhelming the server)
+Crawl-delay: 1 
