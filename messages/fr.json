@@ -4,90 +4,207 @@
     "features": "Fonctionnalités", 
     "reviews": "Avis",
     "about": "À propos",
-    "contact": "Contact"
+    "contact": "Contact",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsConditions": "Conditions générales"
+  },
+  "common": {
+    "downloadAndroid": "Télécharger pour Android",
+    "downloadFree": "Téléchargement Gratuit",
+    "watchDemo": "Voir la Démo",
+    "readyToExplore": "Prêt à Explorer Sousse ?",
+    "downloadNow": "Télécharger Maintenant",
+    "backToHome": "Retour à l'Accueil",
+    "goToSlide": "Aller à la diapositive",
+    "socialMediaLinks": "Suivez-nous sur les réseaux sociaux",
+    "ariaLabels": {
+      "switchLanguage": "Changer de langue",
+      "toggleMenu": "Basculer le menu"
+    },
+    "close": "Fermer",
+    "open": "Ouvrir",
+    "menu": "Menu",
+    "loading": "Chargement",
+    "submit": "Soumettre",
+    "cancel": "Annuler",
+    "save": "Sauvegarder",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "confirm": "Confirmer",
+    "back": "Retour",
+    "next": "Suivant",
+    "learnMore": "En savoir plus",
+    "readMore": "Lire la suite",
+    "getStarted": "Commencer",
+    "joinNow": "Rejoindre maintenant",
+    "contactUs": "Nous contacter",
+    "followUs": "Nous suivre",
+    "emailUs": "Nous écrire",
+    "callUs": "Nous appeler",
+    "visitUs": "Nous rendre visite",
+    "seeAll": "Tout voir",
+    "viewAll": "Voir tout",
+    "showMore": "Afficher plus",
+    "showLess": "Afficher moins",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "share": "Partager",
+    "like": "J'aime",
+    "comment": "Commenter",
+    "subscribe": "S'abonner",
+    "unsubscribe": "Se désabonner"
   },
   "home": {
     "hero": {
-      "title": "Découvrez la Médina de Sousse avec FielMedina",
-      "subtitle": "Votre guide alimenté par l'IA pour explorer le site du patrimoine mondial de l'UNESCO avec des histoires interactives, navigation GPS et aperçus culturels.",
-      "downloadButton": "Télécharger pour Android",
-      "watchButton": "Regarder la Démo"
+      "badge": "🧭 Votre Guide Numérique de la Médina de Sousse",
+      "title": "Naviguez dans la Médina",
+      "titleHighlight": "Historique de Sousse",
+      "titleSuffix": "en toute Confiance",
+      "subtitle": "Découvrez des trésors cachés, naviguez dans les rues anciennes et immergez-vous dans la riche culture de la médina historique de la Tunisie avec notre guide mobile intelligent.",
+      "downloadButton": "Téléchargement Gratuit",
+      "watchButton": "Voir la Démo"
     },
     "stats": {
-      "downloads": "1K+ Téléchargements",
-      "rating": "4.8 Note de l'App", 
-      "locations": "30+ Emplacements"
+      "rating": "4,8",
+      "ratingLabel": "Note de l'App",
+      "locations": "30+",
+      "locationsLabel": "Emplacements"
     },
     "features": {
-      "title": "Tout ce dont Vous Avez Besoin pour Explorer",
-      "subtitle": "FielMedina combine la technologie moderne avec un riche patrimoine culturel",
-      "gpsTitle": "Navigation GPS",
-      "gpsDescription": "Naviguez dans les ruelles étroites de la médina avec un guidage GPS précis et ne vous perdez jamais.",
-      "storiesTitle": "Histoires Interactives", 
-      "storiesDescription": "Découvrez des récits historiques fascinants et des aperçus culturels à chaque emplacement.",
-      "offlineTitle": "Mode Hors Ligne",
-      "offlineDescription": "Téléchargez le contenu et explorez même sans connexion internet."
+      "title": "Pourquoi Choisir Fielmedina ?",
+      "subtitle": "Découvrez la médina comme jamais auparavant avec nos fonctionnalités de pointe conçues pour enrichir votre voyage à travers le cœur historique de Sousse.",
+      "smartNavigation": {
+        "title": "Navigation Intelligente",
+        "description": "Technologie GPS avancée qui vous aide à naviguer dans la médina historique avec précision et facilité."
+      },
+      "localInsights": {
+        "title": "Conseils Locaux",
+        "description": "Obtenez des recommandations authentiques des habitants et découvrez des joyaux cachés que les touristes manquent habituellement."
+      },
+      "culturalGuide": {
+        "title": "Guide Culturel",
+        "description": "Apprenez sur la riche histoire et culture de Sousse avec nos fonctionnalités de narration interactive."
+      }
     },
     "reviews": {
-      "title": "Ce que Disent les Explorateurs",
-      "subtitle": "Rejoignez des milliers de personnes qui ont découvert la médina de Sousse avec FielMedina"
+      "title": "Ce que Disent Nos Utilisateurs",
+      "rating": "4,8/5,0",
+      "reviewsCount": "Basé sur plus de 20 avis",
+      "testimonials": {
+        "ahmed": {
+          "name": "Ahmed Ben Salem",
+          "role": "Blogueur de Voyage",
+          "text": "Fielmedina a transformé ma visite à Sousse. La navigation était parfaite et j'ai découvert des endroits que je n'aurais jamais trouvés autrement."
+        },
+        "sarah": {
+          "name": "Sarah Johnson",
+          "role": "Guide Touristique", 
+          "text": "En tant que guide professionnelle, je recommande cette application à tous mes clients. Elle est incroyablement précise et facile à utiliser."
+        },
+        "mohamed": {
+          "name": "Mohamed Triki",
+          "role": "Résident Local",
+          "text": "Même en tant que local, j'ai appris de nouvelles choses sur ma propre ville. Les aperçus culturels sont fascinants."
+        }
+      }
     },
     "cta": {
       "title": "Prêt à Explorer Sousse ?",
-      "subtitle": "Téléchargez FielMedina maintenant et commencez à découvrir les histoires cachées de Sousse",
+      "subtitle": "Téléchargez Fielmedina maintenant et commencez votre voyage inoubliable à travers la médina historique de Sousse.",
       "downloadButton": "Télécharger pour Android"
+    },
+    "app": {
+      "brandingTitle": "FielMedina",
+      "brandingSubtitle": "Guide de la Médina de Sousse",
+      "altText": "Capture d'écran de l'App FielMedina"
     }
   },
   "about": {
     "hero": {
-      "title": "À Propos de FielMedina",
-      "subtitle": "Nous sommes passionnés par la préservation et le partage du riche patrimoine culturel de la médina de Sousse grâce à une technologie innovante."
+      "title": "Notre Histoire",
+      "subtitle": "Née d'une passion pour la préservation du patrimoine culturel tunisien, FielMedina donne vie à la médina historique de Sousse grâce à une technologie innovante.",
+      "location": "Sousse, Tunisie",
+      "founded": "Fondée en 2023"
     },
     "mission": {
       "title": "Notre Mission",
-      "description": "FielMedina est né d'un amour profond pour la médina historique de Sousse et d'une vision de rendre le patrimoine culturel accessible à tous. Nous combinons une technologie de pointe avec une narration authentique pour créer des expériences immersives qui connectent les visiteurs avec l'âme de ce site du patrimoine mondial de l'UNESCO."
+      "description1": "Nous croyons que le patrimoine culturel devrait être accessible à tous. Notre mission est d'utiliser la technologie comme un pont entre le passé et le présent, aidant les visiteurs et les habitants à découvrir les histoires cachées derrière chaque porte, chaque pierre et chaque coin de la magnifique médina de Sousse.",
+      "description2": "À travers la narration immersive, les cartes interactives et les aperçus locaux authentiques, nous ne créons pas seulement une application – nous préservons un morceau vivant d'histoire pour que les générations futures l'explorent et le chérissent.",
+      "whyTitle": "Pourquoi FielMedina ?",
+      "features": {
+        "authentic": "Histoires authentiques d'historiens locaux",
+        "gps": "Exploration guidée par GPS de joyaux cachés", 
+        "offline": "Accès hors ligne pour une découverte ininterrompue",
+        "preservation": "Préservation culturelle grâce à la technologie"
+      }
     },
     "values": {
+      "title": "Nos Valeurs",
+      "subtitle": "Les principes qui guident tout ce que nous faisons chez FielMedina",
       "heritage": {
-        "title": "Patrimoine Culturel",
-        "description": "Préserver et célébrer la riche histoire de la médina de Sousse pour les générations futures."
+        "title": "Passion pour le Patrimoine",
+        "description": "Nous sommes profondément passionnés par la préservation et le partage du riche patrimoine culturel de la Tunisie avec le monde."
       },
       "innovation": {
-        "title": "Innovation",
-        "description": "Utiliser la technologie moderne pour améliorer les expériences culturelles traditionnelles."
+        "title": "Innovation et Tradition", 
+        "description": "Combler le fossé entre la sagesse ancienne et la technologie moderne pour créer des expériences significatives."
       },
       "community": {
-        "title": "Communauté",
-        "description": "Construire des ponts entre les habitants et les visiteurs à travers des histoires et expériences partagées."
+        "title": "La Communauté d'Abord",
+        "description": "Construire des connexions entre les voyageurs et les communautés locales pour un échange culturel authentique."
       },
-      "authenticity": {
-        "title": "Authenticité", 
-        "description": "S'assurer que chaque histoire et expérience reflète le véritable esprit de Sousse."
+      "excellence": {
+        "title": "Excellence de l'Expérience",
+        "description": "Engagés à offrir des expériences utilisateur exceptionnelles qui dépassent les attentes à chaque fois."
       }
     },
     "team": {
       "title": "Rencontrez Notre Équipe",
-      "subtitle": "Des personnes passionnées dédiées à donner vie au patrimoine de Sousse"
+      "subtitle": "Des personnes passionnées dédiées à donner vie au patrimoine de Sousse",
+      "members": {
+        "founder": {
+          "name": "Muhammad Aslan",
+          "role": "Fondateur et PDG",
+          "description": "Passionné par la technologie et la préservation culturelle avec plus de 10 ans dans le développement d'applications mobiles."
+        },
+        "cultural": {
+          "name": "Sarah Ben Ali", 
+          "role": "Consultante Culturelle",
+          "description": "Historienne locale et conteuse spécialisée dans le riche patrimoine et les traditions de Sousse."
+        },
+        "developer": {
+          "name": "Ahmed Karray",
+          "role": "Développeur Principal",
+          "description": "Expert en technologies mobiles et systèmes GPS, apportant l'excellence technique à chaque fonctionnalité."
+        }
+      }
     },
     "timeline": {
       "title": "Notre Parcours",
-      "subtitle": "Du concept à l'application culturelle leader pour la médina de Sousse",
-      "2023": {
-        "title": "Lancement de l'App",
-        "description": "FielMedina a officiellement été lancé, apportant des visites numériques du patrimoine à la médina de Sousse."
-      },
-      "2024": {
-        "title": "Croissance Communautaire", 
-        "description": "Atteint 1 000+ téléchargements et élargi notre collection d'histoires et d'emplacements."
-      },
-      "2025": {
-        "title": "Plans Futurs",
-        "description": "Extension à d'autres sites patrimoniaux tunisiens et introduction de nouvelles fonctionnalités interactives."
+      "subtitle": "De la vision à la réalité : L'histoire de FielMedina",
+      "milestones": {
+        "2023": {
+          "title": "La Vision",
+          "description": "Conception de l'idée de préserver et partager numériquement le patrimoine de la médina de Sousse"
+        },
+        "2024a": {
+          "title": "Le Développement Commence", 
+          "description": "Début du travail avec des historiens locaux et des membres de la communauté pour cartographier la médina"
+        },
+        "2024b": {
+          "title": "Lancement Bêta",
+          "description": "Publication de la première version aux testeurs locaux et passionnés de culture"
+        },
+        "2025": {
+          "title": "Lancement Mondial",
+          "description": "Lancement officiel de FielMedina Sousse sur Google Play Store"
+        }
       }
     },
     "cta": {
-      "title": "Prêt à Explorer Sousse ?",
-      "subtitle": "Téléchargez FielMedina maintenant et commencez à découvrir les histoires cachées de Sousse",
+      "title": "Rejoignez Notre Mission",
+      "subtitle": "Aidez-nous à préserver et partager le patrimoine culturel de Sousse avec le monde",
       "downloadButton": "Télécharger pour Android"
     }
   },
@@ -126,7 +243,7 @@
       "sundayHours": "Fermé",
       "quickLinksTitle": "Liens Rapides",
       "emailLink": "Envoyez-nous un email",
-      "downloadLink": "Téléchargez notre app"
+      "downloadLink": "Téléchargez notre application"
     },
     "social": {
       "title": "Suivez Notre Parcours", 
@@ -152,20 +269,72 @@
     }
   },
   "legal": {
+    "termsConditions": {
+      "title": "Conditions Générales",
+      "subtitle": "Conditions légales pour utiliser FielMedina",
+      "lastUpdated": "Dernière mise à jour : 5 juin 2025",
+      "keyPoints": {
+        "freeService": {
+          "title": "Service Gratuit",
+          "description": "FielMedina est fourni comme un service gratuit pour explorer la médina de Sousse."
+        },
+        "userResponsibility": {
+          "title": "Responsabilité de l'Utilisateur",
+          "description": "Les utilisateurs sont responsables de leur sécurité et du respect des lois et réglementations locales."
+        },
+        "liability": {
+          "title": "Limitation de Responsabilité",
+          "description": "L'application est fournie 'en l'état' sans garanties d'aucune sorte."
+        },
+        "acceptableUse": {
+          "title": "Utilisation Acceptable",
+          "description": "Utilisez l'application de manière responsable et conformément aux lois applicables."
+        }
+      },
+      "sections": {
+        "acceptance": {
+          "title": "1. Acceptation des Conditions",
+          "content1": "En téléchargeant, installant ou utilisant l'application mobile FielMedina (\"l'Application\"), vous acceptez d'être lié par ces Conditions Générales (\"Conditions\"). Si vous n'acceptez pas ces Conditions, veuillez ne pas utiliser l'Application.",
+          "content2": "Ces Conditions constituent un accord légal entre vous et Fielmedina (\"nous\", \"notre\"), le développeur et opérateur de FielMedina."
+        },
+        "description": {
+          "title": "2. Description de l'Application et Service",
+          "content1": "FielMedina est une application mobile gratuite de navigation et guide culturel conçue pour aider les utilisateurs à explorer la médina historique de Sousse, en Tunisie. L'Application fournit :",
+          "features": [
+            "Services de navigation GPS et cartographie dans la médina",
+            "Informations culturelles et historiques sur les emplacements", 
+            "Recommandations locales et points d'intérêt",
+            "Fonctionnalité hors ligne pour le contenu téléchargé"
+          ],
+          "content2": "Le service est fourni \"EN L'ÉTAT\" et peut être mis à jour, modifié ou interrompu à notre discrétion."
+        }
+      },
+      "cta": {
+        "title": "Prêt à Explorer Sousse ?",
+        "subtitle": "Téléchargez Fielmedina maintenant et commencez votre voyage inoubliable à travers la médina historique de Sousse.",
+        "downloadButton": "Télécharger pour Android"
+      }
+    },
     "privacyPolicy": {
       "title": "Politique de Confidentialité",
       "subtitle": "Comment nous collectons, utilisons et protégeons vos informations"
-    },
-    "termsConditions": {
-      "title": "Conditions Générales", 
-      "subtitle": "Conditions légales pour utiliser FielMedina"
     }
   },
   "footer": {
-    "description": "Votre guide alimenté par l'IA pour explorer la médina de Sousse avec des histoires interactives et des aperçus culturels.",
-    "quickLinks": "Liens Rapides",
-    "legal": "Légal",
-    "followUs": "Suivez-Nous",
-    "copyright": "© 2024 Fielmedina. Tous droits réservés."
+    "copyright": "© Droits d'auteur 2025. Tous droits réservés.",
+    "links": {
+      "terms": "Conditions Générales",
+      "privacy": "Politique de Confidentialité"
+    },
+    "socialMedia": {
+      "instagram": "Instagram",
+      "facebook": "Facebook", 
+      "tiktok": "TikTok",
+      "youtube": "Youtube"
+    }
+  },
+  "languageSwitcher": {
+    "english": "🇬🇧 English",
+    "french": "🇫🇷 Français"
   }
 } 
