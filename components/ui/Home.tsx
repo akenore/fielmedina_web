@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Download, Star, Play, Quote } from 'lucide-react';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import Header from './Header';
 import UsersIcon from '../icons/UsersIcon';
 import BubbleIcon from '../icons/BubbleIcon';
@@ -10,12 +11,27 @@ import WorldIcon from '../icons/WorldIcon';
 import NavigatorIcon from '../icons/NavigatorIcon';
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6, ease: "easeOut" }
   };
+
+  const sliderImages = [
+    "/slider/splash.webp",
+    "/slider/pic-1.webp", 
+    "/slider/pic-2.webp"
+  ];
+
+  // Auto-slide every 3 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, [sliderImages.length]);
 
   const features = [
     {
@@ -164,10 +180,10 @@ export default function Home() {
               {/* Phone mockup */}
               <div className="relative z-10 bg-gray-900 rounded-[3rem] p-3 shadow-2xl 
                             transform hover:rotate-0 transition-transform duration-500 rotate-2">
-                <div className="bg-white rounded-[2.5rem] overflow-hidden w-72 lg:w-80 aspect-[9/19.5]">
+                <div className="bg-white rounded-[2.5rem] overflow-hidden w-72 lg:w-80 aspect-[9/19.5] flex flex-col">
                   
                   {/* Status bar */}
-                  <div className="bg-white px-6 py-3 flex justify-between items-center text-black text-sm">
+                  <div className="bg-white px-6 py-3 flex justify-between items-center text-black text-sm flex-shrink-0">
                     <span className="font-medium">9:41</span>
                     <div className="flex items-center space-x-1">
                       <div className="w-6 h-3 border border-black rounded-sm">
@@ -176,37 +192,48 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* App content */}
-                  <div className="bg-gradient-to-br from-[#b65d37] to-orange-600 flex-1 p-6 text-white relative">
-                    
-                    {/* Header */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div>
-                        <h3 className="text-xl font-bold">Medina Guide</h3>
-                        <p className="text-orange-100 text-sm">Sousse, Tunisia</p>
-                      </div>
-                      <div className="w-10 h-10 bg-white/20 rounded-full" />
+                  {/* Image Slider */}
+                  <div className="relative flex-1 overflow-hidden bg-gray-100 min-h-0">
+                    <div 
+                      className="flex transition-transform duration-500 ease-in-out h-full"
+                      style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                    >
+                      {sliderImages.map((image, index) => (
+                        <div key={index} className="w-full h-full flex-shrink-0 relative">
+                          <Image
+                            src={image}
+                            alt={`FielMedina App Screenshot ${index + 1}`}
+                            fill
+                            className="object-cover"
+                            priority={index === 0}
+                          />
+                          {/* Overlay gradient for better readability */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                        </div>
+                      ))}
                     </div>
 
-                    {/* Map view */}
-                    <motion.div 
-                      animate={{ y: [0, -3, 0] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                      className="bg-white/90 rounded-2xl p-4 mb-4 text-gray-800"
-                    >
-                      <div className="flex items-center justify-between mb-3">
-                        <span className="font-semibold">Current Location</span>
-                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                      </div>
-                      <div className="text-sm text-gray-600">
-                        Near Ribat of Sousse
-                      </div>
-                    </motion.div>
+                    {/* Slide indicators */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                      {sliderImages.map((_, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentSlide(index)}
+                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                            index === currentSlide 
+                              ? 'bg-white shadow-lg' 
+                              : 'bg-white/50 hover:bg-white/70'
+                          }`}
+                          aria-label={`Go to slide ${index + 1}`}
+                        />
+                      ))}
+                    </div>
 
-                    {/* Bottom navigation */}
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <div className="bg-white/30 backdrop-blur-sm rounded-full px-6 py-3 text-center">
-                        <span className="font-medium text-sm">Start Navigation</span>
+                    {/* App branding overlay */}
+                    <div className="absolute top-4 left-4 right-4">
+                      <div className="bg-black/50 backdrop-blur-sm rounded-2xl px-4 py-3 text-white">
+                        <h3 className="text-lg font-bold">FielMedina</h3>
+                        <p className="text-white/80 text-sm">Sousse Medina Guide</p>
                       </div>
                     </div>
                   </div>
@@ -280,7 +307,7 @@ export default function Home() {
               </div>
               <span className="text-xl font-bold text-gray-900">4.8/5.0</span>
             </div>
-            <p className="text-gray-600">Based on 2,500+ reviews</p>
+            <p className="text-gray-600">Based on 20+ reviews</p>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">

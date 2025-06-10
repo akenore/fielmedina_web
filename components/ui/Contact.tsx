@@ -138,7 +138,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16 lg:py-24 bg-white">
+      {/* <section className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             variants={staggerContainer}
@@ -171,7 +171,7 @@ export default function Contact() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Contact Form & Map Section */}
       <section className="py-16 lg:py-24 bg-gray-50">
@@ -344,13 +344,13 @@ export default function Contact() {
                     <Mail className="size-5" />
                     <span>Send us an email</span>
                   </a>
-                  <a 
+                  {/* <a 
                     href="tel:+21655000359"
                     className="flex items-center space-x-3 text-gray-600 hover:text-[#b65d37] transition-colors"
                   >
                     <Phone className="size-5" />
                     <span>Call us directly</span>
-                  </a>
+                  </a> */}
                   <a 
                     href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
                     target="_blank"
