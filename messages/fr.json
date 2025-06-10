@@ -8,8 +8,36 @@
     "privacyPolicy": "Politique de confidentialité",
     "termsConditions": "Conditions générales"
   },
+  "seo": {
+    "home": {
+      "title": "FielMedina - Découvrir la Médina de Sousse",
+      "description": "Votre guide alimenté par l'IA pour explorer le site du patrimoine mondial de l'UNESCO avec des histoires interactives, la navigation GPS et des aperçus culturels.",
+      "keywords": "FielMedina, Sousse, Tunisie, médina, UNESCO, patrimoine, navigation, guide culturel, application mobile"
+    },
+    "about": {
+      "title": "À propos de nous - FielMedina Sousse",
+      "description": "Découvrez la mission de FielMedina de préserver et partager le patrimoine culturel de la médina historique de Sousse grâce à une technologie innovante.",
+      "keywords": "FielMedina, Sousse, Tunisie, médina, patrimoine culturel, à propos, mission, équipe"
+    },
+    "contact": {
+      "title": "Contactez-nous - FielMedina Sousse",
+      "description": "Entrez en contact avec l'équipe FielMedina. Nous aimerions avoir de vos nouvelles concernant notre application guide culturelle de la médina de Sousse.",
+      "keywords": "FielMedina, contact, support, Sousse, Tunisie, médina, guide culturel, contactez-nous"
+    },
+    "termsConditions": {
+      "title": "Conditions Générales - FielMedina Sousse",
+      "description": "Lisez les conditions générales d'utilisation de FielMedina, votre guide pour explorer la médina historique de Sousse.",
+      "keywords": "FielMedina, conditions générales, légal, Sousse, Tunisie, médina, conditions d'application"
+    },
+    "privacyPolicy": {
+      "title": "Politique de Confidentialité - FielMedina Sousse", 
+      "description": "Découvrez comment FielMedina protège votre vie privée et gère vos données pendant que vous explorez la médina historique de Sousse.",
+      "keywords": "FielMedina, politique de confidentialité, protection des données, Sousse, Tunisie, médina, confidentialité app"
+    }
+  },
   "common": {
     "downloadAndroid": "Télécharger pour Android",
+    "downloadIOS": "Télécharger pour iOS",
     "downloadFree": "Téléchargement Gratuit",
     "watchDemo": "Voir la Démo",
     "readyToExplore": "Prêt à Explorer Sousse ?",
@@ -118,6 +146,10 @@
       "brandingTitle": "FielMedina",
       "brandingSubtitle": "Guide de la Médina de Sousse",
       "altText": "Capture d'écran de l'App FielMedina"
+    },
+    "phoneUI": {
+      "time": "9:41",
+      "screenshot": "Capture d'écran de l'App FielMedina"
     }
   },
   "about": {
@@ -161,7 +193,7 @@
     },
     "team": {
       "title": "Rencontrez Notre Équipe",
-      "subtitle": "Des personnes passionnées dédiées à donner vie au patrimoine de Sousse",
+      "subtitle": "Les personnes passionnées derrière la vision de FielMedina",
       "members": {
         "founder": {
           "name": "Muhammad Aslan",
@@ -182,7 +214,7 @@
     },
     "timeline": {
       "title": "Notre Parcours",
-      "subtitle": "De la vision à la réalité : L'histoire de FielMedina",
+      "subtitle": "De la vision à la réalité - les étapes qui ont façonné FielMedina",
       "milestones": {
         "2023": {
           "title": "La Vision",
@@ -205,7 +237,7 @@
     "cta": {
       "title": "Rejoignez Notre Mission",
       "subtitle": "Aidez-nous à préserver et partager le patrimoine culturel de Sousse avec le monde",
-      "downloadButton": "Télécharger pour Android"
+      "downloadButton": "Retour à l'Accueil"
     }
   },
   "contact": {
@@ -213,6 +245,23 @@
       "title": "Contactez-Nous",
       "subtitle": "Vous avez des questions sur FielMedina ? Vous voulez collaborer ou partager vos commentaires ? Nous aimerions avoir de vos nouvelles !",
       "responseTime": "Nous répondons généralement dans les 24 heures"
+    },
+    "contactInfo": {
+      "email": {
+        "title": "Nous Écrire",
+        "details": "info@fielmedina.com",
+        "description": "Envoyez-nous un email à tout moment"
+      },
+      "phone": {
+        "title": "Nous Appeler",
+        "details": "+216 55 000 359",
+        "description": "Lun-Ven de 9h à 18h"
+      },
+      "location": {
+        "title": "Nous Rendre Visite",
+        "details": "Sousse, Tunisie",
+        "description": "Cœur de la médina"
+      }
     },
     "form": {
       "title": "Envoyez-nous un Message",
@@ -243,11 +292,16 @@
       "sundayHours": "Fermé",
       "quickLinksTitle": "Liens Rapides",
       "emailLink": "Envoyez-nous un email",
+      "callDirectly": "Appelez-nous directement",
       "downloadLink": "Téléchargez notre application"
     },
     "social": {
       "title": "Suivez Notre Parcours", 
-      "subtitle": "Restez connecté avec nous sur les réseaux sociaux pour les dernières mises à jour, le contenu en coulisses et les aperçus culturels de Sousse."
+      "subtitle": "Restez connecté avec nous sur les réseaux sociaux pour les dernières mises à jour, le contenu en coulisses et les aperçus culturels de Sousse.",
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "tiktok": "TikTok",
+      "youtube": "YouTube"
     },
     "faq": {
       "title": "Questions Fréquemment Posées",
@@ -271,9 +325,11 @@
   "legal": {
     "termsConditions": {
       "title": "Conditions Générales",
-      "subtitle": "Conditions légales pour utiliser FielMedina",
+      "subtitle": "Veuillez lire attentivement ces conditions avant d'utiliser FielMedina. En utilisant notre application, vous acceptez ces conditions générales.",
       "lastUpdated": "Dernière mise à jour : 5 juin 2025",
       "keyPoints": {
+        "title": "Aperçu des Conditions Clés",
+        "subtitle": "Points essentiels sur l'utilisation responsable de FielMedina",
         "freeService": {
           "title": "Service Gratuit",
           "description": "FielMedina est fourni comme un service gratuit pour explorer la médina de Sousse."
@@ -295,7 +351,7 @@
         "acceptance": {
           "title": "1. Acceptation des Conditions",
           "content1": "En téléchargeant, installant ou utilisant l'application mobile FielMedina (\"l'Application\"), vous acceptez d'être lié par ces Conditions Générales (\"Conditions\"). Si vous n'acceptez pas ces Conditions, veuillez ne pas utiliser l'Application.",
-          "content2": "Ces Conditions constituent un accord légal entre vous et Fielmedina (\"nous\", \"notre\"), le développeur et opérateur de FielMedina."
+          "content2": "Ces Conditions constituent un accord légal entre vous et Fielmedina (\"nous\", \"nous\", ou \"notre\"), le développeur et opérateur de FielMedina."
         },
         "description": {
           "title": "2. Description de l'Application et Service",
@@ -307,6 +363,84 @@
             "Fonctionnalité hors ligne pour le contenu téléchargé"
           ],
           "content2": "Le service est fourni \"EN L'ÉTAT\" et peut être mis à jour, modifié ou interrompu à notre discrétion."
+        },
+        "userResponsibilities": {
+          "title": "3. Responsabilités de l'Utilisateur et Utilisation Acceptable",
+          "content1": "En utilisant FielMedina, vous acceptez de :",
+          "rules": [
+            "Utiliser l'Application uniquement à des fins légales et conformément aux lois locales",
+            "Respecter les coutumes locales, les traditions et la propriété privée",
+            "Exercer une responsabilité personnelle pour votre sécurité lors de la navigation",
+            "Ne pas utiliser l'Application à des fins commerciales sans autorisation",
+            "Ne pas tenter de procéder à l'ingénierie inverse, pirater ou interférer avec l'Application",
+            "Fournir des informations exactes lors du contact avec notre équipe de support"
+          ],
+          "safetyNotice": "Avis de Sécurité :",
+          "safetyContent": "Priorisez toujours votre sécurité personnelle. Soyez conscient de votre environnement, suivez les directives de sécurité locales et utilisez le bon sens lors de l'exploration de zones inconnues."
+        },
+        "privacy": {
+          "title": "4. Confidentialité et Collecte de Données",
+          "content1": "Votre vie privée est importante pour nous. En utilisant l'Application, vous consentez à la collecte et à l'utilisation d'informations comme décrit dans notre Politique de Confidentialité, qui est incorporée dans ces Conditions par référence.",
+          "content2": "L'Application nécessite des services de localisation pour fournir une fonctionnalité de navigation. Vous pouvez contrôler les autorisations de localisation via les paramètres de votre appareil.",
+          "privacyLink": "Lisez notre Politique de Confidentialité complète →"
+        },
+        "intellectualProperty": {
+          "title": "5. Droits de Propriété Intellectuelle",
+          "content1": "Tout le contenu de l'application FielMedina, y compris mais sans s'y limiter le texte, les graphiques, les images, les logos, les clips audio, les téléchargements numériques et les logiciels, est la propriété de Fielmedina ou de ses fournisseurs de contenu et est protégé par le droit d'auteur et d'autres lois de propriété intellectuelle.",
+          "content2": "Vous ne pouvez pas modifier, copier, distribuer, transmettre, afficher, exécuter, reproduire, publier, concéder sous licence, créer des œuvres dérivées, transférer ou vendre tout contenu obtenu de l'Application sans autorisation explicite.",
+          "content3": "Le nom et le logo FielMedina sont des marques de commerce de Fielmedina et ne peuvent pas être utilisés sans autorisation."
+        },
+        "disclaimers": {
+          "title": "6. Avis de Non-responsabilité et Limitation de Responsabilité",
+          "disclaimersTitle": "Avis de Non-responsabilité",
+          "disclaimersContent": "L'Application est fournie \"EN L'ÉTAT\" et \"SELON DISPONIBILITÉ\" sans garanties d'aucune sorte, expresses ou implicites, y compris mais sans s'y limiter :",
+          "disclaimersList": [
+            "Exactitude, fiabilité ou exhaustivité des données de navigation ou de localisation",
+            "Fonctionnement ininterrompu ou sans erreur",
+            "Adéquation à un usage particulier",
+            "Non-violation des droits de tiers"
+          ],
+          "liabilityTitle": "Limitation de Responsabilité",
+          "liabilityContent": "Dans la mesure maximale permise par la loi, Fielmedina ne sera pas responsable de :",
+          "liabilityList": [
+            "Tous dommages directs, indirects, accessoires, spéciaux ou consécutifs",
+            "Blessures personnelles ou dommages matériels résultant de l'utilisation de l'application",
+            "Se perdre ou erreurs de navigation",
+            "Perte de données ou interruption d'activité",
+            "Tous dommages dépassant le montant payé pour l'Application (qui est gratuite)"
+          ]
+        },
+        "thirdParty": {
+          "title": "7. Services et Contenu de Tiers",
+          "content1": "L'Application peut s'intégrer ou contenir des liens vers des services, sites Web ou contenus de tiers. Ces services tiers ont leurs propres conditions et politiques de confidentialité, et nous ne sommes pas responsables de leur contenu ou de leurs pratiques.",
+          "content2": "Les services tiers utilisés par FielMedina incluent :",
+          "services": [
+            "Google Play Services",
+            "Google Analytics pour Firebase",
+            "Services de cartographie et de localisation"
+          ]
+        },
+        "termination": {
+          "title": "8. Résiliation",
+          "content1": "Vous pouvez arrêter d'utiliser l'Application à tout moment en la désinstallant de votre appareil. Nous nous réservons le droit de résilier ou de suspendre l'accès à l'Application à notre discrétion, sans préavis, pour toute raison, y compris la violation de ces Conditions.",
+          "content2": "Lors de la résiliation, votre droit d'utiliser l'Application cessera immédiatement, mais les dispositions de ces Conditions qui, par nature, devraient survivre, resteront en vigueur."
+        },
+        "governingLaw": {
+          "title": "9. Loi Applicable et Résolution des Conflits",
+          "content1": "Ces Conditions seront régies et interprétées conformément aux lois de la Tunisie, sans égard à ses dispositions de conflit de lois.",
+          "content2": "Tout différend découlant de ces Conditions ou de votre utilisation de l'Application sera résolu par des négociations de bonne foi. Si une résolution ne peut être atteinte, les différends peuvent être soumis aux tribunaux appropriés de Sousse, en Tunisie."
+        },
+        "changes": {
+          "title": "10. Modifications des Conditions",
+          "content1": "Nous nous réservons le droit de modifier ces Conditions à tout moment. Lorsque nous apportons des modifications, nous mettrons à jour la date \"Dernière mise à jour\" en haut de cette page et informerons les utilisateurs via l'Application ou d'autres moyens appropriés.",
+          "content2": "Votre utilisation continue de l'Application après tout changement indique votre acceptation des Conditions modifiées. Si vous n'acceptez pas les modifications, vous devriez arrêter d'utiliser l'Application."
+        },
+        "contact": {
+          "title": "11. Informations de Contact",
+          "content1": "Si vous avez des questions sur ces Conditions Générales, veuillez nous contacter :",
+          "contactTitle": "Questions ou Préoccupations ?",
+          "contactMessage": "Si vous avez des questions sur ces Conditions Générales, veuillez nous contacter :",
+          "email": "info@fielmedina.com"
         }
       },
       "cta": {
@@ -317,7 +451,121 @@
     },
     "privacyPolicy": {
       "title": "Politique de Confidentialité",
-      "subtitle": "Comment nous collectons, utilisons et protégeons vos informations"
+      "subtitle": "Votre vie privée nous importe. Cette politique explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez FielMedina.",
+      "lastUpdated": "Dernière mise à jour : 5 juin 2025",
+      "keyPoints": {
+        "title": "Nos Engagements de Confidentialité",
+        "subtitle": "Voici ce que vous devez savoir sur la façon dont nous gérons vos données",
+        "dataProtection": {
+          "title": "Protection des Données",
+          "description": "Nous utilisons des mesures de sécurité de niveau industriel pour protéger vos informations personnelles."
+        },
+        "transparency": {
+          "title": "Transparence",
+          "description": "Nous sommes transparents sur les données que nous collectons et comment nous les utilisons."
+        },
+        "privacyFirst": {
+          "title": "Confidentialité d'Abord",
+          "description": "Votre vie privée est notre priorité - nous ne collectons que ce qui est nécessaire pour le fonctionnement de l'application."
+        },
+        "noSale": {
+          "title": "Aucune Vente de Données",
+          "description": "Nous ne vendons jamais vos informations personnelles à des tiers."
+        }
+      },
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "content1": "Cette Politique de Confidentialité s'applique à l'application mobile FielMedina (l'\"Application\") développée par Fielmedina (le \"Fournisseur de Services\") en tant que service gratuit. Ce service est fourni \"EN L'ÉTAT\" et est conçu pour aider les utilisateurs à naviguer et explorer la médina historique de Sousse, en Tunisie.",
+          "content2": "En utilisant notre Application, vous acceptez la collecte et l'utilisation d'informations conformément à cette politique. Nous nous engageons à protéger votre vie privée et à vous assurer une expérience positive sur notre application."
+        },
+        "informationCollection": {
+          "title": "Informations que Nous Collectons",
+          "userProvidedTitle": "Informations Fournies par l'Utilisateur",
+          "userProvidedContent": "L'Application peut collecter des informations que vous fournissez lorsque vous :",
+          "userProvidedList": [
+            "Téléchargez et utilisez l'Application",
+            "Nous contactez via l'application ou nos canaux de support",
+            "Fournissez des commentaires ou des avis",
+            "Participez à des sondages ou activités promotionnelles"
+          ],
+          "automaticTitle": "Informations Collectées Automatiquement",
+          "automaticContent": "L'Application peut automatiquement collecter certaines informations, notamment :",
+          "automaticList": [
+            "Type d'appareil et système d'exploitation mobile",
+            "Identifiant unique de l'appareil",
+            "Adresse IP",
+            "Type de navigateur mobile",
+            "Modèles d'utilisation de l'application et données de navigation",
+            "Journaux de plantage et données de performance"
+          ]
+        },
+        "locationInformation": {
+          "title": "Informations de Localisation",
+          "content1": "FielMedina est une application de navigation qui nécessite des services de localisation pour fonctionner correctement. Voici comment nous gérons vos données de localisation :",
+          "features": [
+            "Navigation GPS : Nous utilisons votre localisation pour fournir une navigation étape par étape dans la médina",
+            "Points d'Intérêt Proches : Les données de localisation nous aident à montrer les attractions et boutiques pertinentes près de vous",
+            "Expérience Améliorée : Nous analysons les modèles de localisation agrégés et anonymisés pour améliorer nos cartes et recommandations",
+            "Fonctionnalité Hors Ligne : Les données de localisation sont traitées localement sur votre appareil lors de l'utilisation des fonctionnalités hors ligne"
+          ],
+          "important": "Important : Vous pouvez désactiver les services de localisation à tout moment via les paramètres de votre appareil, mais cela peut limiter la fonctionnalité de navigation de l'application."
+        },
+        "thirdPartyServices": {
+          "title": "Services de Tiers",
+          "content1": "L'Application utilise les services tiers suivants qui peuvent collecter des informations :",
+          "services": [
+            "Google Play Services : Pour la distribution d'applications, les mises à jour et les fonctionnalités Android de base",
+            "Google Analytics pour Firebase : Pour la surveillance des performances de l'application et l'analyse des utilisateurs"
+          ],
+          "content2": "Ces services ont leurs propres politiques de confidentialité qui régissent leurs pratiques de collecte de données. Nous ne partageons que des données anonymisées et agrégées avec ces services."
+        },
+        "dataSecurity": {
+          "title": "Sécurité et Rétention des Données",
+          "content1": "Nous mettons en place des mesures de sécurité appropriées pour protéger vos informations :",
+          "securityMeasures": [
+            "Chiffrement des données en transit et au repos",
+            "Audits de sécurité et mises à jour réguliers",
+            "Accès limité aux données personnelles selon le principe du besoin de savoir",
+            "Centres de données sécurisés avec protection physique et numérique"
+          ],
+          "retentionTitle": "Rétention des Données",
+          "retentionList": [
+            "Les données utilisateur ne sont conservées que le temps nécessaire pour le fonctionnement de l'application",
+            "Les données d'analyse sont conservées jusqu'à 24 mois",
+            "Vous pouvez demander la suppression de vos données en nous contactant à info@fielmedina.com"
+          ]
+        },
+        "userRights": {
+          "title": "Vos Droits et Choix",
+          "content1": "Vous avez plusieurs droits concernant vos informations personnelles :",
+          "rights": [
+            "Accès : Demander une copie des données personnelles que nous détenons sur vous",
+            "Correction : Demander la correction de données inexactes ou incomplètes",
+            "Suppression : Demander la suppression de vos données personnelles",
+            "Désinscription : Désinstaller l'application pour arrêter toute collecte de données",
+            "Services de Localisation : Désactiver l'accès à la localisation via les paramètres de l'appareil"
+          ],
+          "contact": "Pour exercer ces droits, contactez-nous à info@fielmedina.com. Nous répondrons dans un délai raisonnable."
+        },
+        "childrensPrivacy": {
+          "title": "Confidentialité des Enfants",
+          "content1": "FielMedina ne collecte pas sciemment d'informations personnelles d'enfants de moins de 13 ans. Si nous découvrons qu'un enfant de moins de 13 ans a fourni des informations personnelles, nous supprimerons immédiatement ces informations de nos serveurs.",
+          "content2": "Si vous êtes parent ou tuteur et croyez que votre enfant a fourni des informations personnelles, veuillez nous contacter à info@fielmedina.com afin que nous puissions prendre les mesures appropriées."
+        },
+        "updates": {
+          "title": "Mises à Jour et Contact",
+          "content1": "Cette Politique de Confidentialité peut être mise à jour périodiquement pour refléter les changements dans nos pratiques ou pour des raisons légales et réglementaires. Nous informerons les utilisateurs des changements significatifs via l'application ou en mettant à jour cette page.",
+          "contactTitle": "Questions ou Préoccupations ?",
+          "contactContent": "Si vous avez des questions sur cette Politique de Confidentialité ou nos pratiques de données, veuillez nous contacter :",
+          "email": "info@fielmedina.com"
+        }
+      },
+      "cta": {
+        "title": "Prêt à Explorer Sousse ?",
+        "subtitle": "Téléchargez Fielmedina maintenant et commencez votre voyage inoubliable à travers la médina historique de Sousse.",
+        "downloadButton": "Télécharger pour Android"
+      }
     }
   },
   "footer": {
@@ -333,8 +581,17 @@
       "youtube": "Youtube"
     }
   },
+  "header": {
+    "download": "Télécharger",
+    "downloadApp": "Télécharger l'App"
+  },
   "languageSwitcher": {
     "english": "🇬🇧 English",
     "french": "🇫🇷 Français"
+  },
+  "maintenanceMode": {
+    "title": "Maintenance en Cours",
+    "message": "Nous effectuons actuellement une maintenance sur notre site. Veuillez revenir bientôt.",
+    "backSoon": "Nous reviendrons bientôt !"
   }
 } 
