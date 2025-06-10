@@ -39,9 +39,9 @@ export default function Home() {
   ];
 
   const stats = [
-    { number: "2K+", label: "Active Users" },
+    // { number: "2K+", label: "Active Users" },
     { number: "4.8", label: "App Rating" },
-    // { number: "30+", label: "Locations" }
+    { number: "30+", label: "Locations" }
   ];
 
   const testimonials = [
@@ -69,13 +69,9 @@ export default function Home() {
     <div className="min-h-screen bg-[#FDF7EC]">
       <Header />
       <section id="home" className="pt-24 lg:pt-32 pb-16 lg:pb-24 relative overflow-hidden">
-        {/* Background decoration */}
         <div className="section-decoration" />
-        
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
-            
-            {/* Left content */}
             <motion.div
               initial="initial"
               whileInView="animate"
@@ -84,7 +80,7 @@ export default function Home() {
             >
               <motion.div
                 variants={fadeInUp}
-                className="inline-block bg-[#b65d37]/10 text-[#b65d37] px-4 py-2 rounded-full text-sm font-medium mb-6"
+                className="inline-block bg-[#b65d37]/10 text-[#b65d37] px-4 py-2 rounded-full text-md font-medium mb-6"
               >
                 🧭 Your Digital Guide to Sousse Medina
               </motion.div>
@@ -125,7 +121,7 @@ export default function Home() {
                   <span>Download Free</span>
                 </motion.a>
                 
-                <motion.button
+                {/* <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="border-2 border-[#b65d37] text-[#b65d37] px-8 py-4 rounded-full text-lg font-semibold 
@@ -134,7 +130,7 @@ export default function Home() {
                 >
                   <Play className="size-5" />
                   <span>Watch Demo</span>
-                </motion.button>
+                </motion.button> */}
               </motion.div>
 
               {/* Stats */}

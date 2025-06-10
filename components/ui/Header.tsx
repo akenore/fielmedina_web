@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Download, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,14 +21,16 @@ export default function Header() {
           
           {/* Logo */}
           <div className="flex items-center">
-            <Image
-              src="/logo.svg"
-              alt="Fielmedina"
-              width={180}
-              height={40}
-              className="h-8 lg:h-10 w-auto"
-              priority
-            />
+            <Link href="/">
+              <Image
+                src="/logo.svg"
+                alt="Fielmedina"
+                width={180}
+                height={40}
+                className="h-8 lg:h-10 w-auto"
+                priority
+              />
+            </Link>
           </div>
           <nav className="hidden lg:flex items-center space-x-8">
             {[
