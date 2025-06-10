@@ -4,10 +4,14 @@ import { motion } from 'framer-motion';
 import { Download, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslations, useLocale } from 'next-intl';
+import {Link} from '../../i18n/navigation';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const t = useTranslations('navigation');
+  const locale = useLocale();
 
   return (
     <motion.header 
@@ -34,14 +38,14 @@ export default function Header() {
           </div>
           <nav className="hidden lg:flex items-center space-x-8">
             {[
-              { name: 'Home', href: '/#home' },
-              { name: 'Features', href: '/#features' },
-              { name: 'About', href: '/about' },
-              { name: 'Reviews', href: '/#reviews' },
-              { name: 'Contact', href: '/contact' }
+              { name: t('home'), href: '/#home', key: 'home' },
+              { name: t('features'), href: '/#features', key: 'features' },
+              { name: t('about'), href: '/about', key: 'about' },
+              { name: t('reviews'), href: '/#reviews', key: 'reviews' },
+              { name: t('contact'), href: '/contact', key: 'contact' }
             ].map((item) => (
               <a 
-                key={item.name}
+                key={item.key}
                 href={item.href} 
                 className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300"
               >
@@ -50,19 +54,24 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Download Button */}
-          <motion.a
-            href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="hidden lg:flex items-center space-x-2 bg-[#b65d37] text-white px-6 py-3 rounded-full 
-                     hover:bg-[#a0542f] transition-all duration-300 shadow-lg hover:shadow-xl"
-          >
-            <Download className="size-4" />
-            <span className="font-medium">Download</span>
-          </motion.a>
+          {/* Language Switcher & Download Button */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <LanguageSwitcher />
+            
+            {/* Download Button */}
+            <motion.a
+              href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center space-x-2 bg-[#b65d37] text-white px-6 py-3 rounded-full 
+                       hover:bg-[#a0542f] transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <Download className="size-4" />
+              <span className="font-medium">Download</span>
+            </motion.a>
+          </div>
 
           {/* Mobile menu button */}
           <button
@@ -84,14 +93,14 @@ export default function Header() {
       >
         <div className="container mx-auto px-4 py-4 space-y-4">
           {[
-            { name: 'Home', href: '/#home' },
-            { name: 'Features', href: '/#features' },
-            { name: 'About', href: '/about' },
-            { name: 'Reviews', href: '/#reviews' },
-            { name: 'Contact', href: '/contact' }
+            { name: t('home'), href: '/#home', key: 'home' },
+            { name: t('features'), href: '/#features', key: 'features' },
+            { name: t('about'), href: '/about', key: 'about' },
+            { name: t('reviews'), href: '/#reviews', key: 'reviews' },
+            { name: t('contact'), href: '/contact', key: 'contact' }
           ].map((item) => (
             <a 
-              key={item.name}
+              key={item.key}
               href={item.href} 
               className="block text-gray-700 hover:text-[#b65d37] font-medium py-2 transition-colors"
               onClick={() => setIsMenuOpen(false)}
@@ -99,6 +108,11 @@ export default function Header() {
               {item.name}
             </a>
           ))}
+          
+          {/* Language Switcher in Mobile */}
+          <div className="pt-2 border-t border-gray-200">
+            <LanguageSwitcher />
+          </div>
           <a 
             href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
             target="_blank"

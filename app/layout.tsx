@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FielMedina (في المدينة)",
-  description: "Discover the hidden soul of Sousse El Medina through its historic doors, monuments, and mysterious corners.",
+  title: "FielMedina - Discover Sousse Medina",
+  description: "Your AI-powered guide to explore the UNESCO World Heritage site with interactive stories, GPS navigation, and cultural insights.",
 };
 
 export default function RootLayout({
@@ -22,13 +22,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FDF7EC]`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+  return children;
 }

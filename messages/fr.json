@@ -1,0 +1,171 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "features": "Fonctionnalités", 
+    "reviews": "Avis",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Découvrez la Médina de Sousse avec FielMedina",
+      "subtitle": "Votre guide alimenté par l'IA pour explorer le site du patrimoine mondial de l'UNESCO avec des histoires interactives, navigation GPS et aperçus culturels.",
+      "downloadButton": "Télécharger pour Android",
+      "watchButton": "Regarder la Démo"
+    },
+    "stats": {
+      "downloads": "1K+ Téléchargements",
+      "rating": "4.8 Note de l'App", 
+      "locations": "30+ Emplacements"
+    },
+    "features": {
+      "title": "Tout ce dont Vous Avez Besoin pour Explorer",
+      "subtitle": "FielMedina combine la technologie moderne avec un riche patrimoine culturel",
+      "gpsTitle": "Navigation GPS",
+      "gpsDescription": "Naviguez dans les ruelles étroites de la médina avec un guidage GPS précis et ne vous perdez jamais.",
+      "storiesTitle": "Histoires Interactives", 
+      "storiesDescription": "Découvrez des récits historiques fascinants et des aperçus culturels à chaque emplacement.",
+      "offlineTitle": "Mode Hors Ligne",
+      "offlineDescription": "Téléchargez le contenu et explorez même sans connexion internet."
+    },
+    "reviews": {
+      "title": "Ce que Disent les Explorateurs",
+      "subtitle": "Rejoignez des milliers de personnes qui ont découvert la médina de Sousse avec FielMedina"
+    },
+    "cta": {
+      "title": "Prêt à Explorer Sousse ?",
+      "subtitle": "Téléchargez FielMedina maintenant et commencez à découvrir les histoires cachées de Sousse",
+      "downloadButton": "Télécharger pour Android"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "À Propos de FielMedina",
+      "subtitle": "Nous sommes passionnés par la préservation et le partage du riche patrimoine culturel de la médina de Sousse grâce à une technologie innovante."
+    },
+    "mission": {
+      "title": "Notre Mission",
+      "description": "FielMedina est né d'un amour profond pour la médina historique de Sousse et d'une vision de rendre le patrimoine culturel accessible à tous. Nous combinons une technologie de pointe avec une narration authentique pour créer des expériences immersives qui connectent les visiteurs avec l'âme de ce site du patrimoine mondial de l'UNESCO."
+    },
+    "values": {
+      "heritage": {
+        "title": "Patrimoine Culturel",
+        "description": "Préserver et célébrer la riche histoire de la médina de Sousse pour les générations futures."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Utiliser la technologie moderne pour améliorer les expériences culturelles traditionnelles."
+      },
+      "community": {
+        "title": "Communauté",
+        "description": "Construire des ponts entre les habitants et les visiteurs à travers des histoires et expériences partagées."
+      },
+      "authenticity": {
+        "title": "Authenticité", 
+        "description": "S'assurer que chaque histoire et expérience reflète le véritable esprit de Sousse."
+      }
+    },
+    "team": {
+      "title": "Rencontrez Notre Équipe",
+      "subtitle": "Des personnes passionnées dédiées à donner vie au patrimoine de Sousse"
+    },
+    "timeline": {
+      "title": "Notre Parcours",
+      "subtitle": "Du concept à l'application culturelle leader pour la médina de Sousse",
+      "2023": {
+        "title": "Lancement de l'App",
+        "description": "FielMedina a officiellement été lancé, apportant des visites numériques du patrimoine à la médina de Sousse."
+      },
+      "2024": {
+        "title": "Croissance Communautaire", 
+        "description": "Atteint 1 000+ téléchargements et élargi notre collection d'histoires et d'emplacements."
+      },
+      "2025": {
+        "title": "Plans Futurs",
+        "description": "Extension à d'autres sites patrimoniaux tunisiens et introduction de nouvelles fonctionnalités interactives."
+      }
+    },
+    "cta": {
+      "title": "Prêt à Explorer Sousse ?",
+      "subtitle": "Téléchargez FielMedina maintenant et commencez à découvrir les histoires cachées de Sousse",
+      "downloadButton": "Télécharger pour Android"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Contactez-Nous",
+      "subtitle": "Vous avez des questions sur FielMedina ? Vous voulez collaborer ou partager vos commentaires ? Nous aimerions avoir de vos nouvelles !",
+      "responseTime": "Nous répondons généralement dans les 24 heures"
+    },
+    "form": {
+      "title": "Envoyez-nous un Message",
+      "nameLabel": "Nom Complet",
+      "namePlaceholder": "Votre nom complet",
+      "emailLabel": "Adresse Email", 
+      "emailPlaceholder": "votre@email.com",
+      "subjectLabel": "Sujet",
+      "subjectPlaceholder": "De quoi s'agit-il ?",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Parlez-nous de votre demande...",
+      "sendButton": "Envoyer le Message",
+      "sending": "Envoi en cours...",
+      "successTitle": "Message Envoyé avec Succès !",
+      "successMessage": "Merci pour votre message. Nous vous répondrons dans les 24 heures.",
+      "errorTitle": "Échec de l'Envoi du Message",
+      "errorMessage": "Il y a eu une erreur lors de l'envoi de votre message. Veuillez réessayer ou nous contacter directement."
+    },
+    "info": {
+      "locationTitle": "Notre Emplacement",
+      "locationSubtitle": "Cœur historique de Sousse, Tunisie",
+      "hoursTitle": "Heures d'Ouverture",
+      "monday": "Lundi - Vendredi",
+      "mondayHours": "9h00 - 18h00",
+      "saturday": "Samedi", 
+      "saturdayHours": "10h00 - 16h00",
+      "sunday": "Dimanche",
+      "sundayHours": "Fermé",
+      "quickLinksTitle": "Liens Rapides",
+      "emailLink": "Envoyez-nous un email",
+      "downloadLink": "Téléchargez notre app"
+    },
+    "social": {
+      "title": "Suivez Notre Parcours", 
+      "subtitle": "Restez connecté avec nous sur les réseaux sociaux pour les dernières mises à jour, le contenu en coulisses et les aperçus culturels de Sousse."
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "subtitle": "Réponses rapides aux questions courantes sur FielMedina",
+      "q1": "FielMedina est-il gratuit à utiliser ?",
+      "a1": "Oui ! FielMedina est complètement gratuit à télécharger et utiliser. Nous croyons que le patrimoine culturel devrait être accessible à tous.",
+      "q2": "L'application fonctionne-t-elle hors ligne ?",
+      "a2": "Absolument ! Une fois que vous téléchargez le contenu, vous pouvez explorer la médina et accéder aux histoires même sans connexion internet.",
+      "q3": "Quelle est la précision de la navigation GPS ?", 
+      "a3": "Notre système GPS est très précis dans la médina. Nous avons soigneusement cartographié chaque emplacement pour assurer une navigation précise dans les rues historiques.",
+      "q4": "Puis-je contribuer avec mes propres histoires ou photos ?",
+      "a4": "Nous adorons les contributions de la communauté ! Veuillez nous contacter via ce formulaire pour discuter de la façon dont vous pouvez partager vos connaissances et expériences."
+    },
+    "cta": {
+      "title": "Prêt à Explorer ?",
+      "subtitle": "Téléchargez FielMedina maintenant et commencez à découvrir les histoires cachées de Sousse",
+      "downloadButton": "Télécharger Maintenant",
+      "homeButton": "Retour à l'Accueil"
+    }
+  },
+  "legal": {
+    "privacyPolicy": {
+      "title": "Politique de Confidentialité",
+      "subtitle": "Comment nous collectons, utilisons et protégeons vos informations"
+    },
+    "termsConditions": {
+      "title": "Conditions Générales", 
+      "subtitle": "Conditions légales pour utiliser FielMedina"
+    }
+  },
+  "footer": {
+    "description": "Votre guide alimenté par l'IA pour explorer la médina de Sousse avec des histoires interactives et des aperçus culturels.",
+    "quickLinks": "Liens Rapides",
+    "legal": "Légal",
+    "followUs": "Suivez-Nous",
+    "copyright": "© 2024 Fielmedina. Tous droits réservés."
+  }
+} 
