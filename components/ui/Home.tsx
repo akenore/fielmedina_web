@@ -219,7 +219,7 @@ export default function Home() {
                     {/* App branding overlay */}
                     <div className="absolute top-4 left-4 right-4">
                       <div className="bg-black/50 backdrop-blur-sm rounded-2xl px-4 py-3 text-white">
-                        <h3 className="text-lg font-bold">{t('home.appBranding.title')}</h3>
+                        <h2 className="text-lg font-bold">{t('home.appBranding.title')}</h2>
                         <p className="text-white/80 text-sm">{t('home.appBranding.subtitle')}</p>
                       </div>
                     </div>
@@ -325,7 +325,7 @@ export default function Home() {
                     </span>
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                    <h3 className="font-bold text-gray-900">{testimonial.name}</h3>
                     <p className="text-gray-600 text-sm">{testimonial.role}</p>
                   </div>
                 </div>
