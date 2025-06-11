@@ -131,9 +131,8 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                 {t('about.mission.title')}
@@ -148,9 +147,8 @@ export default function About() {
             
             <motion.div
               initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="relative"
             >
               <div className="bg-gradient-to-r from-[#b65d37] to-orange-500 rounded-2xl p-8 text-white">
@@ -364,7 +362,6 @@ export default function About() {
           >
             <Link
               href="/"
-              scroll={false}
               className="bg-white text-[#b65d37] px-8 py-4 rounded-full text-lg font-semibold 
                        hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl
                        flex items-center space-x-2"
@@ -379,7 +376,6 @@ export default function About() {
             
             <Link
               href="/contact"
-              scroll={false}
               className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold 
                        hover:bg-white hover:text-[#b65d37] transition-colors
                        flex items-center space-x-2"

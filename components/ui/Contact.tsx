@@ -181,9 +181,8 @@ export default function Contact() {
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="flex items-center space-x-3 mb-6">
@@ -325,9 +324,8 @@ export default function Contact() {
             {/* Location & Additional Info */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
               className="space-y-8"
             >
               {/* Map placeholder */}
@@ -544,7 +542,6 @@ export default function Contact() {
             
             <Link
               href="/"
-              scroll={false}
               className="inline-flex items-center space-x-2 border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold 
                        hover:bg-white hover:text-[#b65d37] transition-colors"
             >

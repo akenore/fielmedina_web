@@ -90,8 +90,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             <motion.div
               initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
+              animate="animate"
               className="text-center lg:text-left"
             >
               <motion.div
@@ -156,8 +155,7 @@ export default function Home() {
             {/* Right content - App mockup */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
-              whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative flex justify-center"
             >
@@ -236,9 +234,8 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto"
           >
             <h2 className="text-responsive-2xl font-bold text-gray-900 mb-6">

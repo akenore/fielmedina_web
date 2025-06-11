@@ -42,8 +42,6 @@ export default function Header() {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          
-          {/* Logo */}
           <div className="flex items-center">
             <Link href="/" scroll={false}>
               <Image
@@ -64,7 +62,6 @@ export default function Header() {
               { name: t('reviews'), href: '/#reviews', key: 'reviews' },
               { name: t('contact'), href: '/contact', key: 'contact' }
             ].map((item) => {
-              // For hash links, use button with onClick handler
               if (item.href.startsWith('/#')) {
                 return (
                   <button
@@ -76,12 +73,10 @@ export default function Header() {
                   </button>
                 );
               }
-              // For regular pages, use Link component with scroll={false} to prevent auto-scroll warnings
               return (
                 <Link
                   key={item.key}
                   href={item.href}
-                  scroll={false}
                   className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300"
                 >
                   {item.name}
@@ -90,11 +85,9 @@ export default function Header() {
             })}
           </nav>
 
-          {/* Language Switcher & Download Button */}
           <div className="hidden lg:flex items-center space-x-4">
             <LanguageSwitcher />
             
-            {/* Download Button */}
             <motion.a
               href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
               target="_blank"
@@ -108,19 +101,20 @@ export default function Header() {
               <span className="font-medium">{useTranslations('header')('download')}</span>
             </motion.a>
           </div>
-
-          {/* Mobile menu button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
-            aria-label={useTranslations('aria')('toggleNavigation')}
-          >
-            {isMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
-          </button>
+          {/* Mobile controls - Language Switcher and Menu button */}
+          <div className="lg:hidden flex items-center space-x-2">
+            <LanguageSwitcher />
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label={useTranslations('aria')('toggleNavigation')}
+            >
+              {isMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <motion.div
         initial={false}
         animate={isMenuOpen ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
@@ -135,7 +129,6 @@ export default function Header() {
             { name: t('reviews'), href: '/#reviews', key: 'reviews' },
             { name: t('contact'), href: '/contact', key: 'contact' }
           ].map((item) => {
-            // For hash links, use button with onClick handler
             if (item.href.startsWith('/#')) {
               return (
                 <button
@@ -147,12 +140,10 @@ export default function Header() {
                 </button>
               );
             }
-            // For regular pages, use Link component with scroll={false} to prevent auto-scroll warnings
             return (
               <Link
                 key={item.key}
                 href={item.href}
-                scroll={false}
                 className="block text-gray-700 hover:text-[#b65d37] font-medium py-2 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -161,10 +152,7 @@ export default function Header() {
             );
           })}
           
-          {/* Language Switcher in Mobile */}
-          <div className="pt-2 border-t border-gray-200">
-            <LanguageSwitcher />
-          </div>
+
           <a 
             href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
             target="_blank"

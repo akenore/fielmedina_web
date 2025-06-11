@@ -54,7 +54,6 @@ export default function Footer() {
                                    <nav className="flex flex-wrap justify-center gap-6 lg:gap-8">
                                         <Link
                                              href="/terms-conditions"
-                                             scroll={false}
                                              className="text-gray-200 hover:text-[#b65d37] hover:underline 
                            focus-ring transition-colors duration-300"
                                         >
@@ -62,7 +61,6 @@ export default function Footer() {
                                         </Link>
                                         <Link
                                              href="/privacy-policy"
-                                             scroll={false}
                                              className="text-gray-200 hover:text-[#b65d37] hover:underline 
                            focus-ring transition-colors duration-300"
                                         >

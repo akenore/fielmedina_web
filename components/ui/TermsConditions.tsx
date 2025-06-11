@@ -198,7 +198,6 @@ export default function TermsConditions() {
               </p>
               <Link 
                 href="/privacy-policy" 
-                scroll={false}
                 className="text-[#b65d37] font-medium hover:underline"
               >
                 {t('legal.termsConditions.sections.privacy.linkText')}
