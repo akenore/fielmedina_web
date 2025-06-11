@@ -50,26 +50,26 @@ export default function About() {
     }
   ];
 
-  const teamMembers = [
-    {
-      name: t('about.team.muhammad.name'),
-      role: t('about.team.muhammad.role'),
-      description: t('about.team.muhammad.description'),
-      image: "/team/founder.jpg"
-    },
-    {
-      name: t('about.team.sarah.name'),
-      role: t('about.team.sarah.role'),
-      description: t('about.team.sarah.description'),
-      image: "/team/cultural.jpg"
-    },
-    {
-      name: t('about.team.ahmed.name'),
-      role: t('about.team.ahmed.role'),
-      description: t('about.team.ahmed.description'),
-      image: "/team/developer.jpg"
-    }
-  ];
+  // const teamMembers = [
+  //   {
+  //     name: t('about.team.muhammad.name'),
+  //     role: t('about.team.muhammad.role'),
+  //     description: t('about.team.muhammad.description'),
+  //     image: "/team/founder.jpg"
+  //   },
+  //   {
+  //     name: t('about.team.sarah.name'),
+  //     role: t('about.team.sarah.role'),
+  //     description: t('about.team.sarah.description'),
+  //     image: "/team/cultural.jpg"
+  //   },
+  //   {
+  //     name: t('about.team.ahmed.name'),
+  //     role: t('about.team.ahmed.role'),
+  //     description: t('about.team.ahmed.description'),
+  //     image: "/team/developer.jpg"
+  //   }
+  // ];
 
   const milestones = [
     {
@@ -226,7 +226,7 @@ export default function About() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 lg:py-24 bg-white">
+      {/* <section className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -276,7 +276,7 @@ export default function About() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Timeline Section */}
       <section className="py-16 lg:py-24 bg-[#FDF7EC]">
