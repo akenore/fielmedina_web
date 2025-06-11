@@ -67,7 +67,7 @@ export default function Header() {
                   <button
                     key={item.key}
                     onClick={() => handleNavClick(item.href)}
-                    className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300"
+                    className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300 cursor-pointer"
                   >
                     {item.name}
                   </button>
@@ -152,7 +152,6 @@ export default function Header() {
             );
           })}
           
-
           <a 
             href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
             target="_blank"
