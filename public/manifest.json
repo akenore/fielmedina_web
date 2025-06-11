@@ -1,20 +1,20 @@
 {
   "name": "FielMedina - Discover Sousse Medina",
   "short_name": "FielMedina",
-  "description": "Your AI-powered guide to explore the UNESCO World Heritage site with interactive stories, GPS navigation, and cultural insights.",
+  "description": "Your digital guide to explore the World Heritage site with interactive stories, GPS navigation, and cultural insights.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FDF7EC",
   "theme_color": "#b65d37",
   "icons": [
     {
-      "src": "/logo.png",
-      "sizes": "192x192",
+      "src": "/196.png",
+      "sizes": "196x196",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "/logo.png",
+      "src": "/512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
