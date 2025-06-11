@@ -51,6 +51,8 @@ export default function Header() {
                 height={40}
                 className="h-8 lg:h-10 w-auto object-contain"
                 priority
+                fetchPriority="high"
+                loading="eager"
               />
             </Link>
           </div>

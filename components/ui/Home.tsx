@@ -193,6 +193,8 @@ export default function Home() {
                             sizes="(max-width: 768px) 288px, 320px"
                             className="object-cover"
                             priority={index === 0}
+                            fetchPriority={index === 0 ? "high" : "auto"}
+                            loading={index === 0 ? "eager" : "lazy"}
                           />
                           {/* Overlay gradient for better readability */}
                           <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
