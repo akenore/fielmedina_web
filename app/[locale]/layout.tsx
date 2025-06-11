@@ -105,7 +105,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        {/* Preload critical LCP images */}
+        {/* Preload only the most critical LCP images */}
         <link
           rel="preload"
           href="/logo.svg"
@@ -113,20 +113,25 @@ export default async function LocaleLayout({
           type="image/svg+xml"
           fetchPriority="high"
         />
-        <link
-          rel="preload"
-          href="/slider/splash.webp"
-          as="image"
-          type="image/webp"
-          fetchPriority="high"
-        />
-        <link
-          rel="preload"
-          href="/yellow_dotes.webp"
-          as="image"
-          type="image/webp"
-          fetchPriority="high"
-        />
+        {/* Only preload slider image in production to avoid dev warnings */}
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <link
+              rel="preload"
+              href="/slider/splash.webp"
+              as="image"
+              type="image/webp"
+              fetchPriority="high"
+            />
+            <link
+              rel="preload"
+              href="/yellow_dotes.webp"
+              as="image"
+              type="image/webp"
+              fetchPriority="high"
+            />
+          </>
+        )}
         {/* DNS prefetch for external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
