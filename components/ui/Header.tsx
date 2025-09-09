@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Download, Menu, X } from 'lucide-react';
+import {  Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
@@ -154,16 +154,7 @@ export default function Header() {
             );
           })}
           
-          <a 
-            href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center space-x-2 bg-[#b65d37] text-white px-6 py-3 rounded-full 
-                         hover:bg-[#a0542f] transition-colors w-full justify-center"
-          >
-            <Download className="size-4" />
-            <span>{useTranslations('header')('downloadApp')}</span>
-          </a>
+         
         </div>
       </motion.div>
     </motion.header>
