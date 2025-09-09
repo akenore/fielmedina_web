@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Download, Star, Quote } from 'lucide-react';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Header from './Header';
 import BubbleIcon from '../icons/BubbleIcon';
 import WorldIcon from '../icons/WorldIcon';
@@ -12,7 +12,12 @@ import NavigatorIcon from '../icons/NavigatorIcon';
 
 export default function Home() {
   const t = useTranslations();
+  const locale = useLocale();
   const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Dynamic image sources based on locale
+  const googlePlayImage = locale === 'fr' ? '/googleplay-fr.svg' : '/googleplay-en.svg';
+  const iosImage = locale === 'fr' ? '/ios-fr.svg' : '/ios-en.svg';
 
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
@@ -22,7 +27,7 @@ export default function Home() {
 
   const sliderImages = [
     "/slider/splash.webp",
-    "/slider/pic-1.webp", 
+    "/slider/pic-1.webp",
     "/slider/pic-2.webp"
   ];
 
@@ -43,7 +48,7 @@ export default function Home() {
     },
     {
       icon: BubbleIcon,
-      title: t('home.features.localInsights.title'), 
+      title: t('home.features.localInsights.title'),
       description: t('home.features.localInsights.description'),
       gradient: "from-[#b65d37] to-gray-800"
     },
@@ -68,20 +73,20 @@ export default function Home() {
       rating: 5
     },
     {
-      name: t('home.testimonials.sarah.name'), 
+      name: t('home.testimonials.sarah.name'),
       role: t('home.testimonials.sarah.role'),
       text: t('home.testimonials.sarah.text'),
       rating: 5
     },
     {
       name: t('home.testimonials.mohamed.name'),
-      role: t('home.testimonials.mohamed.role'), 
+      role: t('home.testimonials.mohamed.role'),
       text: t('home.testimonials.mohamed.text'),
       rating: 5
     }
   ];
 
-     return (
+  return (
     <div className="min-h-screen bg-[#FDF7EC]">
       <Header />
       <section id="home" className="pt-24 lg:pt-32 pb-16 lg:pb-24 relative overflow-hidden">
@@ -99,8 +104,8 @@ export default function Home() {
               >
                 {t('home.hero.badge')}
               </motion.div>
-              
-              <motion.h1 
+
+              <motion.h1
                 variants={fadeInUp}
                 className="text-responsive-2xl font-bold text-gray-900 leading-tight mb-6"
               >
@@ -108,8 +113,8 @@ export default function Home() {
                 <span className="text-[#b65d37] block">{t('home.hero.title.line2')}</span>
                 {t('home.hero.title.line3')}
               </motion.h1>
-              
-              <motion.p 
+
+              <motion.p
                 variants={fadeInUp}
                 className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0"
               >
@@ -117,27 +122,41 @@ export default function Home() {
               </motion.p>
 
               {/* CTA Buttons */}
-              <motion.div 
-                variants={fadeInUp}
-                className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start"
-              >
-                <motion.a
-                  href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-[#b65d37] text-white px-8 py-4 rounded-full text-lg font-semibold 
-                           hover:bg-[#a0542f] transition-all duration-300 shadow-lg hover:shadow-xl
-                           flex items-center justify-center space-x-2"
+              <div className="flex gap-4">
+                <motion.div
+                  variants={fadeInUp}
+                  className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start"
                 >
-                  <Download className="size-5" />
-                  <span>{t('home.hero.downloadButton')}</span>
-                </motion.a>
-              </motion.div>
+                  <motion.a
+                    href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="transition-all duration-300"
+                  >
+                    <Image src={googlePlayImage} alt="Play Store" width={220} height={100} />
+                  </motion.a>
+                </motion.div>
+                <motion.div
+                  variants={fadeInUp}
+                  className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start"
+                >
+                  <motion.a
+                    href="https://apps.apple.com/us/app/fielmedina/id6751167445"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="transition-all duration-300"
+                  >
+                    <Image src={iosImage} alt="Apple Store" width={205} height={100} />
+                  </motion.a>
+                </motion.div>
+              </div>
 
               {/* Stats */}
-              <motion.div 
+              <motion.div
                 variants={fadeInUp}
                 className="grid grid-cols-2 lg:grid-cols-4 gap-6"
               >
@@ -162,12 +181,12 @@ export default function Home() {
               {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#b65d37]/20 to-blue-500/20 
                             rounded-full blur-3xl scale-75 opacity-60" />
-              
+
               {/* Phone mockup */}
               <div className="relative z-10 bg-gray-900 rounded-[3rem] p-3 shadow-2xl 
                             transform hover:rotate-0 transition-transform duration-500 rotate-2">
                 <div className="bg-white rounded-[2.5rem] overflow-hidden w-72 lg:w-80 aspect-[9/19.5] flex flex-col">
-                  
+
                   {/* Status bar */}
                   <div className="bg-white px-6 py-3 flex justify-between items-center text-black text-sm flex-shrink-0">
                     <span className="font-medium">{t('home.phoneUI.time')}</span>
@@ -180,7 +199,7 @@ export default function Home() {
 
                   {/* Image Slider */}
                   <div className="relative flex-1 overflow-hidden bg-gray-100 min-h-0">
-                    <div 
+                    <div
                       className="flex transition-transform duration-500 ease-in-out h-full"
                       style={{ transform: `translateX(-${currentSlide * 100}%)` }}
                     >
@@ -188,7 +207,7 @@ export default function Home() {
                         <div key={index} className="w-full h-full flex-shrink-0 relative">
                           <Image
                             src={image}
-                            alt={t('home.phoneUI.screenshotAlt', {number: index + 1})}
+                            alt={t('home.phoneUI.screenshotAlt', { number: index + 1 })}
                             fill
                             sizes="(max-width: 768px) 288px, 320px"
                             className="object-cover"
@@ -208,12 +227,11 @@ export default function Home() {
                         <button
                           key={index}
                           onClick={() => setCurrentSlide(index)}
-                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                            index === currentSlide 
-                              ? 'bg-white shadow-lg' 
-                              : 'bg-white/50 hover:bg-white/70'
-                          }`}
-                          aria-label={t('common.goToSlide', {number: index + 1})}
+                          className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide
+                            ? 'bg-white shadow-lg'
+                            : 'bg-white/50 hover:bg-white/70'
+                            }`}
+                          aria-label={t('common.goToSlide', { number: index + 1 })}
                         />
                       ))}
                     </div>
@@ -312,13 +330,13 @@ export default function Home() {
                     <Star key={i} className="size-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                
+
                 <Quote className="size-8 text-[#b65d37] mb-4" />
-                
+
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
-                
+
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-gradient-to-r from-[#b65d37] to-orange-500 
                                 rounded-full flex items-center justify-center mr-4">
@@ -347,7 +365,7 @@ export default function Home() {
           >
             {t('home.cta.title')}
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -357,28 +375,39 @@ export default function Home() {
           >
             {t('home.cta.subtitle')}
           </motion.p>
-          
+
+          <div className="flex gap-4 justify-center items-center">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <motion.a
-              href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-[#b65d37] px-8 py-4 rounded-full text-lg font-semibold 
-                       hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl
-                       flex items-center space-x-2"
-            >
-              <Download className="size-5" />
-              <span>{t('home.cta.downloadButton')}</span>
-            </motion.a>
-          </motion.div>
+                  variants={fadeInUp}
+                  className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start"
+                >
+                  <motion.a
+                    href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="transition-all duration-300"
+                  >
+                    <Image src={googlePlayImage} alt="Play Store" width={220} height={100} />
+                  </motion.a>
+                </motion.div>
+                <motion.div
+                  variants={fadeInUp}
+                  className="flex flex-col sm:flex-row gap-4 mb-12 justify-center lg:justify-start"
+                >
+                  <motion.a
+                    href="https://apps.apple.com/us/app/fielmedina/id6751167445"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="transition-all duration-300"
+                  >
+                    <Image src={iosImage} alt="Apple Store" width={205} height={100} />
+                  </motion.a>
+                </motion.div>
+          </div>
         </div>
 
         {/* Background decoration */}
@@ -389,5 +418,5 @@ export default function Home() {
         </div>
       </section>
     </div>
-     );
+  );
 }

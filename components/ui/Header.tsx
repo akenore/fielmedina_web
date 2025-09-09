@@ -45,7 +45,7 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" scroll={false}>
               <Image
-                src="/logo.svg"
+                src="/logo.webp"
                 alt={useTranslations('header')('logo')}
                 width={180}
                 height={40}
@@ -90,7 +90,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center space-x-4">
             <LanguageSwitcher />
             
-            <motion.a
+            {/* <motion.a
               href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
               target="_blank"
               rel="noopener noreferrer"
@@ -101,7 +101,7 @@ export default function Header() {
             >
               <Download className="size-4" />
               <span className="font-medium">{useTranslations('header')('download')}</span>
-            </motion.a>
+            </motion.a> */}
           </div>
           {/* Mobile controls - Language Switcher and Menu button */}
           <div className="lg:hidden flex items-center space-x-2">
