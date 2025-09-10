@@ -85,11 +85,11 @@
   },
   "home": {
     "hero": {
-      "badge": "🧭 Votre Guide Numérique de la Médina de Sousse",
+      "badge": "🧭 Découvrez les Médinas de Tunisie avec Votre Guide Digital",
       "title": {
-        "line1": "Naviguez dans la Médina",
-        "line2": "Historique de Sousse",
-        "line3": "en toute Confiance"
+        "line1": "Découvrez l’Âme des",
+        "line2": "Médinas de Tunisie",
+        "line3": "avec FielMedina"
       },
       "subtitle": "Découvrez des trésors cachés, naviguez dans les rues anciennes et immergez-vous dans la riche culture de la médina historique de la Tunisie avec notre guide mobile intelligent.",
       "downloadButton": "Téléchargement Gratuit",
@@ -160,13 +160,13 @@
       }
     },
     "cta": {
-      "title": "Prêt à Explorer Sousse ?",
-      "subtitle": "Téléchargez Fielmedina maintenant et commencez votre voyage inoubliable à travers la médina historique de Sousse.",
+      "title": "Prêt à Explorer ?",
+      "subtitle": "Téléchargez Fielmedina maintenant et commencez votre voyage inoubliable à travers les médinas historique de Tunisie.",
       "downloadButton": "Télécharger pour Android"
     },
     "app": {
       "brandingTitle": "FielMedina",
-      "brandingSubtitle": "Guide de la Médina de Sousse",
+      "brandingSubtitle": "Guide des médinas de Tunisie",
       "altText": "Capture d'écran de l'App FielMedina"
     },
     "phoneUI": {
@@ -176,7 +176,7 @@
     },
     "appBranding": {
       "title": "FielMedina",
-      "subtitle": "Guide de la Médina de Sousse"
+      "subtitle": "Guide des médinas de Tunisie"
     }
   },
   "about": {

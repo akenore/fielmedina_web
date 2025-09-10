@@ -11,11 +11,15 @@ import Script from 'next/script';
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap',
+  preload: true
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
+  preload: false // Only preload the primary font
 });
 
 type Props = {
@@ -105,32 +109,16 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        {/* Preload only the most critical LCP images */}
-        <link
-          rel="preload"
-          href="/logo.svg"
-          as="image"
-          type="image/svg+xml"
-          fetchPriority="high"
-        />
-        {/* Only preload slider image in production to avoid dev warnings */}
+        {/* Preload only the most critical LCP images - logo is small and loads quickly */}
+        {/* Only preload critical above-the-fold images */}
         {process.env.NODE_ENV === 'production' && (
-          <>
-            <link
-              rel="preload"
-              href="/slider/splash.webp"
-              as="image"
-              type="image/webp"
-              fetchPriority="high"
-            />
-            <link
-              rel="preload"
-              href="/yellow_dotes.webp"
-              as="image"
-              type="image/webp"
-              fetchPriority="high"
-            />
-          </>
+          <link
+            rel="preload"
+            href="/slider/001.png"
+            as="image"
+            type="image/png"
+            fetchPriority="high"
+          />
         )}
         {/* DNS prefetch for external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />

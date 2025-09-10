@@ -45,7 +45,7 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/" scroll={false}>
               <Image
-                src="/logo.webp"
+                src="/logo.png"
                 alt={useTranslations('header')('logo')}
                 width={180}
                 height={40}

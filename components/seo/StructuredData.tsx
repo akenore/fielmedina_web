@@ -7,7 +7,7 @@ export default function StructuredData() {
     "name": "FielMedina",
     "description": "Your AI-powered guide to explore the UNESCO World Heritage site Sousse Medina with interactive stories, GPS navigation, and cultural insights.",
     "url": "https://www.fielmedina.com",
-    "logo": "https://www.fielmedina.com/logo.svg",
+    "logo": "https://www.fielmedina.com/logo.png",
     "foundingDate": "2024",
     "founder": {
       "@type": "Person",

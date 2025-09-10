@@ -26,9 +26,12 @@ export default function Home() {
   };
 
   const sliderImages = [
-    "/slider/splash.webp",
-    "/slider/pic-1.webp",
-    "/slider/pic-2.webp"
+    "/slider/001.png",
+    "/slider/002.png",
+    "/slider/003.png",
+    "/slider/005.png",
+    "/slider/007.png",
+    "/slider/008.png"
   ];
 
   // Auto-slide every 3 seconds
@@ -187,15 +190,6 @@ export default function Home() {
                             transform hover:rotate-0 transition-transform duration-500 rotate-2">
                 <div className="bg-white rounded-[2.5rem] overflow-hidden w-72 lg:w-80 aspect-[9/19.5] flex flex-col">
 
-                  {/* Status bar */}
-                  <div className="bg-white px-6 py-3 flex justify-between items-center text-black text-sm flex-shrink-0">
-                    <span className="font-medium">{t('home.phoneUI.time')}</span>
-                    <div className="flex items-center space-x-1">
-                      <div className="w-6 h-3 border border-black rounded-sm">
-                        <div className="w-4 h-2 bg-black rounded-sm ml-0.5 mt-0.5" />
-                      </div>
-                    </div>
-                  </div>
 
                   {/* Image Slider */}
                   <div className="relative flex-1 overflow-hidden bg-gray-100 min-h-0">

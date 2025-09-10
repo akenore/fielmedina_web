@@ -85,11 +85,11 @@
   },
   "home": {
     "hero": {
-      "badge": "🧭 Your Digital Guide to Sousse Medina",
+      "badge": "🧭 Discover Tunisia’s Medinas with Your Digital Guide",
       "title": {
-        "line1": "Navigate the Historic",
-        "line2": "Medina of Sousse",
-        "line3": "with Confidence"
+        "line1": "Discover the Soul of",
+        "line2": "Tunisia’s Medinas",
+        "line3": "with FielMedina"
       },
       "subtitle": "Discover hidden treasures, navigate ancient streets, and immerse yourself in the rich culture of Tunisia's historic medina with our smart mobile guide.",
       "downloadButton": "Download Free",
@@ -160,13 +160,13 @@
       }
     },
     "cta": {
-      "title": "Ready to Explore Sousse?",
-      "subtitle": "Download Fielmedina now and start your unforgettable journey through the historic medina of Sousse.",
+      "title": "Ready to Explore?",
+      "subtitle": "Download Fielmedina now and start your unforgettable journey through the historic medinas of Tunisia.",
       "downloadButton": "Download for Android"
     },
     "app": {
       "brandingTitle": "FielMedina",
-      "brandingSubtitle": "Sousse Medina Guide",
+      "brandingSubtitle": "Tunisia’s Medinas Guide",
       "altText": "FielMedina App Screenshot"
     },
     "phoneUI": {
@@ -176,7 +176,7 @@
     },
     "appBranding": {
       "title": "FielMedina",
-      "subtitle": "Sousse Medina Guide"
+      "subtitle": "Tunisia’s Medinas Guide"
     }
   },
   "about": {
