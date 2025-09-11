@@ -2,8 +2,51 @@
 
 import { motion } from 'framer-motion';
 import { Shield, Eye, Lock, Users, Clock, Mail } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { usePage } from '@/lib/hooks/usePages';
 import Footer from './Footer';
+import CTA from './CTA';
+
+function PrivacyPolicyContent() {
+  const locale = useLocale();
+  const t = useTranslations('common.api');
+  // Map Next.js locale to Django API language codes and slugs
+  const apiLanguage = locale === 'fr' ? 'fr' : 'en';
+  const apiSlug = locale === 'fr' ? 'politique-de-confidentialite' : 'privacy-policy';
+  const { data: pageData, loading, error } = usePage(apiSlug, apiLanguage);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500"></div>
+        <span className="ml-2 text-gray-600">{t('loading')}</span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-red-600">
+        {t('errorLoadingContent')}: {error.message}
+      </div>
+    );
+  }
+
+  if (!pageData?.page) {
+    return (
+      <div className="text-gray-600">
+        {t('contentNotAvailable')}
+      </div>
+    );
+  }
+
+  return (
+    <div 
+      className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-900"
+      dangerouslySetInnerHTML={{ __html: pageData.page.content }}
+    />
+  );
+}
 
 export default function PrivacyPolicy() {
   const t = useTranslations();
@@ -122,172 +165,9 @@ export default function PrivacyPolicy() {
               transition={{ duration: 0.6 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.introduction.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.privacyPolicy.sections.introduction.content1')}
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                {t('legal.privacyPolicy.sections.introduction.content2')}
-              </p>
+              <PrivacyPolicyContent />
             </motion.div>
 
-            {/* Information Collection */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.informationCollection.title')}</h2>
-              
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{t('legal.privacyPolicy.sections.informationCollection.userProvidedTitle')}</h3>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.privacyPolicy.sections.informationCollection.userProvidedContent')}
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6 ml-4">
-                <li>{t('legal.privacyPolicy.sections.informationCollection.userProvided1')}</li>
-                <li>{t('legal.privacyPolicy.sections.informationCollection.userProvided2')}</li>
-                <li>{t('legal.privacyPolicy.sections.informationCollection.userProvided3')}</li>
-                <li>{t('legal.privacyPolicy.sections.informationCollection.userProvided4')}</li>
-              </ul>
-
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{t('legal.privacyPolicy.sections.informationCollection.automaticTitle')}</h3>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.privacyPolicy.sections.informationCollection.automaticContent')}
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4 ml-4">
-                <li>{t('legal.privacyPolicy.sections.informationCollection.automatic1')}</li>
-                <li>{t('legal.privacyPolicy.sections.informationCollection.automatic2')}</li>
-                <li>{t('legal.privacyPolicy.sections.informationCollection.automatic3')}</li>
-                <li>{t('legal.privacyPolicy.sections.informationCollection.automatic4')}</li>
-                <li>{t('legal.privacyPolicy.sections.informationCollection.automatic5')}</li>
-                <li>{t('legal.privacyPolicy.sections.informationCollection.automatic6')}</li>
-              </ul>
-            </motion.div>
-
-            {/* Location Information */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.locationInformation.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.privacyPolicy.sections.locationInformation.content1')}
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4 ml-4">
-                <li><strong>{t('legal.privacyPolicy.sections.locationInformation.gpsNavigation')}</strong></li>
-                <li><strong>{t('legal.privacyPolicy.sections.locationInformation.nearbyPOI')}</strong></li>
-                <li><strong>{t('legal.privacyPolicy.sections.locationInformation.improvedExperience')}</strong></li>
-                <li><strong>{t('legal.privacyPolicy.sections.locationInformation.offlineFunctionality')}</strong></li>
-              </ul>
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                <p className="text-blue-800 font-medium">
-                  {t('legal.privacyPolicy.sections.locationInformation.important')}
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Third Party Services */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.thirdPartyServices.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.privacyPolicy.sections.thirdPartyServices.content1')}
-              </p>
-              <div className="space-y-4">
-                <div className="border-l-4 border-[#b65d37] pl-4">
-                  <h4 className="font-semibold text-gray-900">{t('legal.privacyPolicy.sections.thirdPartyServices.googlePlay')}</h4>
-                  <p className="text-gray-600 text-sm">{t('legal.privacyPolicy.sections.thirdPartyServices.googlePlayDesc')}</p>
-                </div>
-                <div className="border-l-4 border-[#b65d37] pl-4">
-                  <h4 className="font-semibold text-gray-900">{t('legal.privacyPolicy.sections.thirdPartyServices.firebase')}</h4>
-                  <p className="text-gray-600 text-sm">{t('legal.privacyPolicy.sections.thirdPartyServices.firebaseDesc')}</p>
-                </div>
-              </div>
-              <p className="text-gray-600 leading-relaxed mt-4">
-                {t('legal.privacyPolicy.sections.thirdPartyServices.content2')}
-              </p>
-            </motion.div>
-
-            {/* Data Security */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.dataSecurity.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.privacyPolicy.sections.dataSecurity.content1')}
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6 ml-4">
-                <li>{t('legal.privacyPolicy.sections.dataSecurity.measure1')}</li>
-                <li>{t('legal.privacyPolicy.sections.dataSecurity.measure2')}</li>
-                <li>{t('legal.privacyPolicy.sections.dataSecurity.measure3')}</li>
-                <li>{t('legal.privacyPolicy.sections.dataSecurity.measure4')}</li>
-              </ul>
-              
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{t('legal.privacyPolicy.sections.dataSecurity.dataRetentionTitle')}</h3>
-              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4 ml-4">
-                <li>{t('legal.privacyPolicy.sections.dataSecurity.retention1')}</li>
-                <li>{t('legal.privacyPolicy.sections.dataSecurity.retention2')}</li>
-                <li>{t('legal.privacyPolicy.sections.dataSecurity.retention3')}</li>
-              </ul>
-            </motion.div>
-
-            {/* Your Rights */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.userRights.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.privacyPolicy.sections.userRights.content1')}
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6 ml-4">
-                <li><strong>{t('legal.privacyPolicy.sections.userRights.access')}</strong></li>
-                <li><strong>{t('legal.privacyPolicy.sections.userRights.correction')}</strong></li>
-                <li><strong>{t('legal.privacyPolicy.sections.userRights.deletion')}</strong></li>
-                <li><strong>{t('legal.privacyPolicy.sections.userRights.optOut')}</strong></li>
-                <li><strong>{t('legal.privacyPolicy.sections.userRights.locationServices')}</strong></li>
-              </ul>
-              
-              <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded">
-                <p className="text-green-800 font-medium">
-                  {t('legal.privacyPolicy.sections.userRights.exerciseRights')}
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Children's Privacy */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.privacyPolicy.sections.childrensPrivacy.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.privacyPolicy.sections.childrensPrivacy.content1')}
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                {t('legal.privacyPolicy.sections.childrensPrivacy.content2')}
-              </p>
-            </motion.div>
 
             {/* Contact & Updates */}
             <motion.div
@@ -323,53 +203,7 @@ export default function PrivacyPolicy() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-r from-[#b65d37] to-[#b65c37] text-white relative overflow-hidden">
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-responsive-2xl font-bold mb-6"
-          >
-            {t('legal.privacyPolicy.cta.title')}
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto leading-relaxed opacity-90"
-          >
-            {t('legal.privacyPolicy.cta.subtitle')}
-          </motion.p>
-          
-          <motion.a
-            href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white text-[#b65d37] px-8 py-4 rounded-full text-lg font-semibold 
-                     hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl
-                     inline-flex items-center space-x-2"
-          >
-            <span>{t('legal.privacyPolicy.cta.downloadButton')}</span>
-          </motion.a>
-        </div>
-
-        {/* Background decoration */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-white rounded-full" />
-          <div className="absolute top-1/2 right-20 w-16 h-16 bg-white rounded-full" />
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white rounded-full" />
-        </div>
-      </section>
+      <CTA />
       <Footer />
     </div>
   );

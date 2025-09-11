@@ -81,7 +81,12 @@
     "like": "Like",
     "comment": "Comment",
     "subscribe": "Subscribe",
-    "unsubscribe": "Unsubscribe"
+    "unsubscribe": "Unsubscribe",
+    "api": {
+      "loading": "Loading...",
+      "errorLoadingContent": "Error loading content",
+      "contentNotAvailable": "Content not available"
+    }
   },
   "home": {
     "hero": {
@@ -469,13 +474,13 @@
     "termsConditions": {
       "title": "Terms & Conditions",
       "subtitle": "Please read these terms carefully before using FielMedina. By using our app, you agree to these terms and conditions.",
-      "lastUpdated": "Last updated: June 5, 2025",
+      "lastUpdated": "Last updated: September 10, 2025",
       "keyPoints": {
         "title": "Key Terms Overview",
         "subtitle": "Essential points about using FielMedina responsibly",
         "freeService": {
           "title": "Free Service",
-          "description": "FielMedina is provided as a free service for exploring Sousse's medina."
+          "description": "FielMedina is provided as a free service for exploring medinas."
         },
         "userResponsibility": {
           "title": "User Responsibility",
@@ -584,7 +589,7 @@
           "content2": "Your continued use of the App after any changes indicates your acceptance of the modified Terms. If you do not agree to the changes, you should stop using the App."
         },
         "contact": {
-          "title": "11. Contact Information",
+          "title": "Contact Information",
           "content1": "If you have any questions about these Terms and Conditions, please contact us:",
           "contactTitle": "Questions or Concerns?",
           "contactMessage": "If you have any questions about this Terms and Conditions, please contact us:",

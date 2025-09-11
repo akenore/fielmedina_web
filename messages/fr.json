@@ -81,7 +81,12 @@
     "like": "J'aime",
     "comment": "Commenter",
     "subscribe": "S'abonner",
-    "unsubscribe": "Se désabonner"
+    "unsubscribe": "Se désabonner",
+    "api": {
+      "loading": "Chargement...",
+      "errorLoadingContent": "Erreur lors du chargement du contenu",
+      "contentNotAvailable": "Contenu non disponible"
+    }
   },
   "home": {
     "hero": {
@@ -469,13 +474,13 @@
     "termsConditions": {
       "title": "Conditions Générales",
       "subtitle": "Veuillez lire attentivement ces conditions avant d'utiliser FielMedina. En utilisant notre application, vous acceptez ces conditions générales.",
-      "lastUpdated": "Dernière mise à jour : 5 juin 2025",
+      "lastUpdated": "Dernière mise à jour : 10 Septembre 2025",
       "keyPoints": {
         "title": "Aperçu des Conditions Clés",
         "subtitle": "Points essentiels sur l'utilisation responsable de FielMedina",
         "freeService": {
           "title": "Service Gratuit",
-          "description": "FielMedina est fourni comme un service gratuit pour explorer la médina de Sousse."
+          "description": "FielMedina est fourni comme un service gratuit pour explorer les médinas."
         },
         "userResponsibility": {
           "title": "Responsabilité de l'Utilisateur",
@@ -575,7 +580,7 @@
           "content2": "Votre utilisation continue de l'Application après tout changement indique votre acceptation des Conditions modifiées. Si vous n'acceptez pas les modifications, vous devriez arrêter d'utiliser l'Application."
         },
         "contact": {
-          "title": "11. Informations de Contact",
+          "title": "Informations de Contact",
           "content1": "Si vous avez des questions sur ces Conditions Générales, veuillez nous contacter :",
           "contactTitle": "Questions ou Préoccupations ?",
           "contactMessage": "Si vous avez des questions sur ces Conditions Générales, veuillez nous contacter :",
@@ -591,7 +596,7 @@
     "privacyPolicy": {
       "title": "Politique de Confidentialité",
       "subtitle": "Votre vie privée nous importe. Cette politique explique comment nous collectons, utilisons et protégeons vos informations lorsque vous utilisez FielMedina.",
-      "lastUpdated": "Dernière mise à jour : 5 juin 2025",
+      "lastUpdated": "Dernière mise à jour : 10 septembre 2025",
       "keyPoints": {
         "title": "Nos Engagements de Confidentialité",
         "subtitle": "Voici ce que vous devez savoir sur la façon dont nous gérons vos données",

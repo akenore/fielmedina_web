@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@apollo/client": "^4.0.4",
+    "@tailwindcss/typography": "^0.5.16",
     "framer-motion": "^12.23.12",
+    "graphql": "^16.11.0",
+    "graphql-tag": "^2.12.6",
     "lineicons": "^1.3.2",
     "lucide-react": "^0.543.0",
     "next": "15.5.2",

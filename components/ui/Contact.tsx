@@ -10,6 +10,8 @@ import FacebookIcon from '../icons/FacebookIcon';
 import TiktokIcon from '../icons/TiktokIcon';
 import YoutubeIcon from '../icons/YoutubeIcon';
 import Footer from './Footer';
+import CTA from './CTA';
+
 
 export default function Contact() {
   const t = useTranslations();
@@ -499,7 +501,7 @@ export default function Contact() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-r from-[#b65d37] to-[#b65c37] text-white">
+      {/* <section className="py-16 lg:py-24 bg-gradient-to-r from-[#b65d37] to-[#b65c37] text-white">
         <div className="container mx-auto px-4 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
@@ -554,7 +556,8 @@ export default function Contact() {
             </Link>
           </motion.div>
         </div>
-      </section>
+      </section> */}
+      <CTA />
       <Footer />
     </div>
   );

@@ -2,9 +2,52 @@
 
 import { motion } from 'framer-motion';
 import { FileText, Users, Shield, AlertTriangle, Clock, Mail } from 'lucide-react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
+import { usePage } from '@/lib/hooks/usePages';
 import {Link} from '../../i18n/navigation';
 import Footer from './Footer';
+import CTA from './CTA';
+
+function TermsConditionsContent() {
+  const locale = useLocale();
+  const t = useTranslations('common.api');
+  // Map Next.js locale to Django API language codes and slugs
+  const apiLanguage = locale === 'fr' ? 'fr' : 'en';
+  const apiSlug = locale === 'fr' ? 'termes-conditions' : 'terms-conditions';
+  const { data: pageData, loading, error } = usePage(apiSlug, apiLanguage);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center p-8">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500"></div>
+        <span className="ml-2 text-gray-600">{t('loading')}</span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-red-600">
+        {t('errorLoadingContent')}: {error.message}
+      </div>
+    );
+  }
+
+  if (!pageData?.page) {
+    return (
+      <div className="text-gray-600">
+        {t('contentNotAvailable')}
+      </div>
+    );
+  }
+
+  return (
+    <div 
+      className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-900"
+      dangerouslySetInnerHTML={{ __html: pageData.page.content }}
+    />
+  );
+}
 
 export default function TermsConditions() {
   const t = useTranslations();
@@ -113,7 +156,7 @@ export default function TermsConditions() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             
-            {/* Acceptance of Terms */}
+            {/* API Content */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -121,222 +164,15 @@ export default function TermsConditions() {
               transition={{ duration: 0.6 }}
               className="bg-white rounded-2xl p-8 shadow-lg mb-8"
             >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.acceptance.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.acceptance.content1')}
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                {t('legal.termsConditions.sections.acceptance.content2')}
-              </p>
+              <TermsConditionsContent />
             </motion.div>
 
-            {/* App Description */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.appDescription.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.appDescription.content1')}
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4 ml-4">
-                <li>{t('legal.termsConditions.sections.appDescription.feature1')}</li>
-                <li>{t('legal.termsConditions.sections.appDescription.feature2')}</li>
-                <li>{t('legal.termsConditions.sections.appDescription.feature3')}</li>
-                <li>{t('legal.termsConditions.sections.appDescription.feature4')}</li>
-              </ul>
-              <p className="text-gray-600 leading-relaxed">
-                {t('legal.termsConditions.sections.appDescription.content2')}
-              </p>
-            </motion.div>
-
-            {/* User Responsibilities */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.userResponsibilities.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.userResponsibilities.content1')}
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6 ml-4">
-                <li>{t('legal.termsConditions.sections.userResponsibilities.responsibility1')}</li>
-                <li>{t('legal.termsConditions.sections.userResponsibilities.responsibility2')}</li>
-                <li>{t('legal.termsConditions.sections.userResponsibilities.responsibility3')}</li>
-                <li>{t('legal.termsConditions.sections.userResponsibilities.responsibility4')}</li>
-                <li>{t('legal.termsConditions.sections.userResponsibilities.responsibility5')}</li>
-                <li>{t('legal.termsConditions.sections.userResponsibilities.responsibility6')}</li>
-              </ul>
-              
-              <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded">
-                <p className="text-red-800 font-medium">
-                  <strong>{t('legal.termsConditions.sections.userResponsibilities.safetyNotice.title')}</strong> {t('legal.termsConditions.sections.userResponsibilities.safetyNotice.content')}
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Privacy & Data */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.privacy.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.privacy.content1')}
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.privacy.content2')}
-              </p>
-              <Link 
-                href="/privacy-policy" 
-                className="text-[#b65d37] font-medium hover:underline"
-              >
-                {t('legal.termsConditions.sections.privacy.linkText')}
-              </Link>
-            </motion.div>
-
-            {/* Intellectual Property */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.intellectualProperty.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.intellectualProperty.content1')}
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.intellectualProperty.content2')}
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                {t('legal.termsConditions.sections.intellectualProperty.content3')}
-              </p>
-            </motion.div>
-
-            {/* Disclaimers & Limitations */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.disclaimers.title')}</h2>
-              
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{t('legal.termsConditions.sections.disclaimers.disclaimersTitle')}</h3>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.disclaimers.disclaimersContent')}
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-6 ml-4">
-                <li>{t('legal.termsConditions.sections.disclaimers.disclaimer1')}</li>
-                <li>{t('legal.termsConditions.sections.disclaimers.disclaimer2')}</li>
-                <li>{t('legal.termsConditions.sections.disclaimers.disclaimer3')}</li>
-                <li>{t('legal.termsConditions.sections.disclaimers.disclaimer4')}</li>
-              </ul>
-
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">{t('legal.termsConditions.sections.disclaimers.liabilityTitle')}</h3>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.disclaimers.liabilityContent')}
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4 ml-4">
-                <li>{t('legal.termsConditions.sections.disclaimers.liability1')}</li>
-                <li>{t('legal.termsConditions.sections.disclaimers.liability2')}</li>
-                <li>{t('legal.termsConditions.sections.disclaimers.liability3')}</li>
-                <li>{t('legal.termsConditions.sections.disclaimers.liability4')}</li>
-                <li>{t('legal.termsConditions.sections.disclaimers.liability5')}</li>
-              </ul>
-            </motion.div>
-
-            {/* Third-Party Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.thirdParty.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.thirdParty.content1')}
-              </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.thirdParty.content2')}
-              </p>
-              <ul className="list-disc list-inside text-gray-600 space-y-2 mb-4 ml-4">
-                <li>{t('legal.termsConditions.sections.thirdParty.service1')}</li>
-                <li>{t('legal.termsConditions.sections.thirdParty.service2')}</li>
-                <li>{t('legal.termsConditions.sections.thirdParty.service3')}</li>
-              </ul>
-            </motion.div>
-
-            {/* Termination */}
+            {/* Contact & Updates */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.termination.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.termination.content1')}
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                {t('legal.termsConditions.sections.termination.content2')}
-              </p>
-            </motion.div>
-
-            {/* Governing Law */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.governingLaw.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.governingLaw.content1')}
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                {t('legal.termsConditions.sections.governingLaw.content2')}
-              </p>
-            </motion.div>
-
-            {/* Changes to Terms */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-              className="bg-white rounded-2xl p-8 shadow-lg mb-8"
-            >
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.changes.title')}</h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {t('legal.termsConditions.sections.changes.content1')}
-              </p>
-              <p className="text-gray-600 leading-relaxed">
-                {t('legal.termsConditions.sections.changes.content2')}
-              </p>
-            </motion.div>
-
-            {/* Contact Information */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 1.0 }}
               className="bg-white rounded-2xl p-8 shadow-lg"
             >
               <h2 className="text-2xl font-bold text-gray-900 mb-4">{t('legal.termsConditions.sections.contact.title')}</h2>
@@ -363,53 +199,7 @@ export default function TermsConditions() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-r from-[#b65d37] to-[#b65c37] text-white relative overflow-hidden">
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-responsive-2xl font-bold mb-6"
-          >
-            {t('legal.termsConditions.cta.title')}
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg lg:text-xl mb-8 max-w-2xl mx-auto leading-relaxed opacity-90"
-          >
-            {t('legal.termsConditions.cta.subtitle')}
-          </motion.p>
-          
-          <motion.a
-            href="https://play.google.com/store/apps/details?id=com.fielmedina.sousse"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-white text-[#b65d37] px-8 py-4 rounded-full text-lg font-semibold 
-                     hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl
-                     inline-flex items-center space-x-2"
-          >
-            <span>{t('legal.termsConditions.cta.downloadButton')}</span>
-          </motion.a>
-        </div>
-
-        {/* Background decoration */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-20 h-20 bg-white rounded-full" />
-          <div className="absolute top-1/2 right-20 w-16 h-16 bg-white rounded-full" />
-          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white rounded-full" />
-        </div>
-      </section>
+      <CTA />
       <Footer />
     </div>
   );

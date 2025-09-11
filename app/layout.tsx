@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ApolloProvider } from "@/components/providers/ApolloProvider";
 
 export const metadata: Metadata = {
   title: "FielMedina - Discover Sousse Medina",
@@ -11,5 +12,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return children;
+  return (
+    <ApolloProvider>
+      {children}
+    </ApolloProvider>
+  );
 }
