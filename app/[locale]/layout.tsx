@@ -128,6 +128,7 @@ export default async function LocaleLayout({
         <link rel="dns-prefetch" href="//play.google.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/196.png" />
         <meta name="application-name" content="FielMedina" />
         <meta name="theme-color" content="#b65d37" />
         <meta name="apple-itunes-app" content="app-id=6751167445, app-argument=https://www.fielmedina.com" />
