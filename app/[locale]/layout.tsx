@@ -8,6 +8,7 @@ import "../globals.css";
 import StructuredData from '../../components/seo/StructuredData';
 import Script from 'next/script';
 import { getPathname } from '../../i18n/navigation';
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -111,6 +112,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
+      <GoogleTagManager gtmId="GTM-THDHNXZM" />
       <head>
         {process.env.NODE_ENV === 'production' && (
           <link
