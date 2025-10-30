@@ -7,6 +7,7 @@ import YoutubeIcon from "../icons/YoutubeIcon";
 
 export default function Footer() {
      const t = useTranslations('footer');
+     const aria = useTranslations('common.ariaLabels');
      
      const socialLinks = [
           { icon: InstagramIcon, href: "http://instagram.com/fielmedina.officiel", label: t('socialMedia.instagram') },
@@ -51,7 +52,10 @@ export default function Footer() {
                                         {t('copyright')}
                                    </div>
 
-                                   <nav className="flex flex-wrap justify-center gap-6 lg:gap-8">
+                                   <nav
+                                        className="flex flex-wrap justify-center gap-6 lg:gap-8"
+                                        aria-label={aria('footerNavigation')}
+                                   >
                                         <Link
                                              href="/terms-conditions"
                                              className="text-gray-200 hover:text-[#b65d37] hover:underline 

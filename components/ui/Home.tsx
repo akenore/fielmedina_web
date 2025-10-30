@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
-import Image from "next/image";
-import { useState, useEffect } from "react";
-import { useTranslations, useLocale } from "next-intl";
-import Header from "./Header";
-import BubbleIcon from "../icons/BubbleIcon";
-import WorldIcon from "../icons/WorldIcon";
-import NavigatorIcon from "../icons/NavigatorIcon";
-import CTA from "./CTA";
+import { motion } from 'framer-motion';
+import { Star, Quote, CheckCircle } from 'lucide-react';
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { useTranslations, useLocale } from 'next-intl';
+import Header from './Header';
+import BubbleIcon from '../icons/BubbleIcon';
+import WorldIcon from '../icons/WorldIcon';
+import NavigatorIcon from '../icons/NavigatorIcon';
+import CTA from './CTA';
 
 export default function Home() {
   const t = useTranslations();
@@ -44,63 +44,82 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [sliderImages.length]);
 
+  const rawHighlights = t.raw('home.hero.highlights') as unknown;
+  const highlights = Array.isArray(rawHighlights) ? (rawHighlights as string[]) : [];
+
   const features = [
     {
       icon: NavigatorIcon,
-      title: t("home.features.smartNavigation.title"),
-      description: t("home.features.smartNavigation.description"),
-      gradient: "from-gray-700 to-[#b65d37]",
+      title: t('home.features.smartNavigation.title'),
+      description: t('home.features.smartNavigation.description'),
+      gradient: 'from-gray-700 to-[#b65d37]'
     },
     {
       icon: BubbleIcon,
-      title: t("home.features.localInsights.title"),
-      description: t("home.features.localInsights.description"),
-      gradient: "from-[#b65d37] to-gray-800",
+      title: t('home.features.localInsights.title'),
+      description: t('home.features.localInsights.description'),
+      gradient: 'from-[#b65d37] to-gray-800'
     },
     {
       icon: WorldIcon,
-      title: t("home.features.culturalGuide.title"),
-      description: t("home.features.culturalGuide.description"),
-      gradient: "from-gray-700 to-[#b65d37]",
-    },
+      title: t('home.features.culturalGuide.title'),
+      description: t('home.features.culturalGuide.description'),
+      gradient: 'from-gray-700 to-[#b65d37]'
+    }
   ];
 
   const stats = [
-    { number: t("home.stats.rating"), label: t("home.stats.ratingLabel") },
+    { number: t('home.stats.rating'), label: t('home.stats.ratingLabel') },
     {
-      number: t("home.stats.locations"),
-      label: t("home.stats.locationsLabel"),
+      number: t('home.stats.locations'),
+      label: t('home.stats.locationsLabel')
     },
+    {
+      number: t('home.stats.languages'),
+      label: t('home.stats.languagesLabel')
+    }
   ];
 
   const testimonials = [
     {
-      name: t("home.testimonials.ahmed.name"),
-      role: t("home.testimonials.ahmed.role"),
-      text: t("home.testimonials.ahmed.text"),
-      rating: 5,
+      name: t('home.testimonials.ahmed.name'),
+      role: t('home.testimonials.ahmed.role'),
+      text: t('home.testimonials.ahmed.text'),
+      rating: 5
     },
     {
-      name: t("home.testimonials.sarah.name"),
-      role: t("home.testimonials.sarah.role"),
-      text: t("home.testimonials.sarah.text"),
-      rating: 5,
+      name: t('home.testimonials.sarah.name'),
+      role: t('home.testimonials.sarah.role'),
+      text: t('home.testimonials.sarah.text'),
+      rating: 5
     },
     {
-      name: t("home.testimonials.mohamed.name"),
-      role: t("home.testimonials.mohamed.role"),
-      text: t("home.testimonials.mohamed.text"),
-      rating: 5,
-    },
+      name: t('home.testimonials.mohamed.name'),
+      role: t('home.testimonials.mohamed.role'),
+      text: t('home.testimonials.mohamed.text'),
+      rating: 5
+    }
   ];
+
+  const rawFaqs = t.raw('home.faq.items') as unknown;
+  const faqs = Array.isArray(rawFaqs)
+    ? (rawFaqs as Array<{ question: string; answer: string }>)
+    : [];
+
+  const heroHeadingId = 'home-hero-heading';
+  const featuresHeadingId = 'home-features-heading';
+  const testimonialsHeadingId = 'home-testimonials-heading';
+  const faqHeadingId = 'home-faq-heading';
 
   return (
     <div className="min-h-screen bg-[#FDF7EC]">
       <Header />
-      <section
-        id="home"
-        className="pt-24 lg:pt-32 pb-16 lg:pb-24 relative overflow-hidden"
-      >
+      <main id="main-content" className="flex flex-col">
+        <section
+          id="home"
+          className="pt-24 lg:pt-32 pb-16 lg:pb-24 relative overflow-hidden"
+          aria-labelledby={heroHeadingId}
+        >
         <div className="section-decoration" />
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
@@ -113,25 +132,26 @@ export default function Home() {
                 variants={fadeInUp}
                 className="inline-block bg-[#b65d37]/10 text-[#b65d37] px-4 py-2 rounded-full text-md font-medium mb-6"
               >
-                {t("home.hero.badge")}
+                {t('home.hero.badge')}
               </motion.div>
 
               <motion.h1
+                id={heroHeadingId}
                 variants={fadeInUp}
                 className="text-responsive-2xl font-bold text-gray-900 leading-tight mb-6"
               >
-                {t("home.hero.title.line1")}
+                {t('home.hero.title.line1')}
                 <span className="text-[#b65d37] block">
-                  {t("home.hero.title.line2")}
+                  {t('home.hero.title.line2')}
                 </span>
-                {t("home.hero.title.line3")}
+                {t('home.hero.title.line3')}
               </motion.h1>
 
               <motion.p
                 variants={fadeInUp}
                 className="text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0"
               >
-                {t("home.hero.subtitle")}
+                {t('home.hero.subtitle')}
               </motion.p>
 
               {/* CTA Buttons */}
@@ -150,7 +170,7 @@ export default function Home() {
                   >
                     <Image
                       src={googlePlayImage}
-                      alt="Play Store"
+                      alt={t('common.badges.googlePlayAlt')}
                       width={220}
                       height={100}
                     />
@@ -170,7 +190,7 @@ export default function Home() {
                   >
                     <Image
                       src={iosImage}
-                      alt="Apple Store"
+                      alt={t('common.badges.appStoreAlt')}
                       width={205}
                       height={100}
                     />
@@ -178,10 +198,31 @@ export default function Home() {
                 </motion.div>
               </div>
 
+              <motion.div
+                variants={fadeInUp}
+                className="mt-4 lg:mt-6"
+              >
+                <h2 className="sr-only">{t('home.hero.highlightsTitle')}</h2>
+                <ul className="space-y-3 text-left max-w-xl mx-auto lg:mx-0" role="list">
+                  {highlights.map((highlight, index) => (
+                    <motion.li
+                      key={highlight}
+                      className="flex items-start gap-3 text-gray-700"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <CheckCircle className="mt-1 size-5 text-[#b65d37]" aria-hidden="true" />
+                      <span>{highlight}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+
               {/* Stats */}
               <motion.div
                 variants={fadeInUp}
-                className="grid grid-cols-2 lg:grid-cols-4 gap-6"
+                className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10"
               >
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center lg:text-left">
@@ -282,7 +323,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="features" className="py-16 lg:py-24 bg-white">
+        <section
+          id="features"
+          className="py-16 lg:py-24 bg-white"
+          aria-labelledby={featuresHeadingId}
+        >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -290,11 +335,14 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto"
           >
-            <h2 className="text-responsive-2xl font-bold text-gray-900 mb-6">
-              {t("home.features.title")}
+            <h2
+              id={featuresHeadingId}
+              className="text-responsive-2xl font-bold text-gray-900 mb-6"
+            >
+              {t('home.features.title')}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-              {t("home.features.subtitle")}
+              {t('home.features.subtitle')}
             </p>
           </motion.div>
 
@@ -326,7 +374,11 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="reviews" className="py-16 lg:py-24 bg-[#FDF7EC]">
+        <section
+          id="reviews"
+          className="py-16 lg:py-24 bg-[#FDF7EC]"
+          aria-labelledby={testimonialsHeadingId}
+        >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -335,8 +387,11 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16 lg:mb-20"
           >
-            <h2 className="text-responsive-2xl font-bold text-gray-900 mb-6">
-              {t("home.testimonials.title")}
+            <h2
+              id={testimonialsHeadingId}
+              className="text-responsive-2xl font-bold text-gray-900 mb-6"
+            >
+              {t('home.testimonials.title')}
             </h2>
             <div className="flex items-center justify-center space-x-2 mb-4">
               <div className="flex">
@@ -348,10 +403,10 @@ export default function Home() {
                 ))}
               </div>
               <span className="text-xl font-bold text-gray-900">
-                {t("home.testimonials.rating")}
+                {t('home.testimonials.rating')}
               </span>
             </div>
-            <p className="text-gray-600">{t("home.testimonials.basedOn")}</p>
+            <p className="text-gray-600">{t('home.testimonials.basedOn')}</p>
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -400,7 +455,51 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <CTA />
+        <section
+          id="faq"
+          className="py-16 lg:py-24 bg-white"
+          aria-labelledby={faqHeadingId}
+        >
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="max-w-3xl mx-auto text-center mb-16 lg:mb-20"
+            >
+              <h2 id={faqHeadingId} className="text-responsive-2xl font-bold text-gray-900 mb-6">
+                {t('home.faq.title')}
+              </h2>
+              <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
+                {t('home.faq.subtitle')}
+              </p>
+            </motion.div>
+
+            <div className="grid gap-6 max-w-5xl mx-auto">
+              {faqs.map((item, index) => (
+                <motion.div
+                  key={item.question}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-[#FDF7EC] border border-[#f0d9c9] rounded-2xl p-6 lg:p-8 text-left shadow-sm"
+                >
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {item.question}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {item.answer}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <CTA />
+      </main>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 import path from 'path';
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },

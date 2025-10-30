@@ -2,6 +2,8 @@ import TermsConditions from '@/components/ui/TermsConditions';
 import Header from '@/components/ui/Header';
 import {getTranslations} from 'next-intl/server';
 import {Metadata} from 'next';
+import { getPathname } from '../../../i18n/navigation';
+import { routing } from '../../../i18n/routing';
 
 type Props = {
   params: Promise<{locale: string}>;
@@ -10,10 +12,15 @@ type Props = {
 export async function generateMetadata({params}: Props): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: 'metadata.termsConditions'});
-  const canonicalPath = locale === 'en' ? '/terms-conditions' : `/${locale}/terms-conditions`;
-  const alternateLanguages = locale === 'en' 
-    ? { 'fr': '/fr/terms-conditions' } 
-    : { 'en': '/terms-conditions' };
+  const canonicalPath = getPathname({ locale, href: '/terms-conditions' });
+  const alternateLanguagesEntries = routing.locales.map((alternateLocale) => [
+    alternateLocale,
+    getPathname({ locale: alternateLocale, href: '/terms-conditions' })
+  ]) as Array<[string, string]>;
+  const alternateLanguages = Object.fromEntries(alternateLanguagesEntries);
+  const xDefaultHref =
+    alternateLanguages[routing.defaultLocale] ??
+    getPathname({ locale: routing.defaultLocale, href: '/terms-conditions' });
 
   return {
     title: t('title'),
@@ -22,7 +29,10 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     metadataBase: new URL('https://www.fielmedina.com'),
     alternates: {
       canonical: canonicalPath,
-      languages: alternateLanguages,
+      languages: {
+        ...alternateLanguages,
+        'x-default': xDefaultHref
+      },
     },
   };
 }

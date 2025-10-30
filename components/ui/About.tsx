@@ -14,6 +14,11 @@ export default function About() {
     locale === "fr" ? "/googleplay-fr.svg" : "/googleplay-en.svg";
   const iosImage = locale === "fr" ? "/ios-fr.svg" : "/ios-en.svg";
   const t = useTranslations();
+  const heroHeadingId = "about-hero-heading";
+  const missionHeadingId = "about-mission-heading";
+  const valuesHeadingId = "about-values-heading";
+  const timelineHeadingId = "about-timeline-heading";
+  const ctaHeadingId = "about-cta-heading";
 
   const fadeInUp = {
     initial: { opacity: 0, y: 40 },
@@ -102,8 +107,12 @@ export default function About() {
 
   return (
     <div className="min-h-screen bg-white">
+      <main id="main-content" className="flex flex-col bg-white">
       {/* Hero Section */}
-      <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-linear-to-br from-[#FDF7EC] to-orange-50">
+      <section
+        className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-linear-to-br from-[#FDF7EC] to-orange-50"
+        aria-labelledby={heroHeadingId}
+      >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -111,7 +120,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 id={heroHeadingId} className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
               {t("about.hero.title")}
             </h1>
             <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8">
@@ -132,7 +141,10 @@ export default function About() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section
+        className="py-16 lg:py-24 bg-white"
+        aria-labelledby={missionHeadingId}
+      >
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
             <motion.div
@@ -140,7 +152,7 @@ export default function About() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              <h2 id={missionHeadingId} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                 {t("about.mission.title")}
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
@@ -186,7 +198,10 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 lg:py-24 bg-gray-50">
+      <section
+        className="py-16 lg:py-24 bg-gray-50"
+        aria-labelledby={valuesHeadingId}
+      >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -195,7 +210,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            <h2 id={valuesHeadingId} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               {t("about.values.title")}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
@@ -289,7 +304,10 @@ export default function About() {
       </section> */}
 
       {/* Timeline Section */}
-      <section className="py-16 lg:py-24 bg-[#FDF7EC]">
+      <section
+        className="py-16 lg:py-24 bg-[#FDF7EC]"
+        aria-labelledby={timelineHeadingId}
+      >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -298,7 +316,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16 lg:mb-20 max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            <h2 id={timelineHeadingId} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               {t("about.timeline.title")}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
@@ -351,7 +369,10 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-linear-to-r from-[#b65d37] to-[#b65c37] text-white">
+      <section
+        className="py-16 lg:py-24 bg-linear-to-r from-[#b65d37] to-[#b65c37] text-white"
+        aria-labelledby={ctaHeadingId}
+      >
         <div className="container mx-auto px-4 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}
@@ -359,6 +380,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="text-3xl lg:text-4xl font-bold mb-6"
+            id={ctaHeadingId}
           >
             {t("about.cta.title")}
           </motion.h2>
@@ -417,6 +439,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      </main>
       <Footer />
     </div>
   );

@@ -58,7 +58,7 @@ export default function CTA() {
             >
               <Image
                 src={googlePlayImage}
-                alt="Play Store"
+                alt={t("common.badges.googlePlayAlt")}
                 width={220}
                 height={100}
               />
@@ -78,7 +78,7 @@ export default function CTA() {
             >
               <Image
                 src={iosImage}
-                alt="Apple Store"
+                alt={t("common.badges.appStoreAlt")}
                 width={205}
                 height={100}
               />

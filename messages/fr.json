@@ -1,7 +1,7 @@
 {
   "navigation": {
     "home": "Accueil",
-    "features": "Fonctionnalités", 
+    "features": "Fonctionnalités",
     "reviews": "Avis",
     "about": "À propos",
     "contact": "Contact",
@@ -10,29 +10,29 @@
   },
   "seo": {
     "home": {
-      "title": "FielMedina - Découvrir la Médina de Sousse",
-      "description": "Votre guide alimenté par l'IA pour explorer le site du patrimoine mondial de l'UNESCO avec des histoires interactives, la navigation GPS et des aperçus culturels.",
-      "keywords": "FielMedina, Sousse, Tunisie, médina, UNESCO, patrimoine, navigation, guide culturel, application mobile"
+      "title": "FielMedina – Application de voyage en Tunisie pour la médina de Sousse",
+      "description": "Préparez des visites immersives de la médina de Sousse classée à l’UNESCO grâce à FielMedina, l’application de circuits à pied avec GPS hors ligne, récits culturels et itinéraires personnalisés.",
+      "keywords": "FielMedina, application voyage Tunisie, guide médina Sousse, compagnon de voyage numérique, tourisme culturel Tunisie, circuits à pied Sousse, télécharger FielMedina"
     },
     "about": {
-      "title": "À propos de nous - FielMedina Sousse",
-      "description": "Découvrez la mission de FielMedina de préserver et partager le patrimoine culturel de la médina historique de Sousse grâce à une technologie innovante.",
-      "keywords": "FielMedina, Sousse, Tunisie, médina, patrimoine culturel, à propos, mission, équipe"
+      "title": "À propos de FielMedina – Le guide intelligent des médinas tunisiennes",
+      "description": "Découvrez comment FielMedina associe experts locaux, conteurs et technologie pour préserver les médinas tunisiennes et encourager un tourisme culturel durable.",
+      "keywords": "FielMedina équipe, innovation patrimoine Tunisie, storytelling médina, technologie tourisme culturel"
     },
     "contact": {
-      "title": "Contactez-nous - FielMedina Sousse",
-      "description": "Entrez en contact avec l'équipe FielMedina. Nous aimerions avoir de vos nouvelles concernant notre application guide culturelle de la médina de Sousse.",
-      "keywords": "FielMedina, contact, support, Sousse, Tunisie, médina, guide culturel, contactez-nous"
+      "title": "Contactez FielMedina – Partenariats avec le guide numérique des médinas",
+      "description": "Échangez avec l’équipe FielMedina pour des partenariats touristiques, projets médias ou assistance aux voyageurs en Tunisie.",
+      "keywords": "contacter FielMedina, support application voyage Tunisie, partenariats tourisme Tunisie, guide culturel numérique"
     },
     "termsConditions": {
-      "title": "Conditions Générales - FielMedina Sousse",
-      "description": "Lisez les conditions générales d'utilisation de FielMedina, votre guide pour explorer la médina historique de Sousse.",
-      "keywords": "FielMedina, conditions générales, légal, Sousse, Tunisie, médina, conditions d'application"
+      "title": "Conditions d’utilisation FielMedina – Guide de voyage numérique",
+      "description": "Comprenez les règles d’usage de FielMedina, le guide des médinas tunisiennes, y compris les bonnes pratiques de tourisme responsable.",
+      "keywords": "conditions FielMedina, politique application voyage Tunisie, guide patrimoine conditions, tourisme responsable"
     },
     "privacyPolicy": {
-      "title": "Politique de Confidentialité - FielMedina Sousse", 
-      "description": "Découvrez comment FielMedina protège votre vie privée et gère vos données pendant que vous explorez la médina historique de Sousse.",
-      "keywords": "FielMedina, politique de confidentialité, protection des données, Sousse, Tunisie, médina, confidentialité app"
+      "title": "Politique de confidentialité FielMedina – Protection des données voyage",
+      "description": "Découvrez comment FielMedina protège la vie privée des voyageurs, sécurise les données de localisation et respecte les réglementations tunisiennes et internationales.",
+      "keywords": "confidentialité FielMedina, protection données voyage Tunisie, application médina confidentialité, tourisme culturel données"
     }
   },
   "common": {
@@ -47,7 +47,11 @@
     "socialMediaLinks": "Suivez-nous sur les réseaux sociaux",
     "ariaLabels": {
       "switchLanguage": "Changer de langue",
-      "toggleMenu": "Basculer le menu"
+      "toggleMenu": "Basculer le menu",
+      "mainNavigation": "Navigation principale",
+      "footerNavigation": "Navigation du pied de page",
+      "skipToContent": "Aller au contenu principal",
+      "toggleNavigation": "Basculer la navigation"
     },
     "close": "Fermer",
     "open": "Ouvrir",
@@ -86,40 +90,52 @@
       "loading": "Chargement...",
       "errorLoadingContent": "Erreur lors du chargement du contenu",
       "contentNotAvailable": "Contenu non disponible"
+    },
+    "badges": {
+      "googlePlayAlt": "Télécharger FielMedina sur Google Play",
+      "appStoreAlt": "Télécharger FielMedina sur l’App Store"
     }
   },
   "home": {
     "hero": {
-      "badge": "🧭 Découvrez les Médinas de Tunisie avec Votre Guide Digital",
+      "badge": "🧭 L’application intelligente des médinas tunisiennes",
       "title": {
-        "line1": "Découvrez l’Âme des",
-        "line2": "Médinas de Tunisie",
-        "line3": "avec FielMedina"
+        "line1": "Découvrez les histoires des",
+        "line2": "médinas tunisiennes",
+        "line3": "avec l’application FielMedina"
       },
-      "subtitle": "Découvrez des trésors cachés, naviguez dans les rues anciennes et immergez-vous dans la riche culture de la médina historique de la Tunisie avec notre guide mobile intelligent.",
+      "subtitle": "FielMedina combine des circuits pédestres GPS hors ligne, des récits audio et des itinéraires locaux pour explorer la médina de Sousse classée UNESCO comme un habitant.",
       "downloadButton": "Téléchargement Gratuit",
-      "watchButton": "Voir la Démo"
+      "watchButton": "Voir la Démo",
+      "highlightsTitle": "Pourquoi les voyageurs choisissent FielMedina",
+      "highlights": [
+        "Circuits GPS hors ligne conçus pour la médina de Sousse",
+        "Récits audio et éclairages culturels en français et en anglais",
+        "Itinéraires intelligents, favoris sauvegardés et alertes pendant le voyage"
+      ]
     },
     "stats": {
       "rating": "4,8",
-      "ratingLabel": "Note de l'App",
+      "ratingLabel": "Note moyenne sur les boutiques d’applications",
       "locations": "30+",
-      "locationsLabel": "Emplacements"
+      "locationsLabel": "Points d’intérêt sélectionnés",
+      "languages": "2",
+      "languagesLabel": "Langues avec contenus culturels"
     },
     "features": {
-      "title": "Pourquoi Choisir Fielmedina ?",
-      "subtitle": "Découvrez la médina comme jamais auparavant avec nos fonctionnalités de pointe conçues pour enrichir votre voyage à travers le cœur historique de Sousse.",
+      "title": "Tout pour une visite inoubliable de la médina",
+      "subtitle": "Notre technologie touristique mêle récits authentiques et navigation intuitive afin que chaque voyageur découvre les villes patrimoniales de Tunisie en toute confiance.",
       "smartNavigation": {
-        "title": "Navigation Intelligente",
-        "description": "Technologie GPS avancée qui vous aide à naviguer dans la médina historique avec précision et facilité."
+        "title": "Navigation GPS hors ligne",
+        "description": "Suivez des circuits à pied conçus avec des historiens locaux et optimisés pour la médina de Sousse."
       },
       "localInsights": {
-        "title": "Conseils Locaux",
-        "description": "Obtenez des recommandations authentiques des habitants et découvrez des joyaux cachés que les touristes manquent habituellement."
+        "title": "Anecdotes d’initiés",
+        "description": "Écoutez les témoignages des experts locaux, trouvez des artisans et profitez de recommandations exclusives pour la gastronomie, l’artisanat et les événements."
       },
       "culturalGuide": {
-        "title": "Guide Culturel",
-        "description": "Apprenez sur la riche histoire et culture de Sousse avec nos fonctionnalités de narration interactive."
+        "title": "Guide culturel immersif",
+        "description": "Profitez de récits audio, de contenus prêts pour la réalité augmentée et de parcours thématiques qui donnent vie aux médinas de Tunisie."
       }
     },
     "reviews": {
@@ -134,7 +150,7 @@
         },
         "sarah": {
           "name": "Sarah Johnson",
-          "role": "Guide Touristique", 
+          "role": "Guide Touristique",
           "text": "En tant que guide professionnelle, je recommande cette application à tous mes clients. Elle est incroyablement précise et facile à utiliser."
         },
         "mohamed": {
@@ -145,28 +161,28 @@
       }
     },
     "testimonials": {
-      "title": "Ce que Disent Nos Utilisateurs",
+      "title": "Appréciée par les voyageurs en Tunisie",
       "rating": "4,8/5,0",
-      "basedOn": "Basé sur plus de 20 avis",
+      "basedOn": "Plébiscitée par les voyageurs, guides locaux et partenaires culturels en Tunisie.",
       "ahmed": {
         "name": "Ahmed Ben Salem",
         "role": "Blogueur de Voyage",
-        "text": "Fielmedina a transformé ma visite à Sousse. La navigation était parfaite et j'ai découvert des endroits que je n'aurais jamais trouvés autrement."
+        "text": "FielMedina a transformé mes visites de la médina en récits immersifs. Le GPS hors ligne m’a gardé sur la bonne voie et les histoires ont séduit mon audience."
       },
       "sarah": {
         "name": "Sarah Johnson",
-        "role": "Guide Touristique", 
-        "text": "En tant que guide professionnelle, je recommande cette application à tous mes clients. Elle est incroyablement précise et facile à utiliser."
+        "role": "Guide Touristique",
+        "text": "Je recommande FielMedina à chaque voyageur : l’application combine un guidage professionnel et un contexte culturel riche dans un seul outil."
       },
       "mohamed": {
         "name": "Mohamed Triki",
         "role": "Résident Local",
-        "text": "Même en tant que local, j'ai appris de nouvelles choses sur ma propre ville. Les aperçus culturels sont fascinants."
+        "text": "Même en tant qu’habitant de Sousse, j’apprends encore de nouvelles anecdotes patrimoniales. Idéal pour faire découvrir la médina à mes proches."
       }
     },
     "cta": {
-      "title": "Prêt à Explorer ?",
-      "subtitle": "Téléchargez Fielmedina maintenant et commencez votre voyage inoubliable à travers les médinas historique de Tunisie.",
+      "title": "Emportez les médinas tunisiennes dans votre poche",
+      "subtitle": "Téléchargez FielMedina pour des récits immersifs, une navigation hors ligne et des itinéraires personnalisés dans les villes patrimoniales de Tunisie.",
       "downloadButton": "Télécharger pour Android"
     },
     "app": {
@@ -181,48 +197,71 @@
     },
     "appBranding": {
       "title": "FielMedina",
-      "subtitle": "Guide des médinas de Tunisie"
+      "subtitle": "Guide des médinas de Tunisie",
+      "alt": "Aperçu de l’interface mobile FielMedina"
+    },
+    "faq": {
+      "title": "FAQ de l’application FielMedina",
+      "subtitle": "Toutes les réponses pour préparer votre voyage dans la médina de Sousse.",
+      "items": [
+        {
+          "question": "L’application FielMedina est-elle gratuite ?",
+          "answer": "Oui. L’application est téléchargeable gratuitement sur Google Play et l’App Store. Des expériences premium optionnelles arriveront plus tard en 2025."
+        },
+        {
+          "question": "Puis-je utiliser FielMedina hors connexion dans la médina ?",
+          "answer": "Bien sûr. Téléchargez votre parcours avant la visite et la navigation GPS, les récits audio et les repères restent accessibles hors ligne."
+        },
+        {
+          "question": "L’application propose-t-elle des histoires audio ?",
+          "answer": "Chaque point d’intérêt contient des récits multilingues, des photos et des conseils pratiques élaborés avec des experts locaux."
+        },
+        {
+          "question": "Quelles seront les prochaines destinations ?",
+          "answer": "Nous étendons FielMedina à d’autres médinas tunisiennes et préparons des lancements au Maroc, en Algérie, en Arabie saoudite, aux Émirats, en Turquie et en Égypte dans les trois prochaines années."
+        }
+      ]
     }
   },
   "about": {
     "hero": {
-      "title": "Notre Histoire",
-      "subtitle": "Née d'une passion pour la préservation du patrimoine culturel tunisien, FielMedina donne vie à la médina historique de Sousse grâce à une technologie innovante.",
-      "location": "Sousse, Tunisie",
+      "title": "À propos de FielMedina",
+      "subtitle": "Conçue par des conteurs, technologues et historiens tunisiens, FielMedina protège le patrimoine tout en guidant les voyageurs modernes dans la médina de Sousse.",
+      "location": "Sousse, Tunisie (et au-delà)",
       "founded": "Fondée en 2023"
     },
     "mission": {
-      "title": "Notre Mission",
-      "paragraph1": "Nous croyons que le patrimoine culturel devrait être accessible à tous. Notre mission est d'utiliser la technologie comme un pont entre le passé et le présent, aidant les visiteurs et les habitants à découvrir les histoires cachées derrière chaque porte, chaque pierre et chaque coin de la magnifique médina de Sousse.",
-      "paragraph2": "À travers la narration immersive, les cartes interactives et les aperçus locaux authentiques, nous ne créons pas seulement une application – nous préservons un morceau vivant d'histoire pour que les générations futures l'explorent et le chérissent.",
-      "description1": "Nous croyons que le patrimoine culturel devrait être accessible à tous. Notre mission est d'utiliser la technologie comme un pont entre le passé et le présent, aidant les visiteurs et les habitants à découvrir les histoires cachées derrière chaque porte, chaque pierre et chaque coin de la magnifique médina de Sousse.",
-      "description2": "À travers la narration immersive, les cartes interactives et les aperçus locaux authentiques, nous ne créons pas seulement une application – nous préservons un morceau vivant d'histoire pour que les générations futures l'explorent et le chérissent.",
-      "whyTitle": "Pourquoi FielMedina ?",
+      "title": "Notre vision du tourisme culturel",
+      "paragraph1": "FielMedina aide les voyageurs à explorer de façon responsable tout en soutenant les artisans, guides et gardiens des médinas tunisiennes.",
+      "paragraph2": "Nous cartographions les histoires orales, créons des parcours immersifs et les diffusons via une technologie accessible pour offrir une connexion authentique.",
+      "description1": "FielMedina aide les voyageurs à explorer de façon responsable tout en soutenant les artisans, guides et gardiens des médinas tunisiennes.",
+      "description2": "Nous cartographions les histoires orales, créons des parcours immersifs et les diffusons via une technologie accessible pour offrir une connexion authentique.",
+      "whyTitle": "Pourquoi nous avons créé FielMedina",
       "features": {
         "authentic": "Histoires authentiques d'historiens locaux",
-        "gps": "Exploration guidée par GPS de joyaux cachés", 
+        "gps": "Exploration guidée par GPS de joyaux cachés",
         "offline": "Accès hors ligne pour une découverte ininterrompue",
         "preservation": "Préservation culturelle grâce à la technologie"
       }
     },
     "values": {
-      "title": "Nos Valeurs",
-      "subtitle": "Les principes qui guident tout ce que nous faisons chez FielMedina",
+      "title": "Nos principes directeurs",
+      "subtitle": "Ces valeurs garantissent une croissance responsable tout en célébrant le patrimoine vivant de la Tunisie.",
       "heritage": {
-        "title": "Passion pour le Patrimoine",
-        "description": "Nous sommes profondément passionnés par la préservation et le partage du riche patrimoine culturel de la Tunisie avec le monde."
+        "title": "Protéger le patrimoine avant tout",
+        "description": "Nous collaborons avec les conservateurs pour que chaque parcours numérique respecte l’âme de la médina."
       },
       "innovation": {
-        "title": "Innovation et Tradition", 
-        "description": "Combler le fossé entre la sagesse ancienne et la technologie moderne pour créer des expériences significatives."
+        "title": "Innover avec sens",
+        "description": "Nous concevons une technologie qui enrichit l’exploration sur le terrain au lieu de la détourner."
       },
       "community": {
-        "title": "La Communauté d'Abord",
-        "description": "Construire des connexions entre les voyageurs et les communautés locales pour un échange culturel authentique."
+        "title": "Partenariats communautaires",
+        "description": "Des modèles de co-création et de partage de revenus maintiennent les voix locales au cœur de FielMedina."
       },
       "excellence": {
-        "title": "Excellence de l'Expérience",
-        "description": "Engagés à offrir des expériences utilisateur exceptionnelles qui dépassent les attentes à chaque fois."
+        "title": "Excellence de l’expérience",
+        "description": "Chaque interface, parcours et histoire est validé avec des voyageurs et experts culturels."
       }
     },
     "team": {
@@ -234,7 +273,7 @@
         "description": "Passionné par la technologie et la préservation culturelle avec plus de 10 ans dans le développement d'applications mobiles."
       },
       "sarah": {
-        "name": "Sarah Ben Ali", 
+        "name": "Sarah Ben Ali",
         "role": "Consultante Culturelle",
         "description": "Historienne locale et conteuse spécialisée dans le riche patrimoine et les traditions de Sousse."
       },
@@ -250,7 +289,7 @@
           "description": "Passionné par la technologie et la préservation culturelle avec plus de 10 ans dans le développement d'applications mobiles."
         },
         "cultural": {
-          "name": "Sarah Ben Ali", 
+          "name": "Sarah Ben Ali",
           "role": "Consultante Culturelle",
           "description": "Historienne locale et conteuse spécialisée dans le riche patrimoine et les traditions de Sousse."
         },
@@ -262,27 +301,27 @@
       }
     },
     "timeline": {
-      "title": "Notre Parcours",
-      "subtitle": "De la vision à la réalité - les étapes qui ont façonné FielMedina",
+      "title": "Les étapes de notre aventure",
+      "subtitle": "D’une idée locale à une plateforme régionale pour le monde arabe et l’Afrique du Nord.",
       "vision": {
-        "year": "2023",
-        "title": "La Vision",
-        "description": "Conception de l'idée de préserver et partager numériquement le patrimoine de la médina de Sousse"
+        "year": "2022",
+        "title": "Vision née à Sousse",
+        "description": "Nous avons commencé par enregistrer des entretiens audio avec artisans, historiens et guides de la médina."
       },
       "development": {
-        "year": "2024",
-        "title": "Le Développement Commence",
-        "description": "Début du travail avec des historiens locaux et des membres de la communauté pour cartographier la médina"
+        "year": "2023",
+        "title": "Design de la plateforme et tests bêta",
+        "description": "Notre équipe a prototypé la navigation hors ligne, les récits en RA et le support multilingue avec des voyageurs pilotes."
       },
       "beta": {
         "year": "2024",
-        "title": "Lancement Bêta",
-        "description": "Publication de la première version aux testeurs locaux et passionnés de culture"
+        "title": "Lancement dans la médina de Sousse",
+        "description": "FielMedina a été déployée sur Android et iOS avec des parcours, des histoires patrimoniales et des artisans mis à l’honneur."
       },
       "launch": {
         "year": "2025",
-        "title": "Lancement Mondial",
-        "description": "Lancement officiel de FielMedina Sousse sur Google Play Store"
+        "title": "Feuille de route régionale",
+        "description": "Nous cartographions les médinas tunisiennes et préparons des lancements au Maroc, en Algérie, en Arabie saoudite, aux Émirats, en Turquie et en Égypte."
       },
       "milestones": {
         "2023": {
@@ -290,7 +329,7 @@
           "description": "Conception de l'idée de préserver et partager numériquement le patrimoine de la médina de Sousse"
         },
         "2024a": {
-          "title": "Le Développement Commence", 
+          "title": "Le Développement Commence",
           "description": "Début du travail avec des historiens locaux et des membres de la communauté pour cartographier la médina"
         },
         "2024b": {
@@ -305,14 +344,14 @@
     },
     "whyFielmedina": {
       "title": "Pourquoi Choisir FielMedina ?",
-      "feature1": "Histoires authentiques d'historiens locaux et de membres de la communauté",
-      "feature2": "Exploration guidée par GPS de joyaux cachés et de lieux secrets",
-      "feature3": "Accès hors ligne pour une découverte ininterrompue dans toute la médina",
-      "feature4": "Préservation culturelle grâce à la narration numérique innovante"
+      "feature1": "Récits authentiques enregistrés avec des historiens locaux",
+      "feature2": "Itinéraires GPS alignés sur la préservation patrimoniale",
+      "feature3": "Conception inclusive pour les langues et l’accessibilité",
+      "feature4": "Feuille de route vers les médinas d’Afrique du Nord et du Moyen-Orient"
     },
     "cta": {
-      "title": "Rejoignez Notre Mission",
-      "subtitle": "Aidez-nous à préserver et partager le patrimoine culturel de Sousse avec le monde",
+      "title": "Rejoignez-nous pour valoriser le tourisme patrimonial",
+      "subtitle": "Participez au mouvement qui connecte les médinas tunisiennes aux voyageurs du monde entier.",
       "downloadButton": "Télécharger pour Android",
       "backHome": "Retour à l'Accueil",
       "getInTouch": "Nous Contacter"
@@ -320,9 +359,9 @@
   },
   "contact": {
     "hero": {
-      "title": "Contactez-Nous",
-      "subtitle": "Vous avez des questions sur FielMedina ? Vous voulez collaborer ou partager vos commentaires ? Nous aimerions avoir de vos nouvelles !",
-      "responseTime": "Nous répondons généralement dans les 24 heures"
+      "title": "Contactez l’équipe FielMedina",
+      "subtitle": "Collaborez avec le guide numérique des médinas tunisiennes pour des partenariats touristiques, des reportages ou l’assistance aux voyageurs.",
+      "responseTime": "Délai de réponse moyen : 24 h (lun.–ven. GMT+1)"
     },
     "contactInfo": {
       "email": {
@@ -342,10 +381,10 @@
       }
     },
     "form": {
-      "title": "Envoyez-nous un Message",
+      "title": "Envoyez-nous un message",
       "fields": {
-        "name": "Nom Complet",
-        "email": "Adresse Email",
+        "name": "Nom complet",
+        "email": "Adresse e-mail",
         "subject": "Sujet",
         "message": "Message"
       },
@@ -358,8 +397,8 @@
       "submit": "Envoyer le Message",
       "submitting": "Envoi en cours...",
       "success": {
-        "title": "Message Envoyé avec Succès !",
-        "message": "Merci pour votre message. Nous vous répondrons dans les 24 heures."
+        "title": "Message bien reçu !",
+        "message": "Merci ! Notre équipe vous répondra sous un jour ouvré."
       },
       "error": {
         "title": "Échec de l'Envoi du Message",
@@ -367,7 +406,7 @@
       },
       "nameLabel": "Nom Complet",
       "namePlaceholder": "Votre nom complet",
-      "emailLabel": "Adresse Email", 
+      "emailLabel": "Adresse Email",
       "emailPlaceholder": "votre@email.com",
       "subjectLabel": "Sujet",
       "subjectPlaceholder": "De quoi s'agit-il ?",
@@ -378,7 +417,8 @@
       "successTitle": "Message Envoyé avec Succès !",
       "successMessage": "Merci pour votre message. Nous vous répondrons dans les 24 heures.",
       "errorTitle": "Échec de l'Envoi du Message",
-      "errorMessage": "Il y a eu une erreur lors de l'envoi de votre message. Veuillez réessayer ou nous contacter directement."
+      "errorMessage": "Il y a eu une erreur lors de l'envoi de votre message. Veuillez réessayer ou nous contacter directement.",
+      "description": "Décrivez votre projet de partenariat, demande média ou question voyageur et nous vous répondrons rapidement."
     },
     "info": {
       "locationTitle": "Notre Emplacement",
@@ -386,7 +426,7 @@
       "hoursTitle": "Heures d'Ouverture",
       "monday": "Lundi - Vendredi",
       "mondayHours": "9h00 - 18h00",
-      "saturday": "Samedi", 
+      "saturday": "Samedi",
       "saturdayHours": "10h00 - 16h00",
       "sunday": "Dimanche",
       "sundayHours": "Fermé",
@@ -397,7 +437,7 @@
     },
     "socialMedia": {
       "instagram": "Instagram",
-      "facebook": "Facebook", 
+      "facebook": "Facebook",
       "tiktok": "TikTok",
       "youtube": "YouTube"
     },
@@ -411,7 +451,7 @@
       "weekdays": "Lundi - Vendredi",
       "weekdaysTime": "9h00 - 18h00",
       "saturday": "Samedi",
-      "saturdayTime": "10h00 - 16h00", 
+      "saturdayTime": "10h00 - 16h00",
       "sunday": "Dimanche",
       "sundayTime": "Fermé"
     },
@@ -421,11 +461,11 @@
       "download": "Téléchargez notre application"
     },
     "socialSection": {
-      "title": "Suivez Notre Parcours",
-      "subtitle": "Restez connecté avec nous sur les réseaux sociaux pour les dernières mises à jour, le contenu en coulisses et les aperçus culturels de Sousse."
+      "title": "Rejoignez notre communauté",
+      "subtitle": "Suivez FielMedina pour les nouvelles histoires, destinations et conseils de voyage culturel."
     },
     "social": {
-      "title": "Suivez Notre Parcours", 
+      "title": "Suivez Notre Parcours",
       "subtitle": "Restez connecté avec nous sur les réseaux sociaux pour les dernières mises à jour, le contenu en coulisses et les aperçus culturels de Sousse.",
       "instagram": "Instagram",
       "facebook": "Facebook",
@@ -433,38 +473,38 @@
       "youtube": "YouTube"
     },
     "faq": {
-      "title": "Questions Fréquemment Posées",
-      "subtitle": "Réponses rapides aux questions courantes sur FielMedina",
+      "title": "FAQ partenariats et support",
+      "subtitle": "Toutes les informations pour collaborer avec la plateforme FielMedina.",
       "questions": {
         "free": {
-          "question": "FielMedina est-il gratuit à utiliser ?",
-          "answer": "Oui ! FielMedina est complètement gratuit à télécharger et utiliser. Nous croyons que le patrimoine culturel devrait être accessible à tous."
+          "question": "Collaborer avec FielMedina est-il payant ?",
+          "answer": "Les fiches partenaires sont gratuites pendant la phase de croissance. Les campagnes co-brandées sont construites sur mesure."
         },
         "offline": {
-          "question": "L'application fonctionne-t-elle hors ligne ?",
-          "answer": "Absolument ! Une fois que vous téléchargez le contenu, vous pouvez explorer la médina et accéder aux histoires même sans connexion internet."
+          "question": "Accompagnez-vous les médias internationaux ?",
+          "answer": "Oui. Nos fondateurs et experts culturels répondent aux interviews sur le patrimoine tunisien, le tourisme intelligent et le futur des guides numériques."
         },
         "gps": {
-          "question": "Quelle est la précision de la navigation GPS ?",
-          "answer": "Notre système GPS est très précis dans la médina. Nous avons soigneusement cartographié chaque emplacement pour assurer une navigation précise dans les rues historiques."
+          "question": "Comment présenter mon commerce dans l’application ?",
+          "answer": "Envoyez votre profil avec localisation, histoire et visuels via le formulaire ci-dessus : notre équipe de curation vous contactera."
         },
         "contribute": {
-          "question": "Puis-je contribuer avec mes propres histoires ou photos ?",
-          "answer": "Nous adorons les contributions de la communauté ! Veuillez nous contacter via ce formulaire pour discuter de la façon dont vous pouvez partager vos connaissances et expériences."
+          "question": "Quand FielMedina sera-t-elle lancée dans d’autres pays ?",
+          "answer": "Nous déployons progressivement FielMedina dans toute la Tunisie et ouvrons des bêta-tests au Maroc, en Algérie, en Arabie saoudite, aux Émirats, en Turquie et en Égypte."
         }
       },
       "q1": "FielMedina est-il gratuit à utiliser ?",
       "a1": "Oui ! FielMedina est complètement gratuit à télécharger et utiliser. Nous croyons que le patrimoine culturel devrait être accessible à tous.",
       "q2": "L'application fonctionne-t-elle hors ligne ?",
       "a2": "Absolument ! Une fois que vous téléchargez le contenu, vous pouvez explorer la médina et accéder aux histoires même sans connexion internet.",
-      "q3": "Quelle est la précision de la navigation GPS ?", 
+      "q3": "Quelle est la précision de la navigation GPS ?",
       "a3": "Notre système GPS est très précis dans la médina. Nous avons soigneusement cartographié chaque emplacement pour assurer une navigation précise dans les rues historiques.",
       "q4": "Puis-je contribuer avec mes propres histoires ou photos ?",
       "a4": "Nous adorons les contributions de la communauté ! Veuillez nous contacter via ce formulaire pour discuter de la façon dont vous pouvez partager vos connaissances et expériences."
     },
     "cta": {
-      "title": "Prêt à Explorer ?",
-      "subtitle": "Téléchargez FielMedina maintenant et commencez à découvrir les histoires cachées de Sousse",
+      "title": "Créons ensemble des expériences mémorables dans les médinas",
+      "subtitle": "Collaborez avec FielMedina pour inspirer les voyageurs, promouvoir les artisans et développer un tourisme intelligent dans la région.",
       "downloadButton": "Télécharger Maintenant",
       "backHome": "Retour à l'Accueil",
       "homeButton": "Retour à l'Accueil"
@@ -509,7 +549,7 @@
           "title": "2. Description de l'Application et Service",
           "content1": "FielMedina est une application mobile gratuite de navigation et guide culturel conçue pour aider les utilisateurs à explorer la médina historique de Sousse, en Tunisie. L'Application fournit :",
           "feature1": "Services de navigation GPS et cartographie dans la médina",
-          "feature2": "Informations culturelles et historiques sur les emplacements", 
+          "feature2": "Informations culturelles et historiques sur les emplacements",
           "feature3": "Recommandations locales et points d'intérêt",
           "feature4": "Fonctionnalité hors ligne pour le contenu téléchargé",
           "content2": "Le service est fourni \"EN L'ÉTAT\" et peut être mis à jour, modifié ou interrompu à notre discrétion."
@@ -629,7 +669,7 @@
           "userProvidedContent": "L'Application peut collecter des informations que vous fournissez lorsque vous :",
           "userProvided1": "Téléchargez et utilisez l'Application",
           "userProvided2": "Nous contactez via l'application ou nos canaux de support",
-          "userProvided3": "Fournissez des commentaires ou des avis", 
+          "userProvided3": "Fournissez des commentaires ou des avis",
           "userProvided4": "Participez à des sondages ou activités promotionnelles",
           "userProvidedList": [
             "Téléchargez et utilisez l'Application",
@@ -641,7 +681,7 @@
           "automaticContent": "L'Application peut automatiquement collecter certaines informations, notamment :",
           "automatic1": "Type d'appareil et système d'exploitation mobile",
           "automatic2": "Identifiant unique de l'appareil",
-          "automatic3": "Adresse IP", 
+          "automatic3": "Adresse IP",
           "automatic4": "Type de navigateur mobile",
           "automatic5": "Modèles d'utilisation de l'application et données de navigation",
           "automatic6": "Journaux de plantage et données de performance",
@@ -677,7 +717,7 @@
           "content1": "Nous mettons en place des mesures de sécurité appropriées pour protéger vos informations :",
           "measure1": "Chiffrement des données en transit et au repos",
           "measure2": "Audits de sécurité et mises à jour réguliers",
-          "measure3": "Accès limité aux données personnelles selon le principe du besoin de savoir", 
+          "measure3": "Accès limité aux données personnelles selon le principe du besoin de savoir",
           "measure4": "Centres de données sécurisés avec protection physique et numérique",
           "dataRetentionTitle": "Rétention des Données",
           "retention1": "Les données utilisateur ne sont conservées que le temps nécessaire pour le fonctionnement de l'application",
@@ -733,7 +773,7 @@
     },
     "socialMedia": {
       "instagram": "Instagram",
-      "facebook": "Facebook", 
+      "facebook": "Facebook",
       "tiktok": "TikTok",
       "youtube": "Youtube"
     }
@@ -769,29 +809,29 @@
   },
   "metadata": {
     "home": {
-      "title": "FielMedina - Découvrir la Médina de Sousse",
-      "description": "Votre guide alimenté par l'IA pour explorer le site du patrimoine mondial de l'UNESCO avec des histoires interactives, la navigation GPS et des aperçus culturels.",
-      "keywords": "FielMedina, Sousse, Tunisie, médina, UNESCO, patrimoine, navigation, guide culturel, GPS, voyage"
+      "title": "FielMedina – Application de voyage en Tunisie pour la médina de Sousse",
+      "description": "Préparez des visites immersives de la médina de Sousse classée à l’UNESCO grâce à FielMedina, l’application de circuits à pied avec GPS hors ligne, récits culturels et itinéraires personnalisés.",
+      "keywords": "FielMedina, application voyage Tunisie, guide médina Sousse, compagnon de voyage numérique, tourisme culturel Tunisie, circuits à pied Sousse, télécharger FielMedina"
     },
     "about": {
-      "title": "À Propos de Nous - FielMedina Sousse",
-      "description": "Découvrez la mission de FielMedina pour préserver et partager le patrimoine culturel de la médina historique de Sousse grâce à une technologie innovante.",
-      "keywords": "FielMedina, Sousse, Tunisie, médina, patrimoine culturel, à propos de nous, mission, équipe"
+      "title": "À propos de FielMedina – Le guide intelligent des médinas tunisiennes",
+      "description": "Découvrez comment FielMedina associe experts locaux, conteurs et technologie pour préserver les médinas tunisiennes et encourager un tourisme culturel durable.",
+      "keywords": "FielMedina équipe, innovation patrimoine Tunisie, storytelling médina, technologie tourisme culturel"
     },
     "contact": {
-      "title": "Contactez-Nous - FielMedina Sousse",
-      "description": "Entrez en contact avec l'équipe FielMedina. Nous aimerions avoir de vos nouvelles concernant notre application de guide culturel de la médina de Sousse.",
-      "keywords": "FielMedina, contact, support, Sousse, Tunisie, médina, guide culturel, nous contacter"
+      "title": "Contactez FielMedina – Partenariats avec le guide numérique des médinas",
+      "description": "Échangez avec l’équipe FielMedina pour des partenariats touristiques, projets médias ou assistance aux voyageurs en Tunisie.",
+      "keywords": "contacter FielMedina, support application voyage Tunisie, partenariats tourisme Tunisie, guide culturel numérique"
     },
     "termsConditions": {
-      "title": "Conditions Générales - FielMedina Sousse",
-      "description": "Lisez les conditions générales d'utilisation de FielMedina, votre guide pour explorer la médina historique de Sousse.",
-      "keywords": "FielMedina, conditions générales, légal, Sousse, Tunisie, médina, conditions d'application"
+      "title": "Conditions d’utilisation FielMedina – Guide de voyage numérique",
+      "description": "Comprenez les règles d’usage de FielMedina, le guide des médinas tunisiennes, y compris les bonnes pratiques de tourisme responsable.",
+      "keywords": "conditions FielMedina, politique application voyage Tunisie, guide patrimoine conditions, tourisme responsable"
     },
     "privacyPolicy": {
-      "title": "Politique de Confidentialité - FielMedina Sousse",
-      "description": "Découvrez comment FielMedina protège votre vie privée et traite vos données pendant que vous explorez la médina historique de Sousse.",
-      "keywords": "FielMedina, politique de confidentialité, protection des données, Sousse, Tunisie, médina, confidentialité de l'application"
+      "title": "Politique de confidentialité FielMedina – Protection des données voyage",
+      "description": "Découvrez comment FielMedina protège la vie privée des voyageurs, sécurise les données de localisation et respecte les réglementations tunisiennes et internationales.",
+      "keywords": "confidentialité FielMedina, protection données voyage Tunisie, application médina confidentialité, tourisme culturel données"
     }
   }
-} 
+}

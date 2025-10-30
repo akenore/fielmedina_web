@@ -50,6 +50,9 @@ function PrivacyPolicyContent() {
 
 export default function PrivacyPolicy() {
   const t = useTranslations();
+  const heroHeadingId = 'privacy-hero-heading';
+  const keyPointsHeadingId = 'privacy-keypoints-heading';
+  const detailHeadingId = 'privacy-detail-heading';
   
 
 
@@ -82,8 +85,12 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen bg-white">
+      <main id="main-content" className="flex flex-col bg-white">
       {/* Hero Section */}
-      <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-linear-to-br from-[#FDF7EC] to-orange-50">
+      <section
+        className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-linear-to-br from-[#FDF7EC] to-orange-50"
+        aria-labelledby={heroHeadingId}
+      >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -94,7 +101,7 @@ export default function PrivacyPolicy() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-[#b65d37] rounded-2xl mb-6">
               <Shield className="size-8 text-white" />
             </div>
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 id={heroHeadingId} className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
               {t('legal.privacyPolicy.title')}
             </h1>
             <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8">
@@ -109,7 +116,10 @@ export default function PrivacyPolicy() {
       </section>
 
       {/* Key Points Section */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section
+        className="py-16 lg:py-24 bg-white"
+        aria-labelledby={keyPointsHeadingId}
+      >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -118,7 +128,7 @@ export default function PrivacyPolicy() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16 max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            <h2 id={keyPointsHeadingId} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               {t('legal.privacyPolicy.keyPoints.title')}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
@@ -153,7 +163,10 @@ export default function PrivacyPolicy() {
       </section>
 
       {/* Detailed Policy Section */}
-      <section className="py-16 lg:py-24 bg-linear-to-br from-[#FDF7EC] to-orange-50">
+      <section
+        className="py-16 lg:py-24 bg-linear-to-br from-[#FDF7EC] to-orange-50"
+        aria-labelledby={detailHeadingId}
+      >
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             
@@ -204,7 +217,8 @@ export default function PrivacyPolicy() {
 
       {/* CTA Section */}
       <CTA />
+      </main>
       <Footer />
     </div>
   );
-} 
+}

@@ -3,6 +3,24 @@
 
 /* Modern CSS using Tailwind 4.1 best practices */
 
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #b65d37;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: top 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1000;
+}
+
+.skip-to-content:focus {
+  top: 1rem;
+  box-shadow: 0 10px 30px -10px rgb(0 0 0 / 0.4);
+}
+
 /* Section background decoration - Responsive with CSS Grid */
 .section-decoration {
   position: absolute;

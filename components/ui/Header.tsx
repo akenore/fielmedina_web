@@ -12,6 +12,8 @@ import LanguageSwitcher from './LanguageSwitcher';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations('navigation');
+  const aria = useTranslations('common.ariaLabels');
+  const headerCopy = useTranslations('header');
   const locale = useLocale();
   type LinkHref = ComponentProps<typeof Link>['href'];
 
@@ -59,7 +61,7 @@ export default function Header() {
             <Link href="/" scroll={false}>
               <Image
                 src="/logo.png"
-                alt={useTranslations('header')('logo')}
+                alt={headerCopy('logo')}
                 width={180}
                 height={40}
                 className="h-8 lg:h-10 w-auto object-contain"
@@ -69,7 +71,10 @@ export default function Header() {
               />
             </Link>
           </div>
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav
+            className="hidden lg:flex items-center space-x-8"
+            aria-label={aria('mainNavigation')}
+          >
             {anchorNavItems.map((item) => (
               <button
                 key={item.key}
@@ -112,7 +117,9 @@ export default function Header() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
-              aria-label={useTranslations('aria')('toggleNavigation')}
+              aria-label={aria('toggleNavigation')}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-primary-navigation"
             >
               {isMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
             </button>
@@ -125,6 +132,8 @@ export default function Header() {
         animate={isMenuOpen ? { opacity: 1, height: 'auto' } : { opacity: 0, height: 0 }}
         transition={{ duration: 0.3 }}
         className="lg:hidden bg-white border-t border-gray-200 overflow-hidden"
+        id="mobile-primary-navigation"
+        aria-label={aria('mainNavigation')}
       >
         <div className="container mx-auto px-4 py-4 space-y-4">
           {anchorNavItems.map((item) => (

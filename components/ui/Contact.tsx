@@ -31,6 +31,12 @@ export default function Contact() {
     transition: { duration: 0.6 }
   };
 
+  const heroHeadingId = 'contact-hero-heading';
+  const formHeadingId = 'contact-form-heading';
+  const socialHeadingId = 'contact-social-heading';
+  const faqHeadingId = 'contact-faq-heading';
+  const ctaHeadingId = 'contact-cta-heading';
+
   const staggerContainer = {
     animate: {
       transition: {
@@ -116,8 +122,12 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-white">
+      <main id="main-content" className="flex flex-col bg-white">
       {/* Hero Section */}
-      <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-linear-to-br from-[#FDF7EC] to-orange-50">
+      <section
+        className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-linear-to-br from-[#FDF7EC] to-orange-50"
+        aria-labelledby={heroHeadingId}
+      >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -125,7 +135,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
+            <h1 id={heroHeadingId} className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
               {t('contact.hero.title')}
             </h1>
             <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed mb-8">
@@ -176,7 +186,10 @@ export default function Contact() {
       </section> */}
 
       {/* Contact Form & Map Section */}
-      <section className="py-16 lg:py-24 bg-gray-50">
+      <section
+        className="py-16 lg:py-24 bg-gray-50"
+        aria-labelledby={formHeadingId}
+      >
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
             
@@ -191,7 +204,7 @@ export default function Contact() {
                   <div className="w-10 h-10 bg-linear-to-r from-[#b65d37] to-orange-500 rounded-lg flex items-center justify-center">
                     <MessageCircle className="size-5 text-white" />
                   </div>
-                  <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
+                  <h2 id={formHeadingId} className="text-2xl lg:text-3xl font-bold text-gray-900">
                     {t('contact.form.title')}
                   </h2>
                 </div>
@@ -397,7 +410,10 @@ export default function Contact() {
       </section>
 
       {/* Social Media Section */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section
+        className="py-16 lg:py-24 bg-white"
+        aria-labelledby={socialHeadingId}
+      >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -406,7 +422,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12 max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            <h2 id={socialHeadingId} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               {t('contact.socialSection.title')}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
@@ -448,7 +464,10 @@ export default function Contact() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 lg:py-24 bg-[#FDF7EC]">
+      <section
+        className="py-16 lg:py-24 bg-[#FDF7EC]"
+        aria-labelledby={faqHeadingId}
+      >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -457,7 +476,7 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12 max-w-3xl mx-auto"
           >
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+            <h2 id={faqHeadingId} className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
               {t('contact.faq.title')}
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
@@ -558,7 +577,9 @@ export default function Contact() {
         </div>
       </section> */}
       <CTA />
+
+      </main>
       <Footer />
     </div>
   );
-} 
+}

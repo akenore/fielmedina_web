@@ -7,6 +7,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
 import StructuredData from '../../components/seo/StructuredData';
 import Script from 'next/script';
+import { getPathname } from '../../i18n/navigation';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,11 +32,15 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: 'metadata.home'});
 
-  const canonicalPath = locale === 'en' ? '/' : '/fr';
-  const alternateLanguages = locale === 'en' 
-    ? { 'fr': '/fr' } 
-    : { 'en': '/' };
-  
+  const canonicalPath = getPathname({ locale, href: '/' });
+  const alternateLanguagesEntries = routing.locales.map((alternateLocale) => [
+    alternateLocale,
+    getPathname({ locale: alternateLocale, href: '/' })
+  ]) as Array<[string, string]>;
+  const alternateLanguages = Object.fromEntries(alternateLanguagesEntries);
+  const xDefaultHref =
+    alternateLanguages[routing.defaultLocale] ?? getPathname({ locale: routing.defaultLocale, href: '/' });
+
   return {
     title: t('title'),
     description: t('description'),
@@ -51,7 +56,10 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
     metadataBase: new URL('https://www.fielmedina.com'),
     alternates: {
       canonical: canonicalPath,
-      languages: alternateLanguages,
+      languages: {
+        ...alternateLanguages,
+        'x-default': xDefaultHref
+      },
     },
     openGraph: {
       title: t('title'),
@@ -95,6 +103,8 @@ export default async function LocaleLayout({
   params
 }: Props) {
   const {locale} = await params;
+  const skipToContentLabel =
+    locale === 'fr' ? 'Passer au contenu principal' : 'Skip to main content';
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -116,10 +126,23 @@ export default async function LocaleLayout({
         <link rel="dns-prefetch" href="//play.google.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <meta name="application-name" content="FielMedina" />
+        <meta name="theme-color" content="#b65d37" />
+        <meta name="apple-itunes-app" content="app-id=6751167445, app-argument=https://www.fielmedina.com" />
+        <meta name="google-play-app" content="app-id=com.fielmedina.sousse" />
+        <meta property="al:ios:app_store_id" content="6751167445" />
+        <meta property="al:ios:url" content="fielmedina://home" />
+        <meta property="al:ios:app_name" content="FielMedina" />
+        <meta property="al:android:package" content="com.fielmedina.sousse" />
+        <meta property="al:android:app_name" content="FielMedina" />
+        <meta property="al:web:url" content="https://www.fielmedina.com" />
         
         <StructuredData />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FDF7EC]`}>
+        <a href="#main-content" className="skip-to-content">
+          {skipToContentLabel}
+        </a>
         {process.env.NODE_ENV === 'development' && (
           <Script id="lcp-monitor" strategy="afterInteractive">
             {`
