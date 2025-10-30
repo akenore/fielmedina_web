@@ -45,25 +45,25 @@ export default function Contact() {
     {
       icon: InstagramIcon,
       name: t('contact.socialMedia.instagram'),
-      url: "https://instagram.com/fielmedina",
+      url: "https://instagram.com/fielmedina.officiel",
       gradient: "from-pink-500 to-rose-600"
     },
     {
       icon: FacebookIcon,
       name: t('contact.socialMedia.facebook'), 
-      url: "https://facebook.com/fielmedina",
+      url: "https://facebook.com/fielmedina.officiel",
       gradient: "from-blue-600 to-blue-700"
     },
     {
       icon: TiktokIcon,
       name: t('contact.socialMedia.tiktok'),
-      url: "https://tiktok.com/@fielmedina",
+      url: "https://tiktok.com/@fielmedina_officiel",
       gradient: "from-gray-800 to-gray-900"
     },
     {
       icon: YoutubeIcon,
       name: t('contact.socialMedia.youtube'),
-      url: "https://youtube.com/@fielmedina",
+      url: "https://youtube.com/@fielmedina.officiel",
       gradient: "from-red-500 to-red-600"
     }
   ];

@@ -11,10 +11,29 @@ export default function LanguageSwitcher() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
-  const switchLocale = (newLocale: string) => {
+  const switchLocale = (newLocale: 'en' | 'fr') => {
     // Using next-intl navigation, it handles locale switching automatically
     const searchParams = new URLSearchParams(window.location.search);
-    router.replace(pathname + (searchParams.toString() ? `?${searchParams}` : ''), {locale: newLocale});
+
+    const queryParams = Array.from(searchParams.entries()).reduce<Record<string, string | string[]>>(
+      (acc, [key, value]) => {
+        const existing = acc[key];
+        if (existing === undefined) {
+          acc[key] = value;
+        } else if (Array.isArray(existing)) {
+          existing.push(value);
+        } else {
+          acc[key] = [existing, value];
+        }
+        return acc;
+      },
+      {}
+    );
+
+    const href: Parameters<typeof router.replace>[0] =
+      searchParams.size > 0 ? { pathname, query: queryParams } : pathname;
+
+    router.replace(href, { locale: newLocale });
     setIsOpen(false);
   };
 

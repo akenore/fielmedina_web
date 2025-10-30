@@ -11,12 +11,12 @@ export default function Footer() {
      const socialLinks = [
           { icon: InstagramIcon, href: "http://instagram.com/fielmedina.officiel", label: t('socialMedia.instagram') },
           { icon: FacebookIcon, href: "https://www.facebook.com/fielmedina.officiel/", label: t('socialMedia.facebook') },
-          { icon: TiktokIcon, href: "https://www.tiktok.com/@fielmedina.officiel", label: t('socialMedia.tiktok') },
+          { icon: TiktokIcon, href: "https://www.tiktok.com/@fielmedina_officiel", label: t('socialMedia.tiktok') },
           { icon: YoutubeIcon, href: "https://www.youtube.com/@fielmedina.officiel", label: t('socialMedia.youtube') },
      ];
 
      return (
-          <footer className="footer-wrapper bg-gradient-to-br from-[#FDF7EC] to-orange-50">
+          <footer className="footer-wrapper bg-linear-to-br from-[#FDF7EC] to-orange-50">
                <div className="footer-decoration" />
 
                <div className="relative z-10">

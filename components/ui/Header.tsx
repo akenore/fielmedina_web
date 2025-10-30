@@ -1,17 +1,30 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {  Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import type { ComponentProps } from 'react';
 import Image from 'next/image';
 import { useTranslations, useLocale } from 'next-intl';
-import {Link} from '../../i18n/navigation';
+import { Link } from '../../i18n/navigation';
 import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const t = useTranslations('navigation');
   const locale = useLocale();
+  type LinkHref = ComponentProps<typeof Link>['href'];
+
+  const anchorNavItems = [
+    { name: t('home'), href: '/#home', key: 'home' },
+    { name: t('features'), href: '/#features', key: 'features' },
+    { name: t('reviews'), href: '/#reviews', key: 'reviews' }
+  ];
+
+  const pageNavItems: Array<{ name: string; href: LinkHref; key: string }> = [
+    { name: t('about'), href: '/about', key: 'about' },
+    { name: t('contact'), href: '/contact', key: 'contact' }
+  ];
 
   const handleNavClick = (href: string) => {
     // If it's a hash link (anchor), handle it specially
@@ -57,34 +70,24 @@ export default function Header() {
             </Link>
           </div>
           <nav className="hidden lg:flex items-center space-x-8">
-            {[
-              { name: t('home'), href: '/#home', key: 'home' },
-              { name: t('features'), href: '/#features', key: 'features' },
-              { name: t('about'), href: '/about', key: 'about' },
-              { name: t('reviews'), href: '/#reviews', key: 'reviews' },
-              { name: t('contact'), href: '/contact', key: 'contact' }
-            ].map((item) => {
-              if (item.href.startsWith('/#')) {
-                return (
-                  <button
-                    key={item.key}
-                    onClick={() => handleNavClick(item.href)}
-                    className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300 cursor-pointer"
-                  >
-                    {item.name}
-                  </button>
-                );
-              }
-              return (
-                <Link
-                  key={item.key}
-                  href={item.href}
-                  className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300"
-                >
-                  {item.name}
-                </Link>
-              );
-            })}
+            {anchorNavItems.map((item) => (
+              <button
+                key={item.key}
+                onClick={() => handleNavClick(item.href)}
+                className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300 cursor-pointer"
+              >
+                {item.name}
+              </button>
+            ))}
+            {pageNavItems.map((item) => (
+              <Link
+                key={item.key}
+                href={item.href}
+                className="text-gray-700 hover:text-[#b65d37] font-medium transition-colors duration-300"
+              >
+                {item.name}
+              </Link>
+            ))}
           </nav>
 
           <div className="hidden lg:flex items-center space-x-4">
@@ -124,35 +127,25 @@ export default function Header() {
         className="lg:hidden bg-white border-t border-gray-200 overflow-hidden"
       >
         <div className="container mx-auto px-4 py-4 space-y-4">
-          {[
-            { name: t('home'), href: '/#home', key: 'home' },
-            { name: t('features'), href: '/#features', key: 'features' },
-            { name: t('about'), href: '/about', key: 'about' },
-            { name: t('reviews'), href: '/#reviews', key: 'reviews' },
-            { name: t('contact'), href: '/contact', key: 'contact' }
-          ].map((item) => {
-            if (item.href.startsWith('/#')) {
-              return (
-                <button
-                  key={item.key}
-                  onClick={() => handleNavClick(item.href)}
-                  className="block text-gray-700 hover:text-[#b65d37] font-medium py-2 transition-colors text-left w-full"
-                >
-                  {item.name}
-                </button>
-              );
-            }
-            return (
-              <Link
-                key={item.key}
-                href={item.href}
-                className="block text-gray-700 hover:text-[#b65d37] font-medium py-2 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            );
-          })}
+          {anchorNavItems.map((item) => (
+            <button
+              key={item.key}
+              onClick={() => handleNavClick(item.href)}
+              className="block text-gray-700 hover:text-[#b65d37] font-medium py-2 transition-colors text-left w-full"
+            >
+              {item.name}
+            </button>
+          ))}
+          {pageNavItems.map((item) => (
+            <Link
+              key={item.key}
+              href={item.href}
+              className="block text-gray-700 hover:text-[#b65d37] font-medium py-2 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.name}
+            </Link>
+          ))}
           
          
         </div>

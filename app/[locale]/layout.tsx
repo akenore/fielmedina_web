@@ -31,10 +31,7 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: 'metadata.home'});
 
-  // Set canonical URL based on the actual routing configuration
   const canonicalPath = locale === 'en' ? '/' : '/fr';
-  
-  // Only include alternate languages in hreflang, not the current language
   const alternateLanguages = locale === 'en' 
     ? { 'fr': '/fr' } 
     : { 'en': '/' };
@@ -89,9 +86,6 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
         'max-snippet': -1,
       },
     },
-    verification: {
-      google: 'your-google-verification-code', // Replace with actual verification code
-    },
     manifest: '/manifest.json',
   };
 }
@@ -100,7 +94,6 @@ export default async function LocaleLayout({
   children,
   params
 }: Props) {
-  // Ensure that the incoming `locale` is valid
   const {locale} = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
@@ -109,8 +102,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        {/* Preload only the most critical LCP images - logo is small and loads quickly */}
-        {/* Only preload critical above-the-fold images */}
         {process.env.NODE_ENV === 'production' && (
           <link
             rel="preload"
@@ -120,19 +111,15 @@ export default async function LocaleLayout({
             fetchPriority="high"
           />
         )}
-        {/* DNS prefetch for external domains */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link rel="dns-prefetch" href="//play.google.com" />
-        
-        {/* Preconnect for critical external resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
         <StructuredData />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FDF7EC]`}>
-        {/* LCP monitoring script - only in development */}
         {process.env.NODE_ENV === 'development' && (
           <Script id="lcp-monitor" strategy="afterInteractive">
             {`
