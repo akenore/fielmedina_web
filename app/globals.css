@@ -27,33 +27,31 @@
   inset: 0;
   z-index: -10;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.section-decoration::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 20%;
-  transform: translateX(-50%);
-  background-image: url('/yellow_dotes.webp');
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: contain;
+.section-decoration__image {
   width: 370px;
   height: 369px;
+  object-fit: contain;
+  margin-top: 20%;
 }
 
 @media (min-width: 640px) {
-  .section-decoration::before {
+  .section-decoration__image {
     width: 760px;
     height: 757px;
+    margin-top: 12%;
   }
 }
 
 @media (min-width: 1024px) {
-  .section-decoration::before {
+  .section-decoration__image {
     width: 1250px;
     height: 1000px;
+    margin-top: 8%;
   }
 }
 

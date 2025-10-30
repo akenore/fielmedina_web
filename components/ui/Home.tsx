@@ -120,7 +120,16 @@ export default function Home() {
           className="pt-24 lg:pt-32 pb-16 lg:pb-24 relative overflow-hidden"
           aria-labelledby={heroHeadingId}
         >
-        <div className="section-decoration" />
+        <div className="section-decoration" aria-hidden="true">
+          <Image
+            src="/yellow_dotes.webp"
+            alt=""
+            className="section-decoration__image"
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
+          />
+        </div>
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
             <motion.div
