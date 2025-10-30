@@ -82,7 +82,7 @@ export default function TermsConditions() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-gradient-to-br from-[#FDF7EC] to-orange-50">
+      <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-linear-to-br from-[#FDF7EC] to-orange-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -135,7 +135,7 @@ export default function TermsConditions() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"
               >
-                <div className={`w-12 h-12 mb-4 rounded-xl bg-gradient-to-r ${point.gradient} 
+                <div className={`w-12 h-12 mb-4 rounded-xl bg-linear-to-r ${point.gradient} 
                               flex items-center justify-center text-white`}>
                   <point.icon className="size-6" />
                 </div>
@@ -152,7 +152,7 @@ export default function TermsConditions() {
       </section>
 
       {/* Detailed Terms Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-[#FDF7EC] to-orange-50">
+      <section className="py-16 lg:py-24 bg-linear-to-br from-[#FDF7EC] to-orange-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             

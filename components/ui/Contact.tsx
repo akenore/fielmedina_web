@@ -117,7 +117,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-gradient-to-br from-[#FDF7EC] to-orange-50">
+      <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-linear-to-br from-[#FDF7EC] to-orange-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -188,7 +188,7 @@ export default function Contact() {
             >
               <div className="bg-white rounded-2xl p-8 shadow-lg">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-10 h-10 bg-gradient-to-r from-[#b65d37] to-orange-500 rounded-lg flex items-center justify-center">
+                  <div className="w-10 h-10 bg-linear-to-r from-[#b65d37] to-orange-500 rounded-lg flex items-center justify-center">
                     <MessageCircle className="size-5 text-white" />
                   </div>
                   <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
@@ -333,7 +333,7 @@ export default function Contact() {
               {/* Map placeholder */}
               <div className="bg-white rounded-2xl p-6 shadow-lg">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{t('contact.location.title')}</h3>
-                <div className="bg-gradient-to-br from-[#b65d37]/10 to-orange-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
+                <div className="bg-linear-to-br from-[#b65d37]/10 to-orange-100 rounded-lg h-64 flex items-center justify-center relative overflow-hidden">
                   <div className="text-center">
                     <MapPin className="size-12 text-[#b65d37] mx-auto mb-4" />
                     <h4 className="text-lg font-semibold text-gray-900 mb-2">{t('contact.location.medina')}</h4>
@@ -432,7 +432,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.95 }}
                 className="group"
               >
-                <div className={`bg-gradient-to-r ${social.gradient} rounded-2xl p-6 text-white text-center
+                <div className={`bg-linear-to-r ${social.gradient} rounded-2xl p-6 text-white text-center
                               shadow-lg group-hover:shadow-xl transition-all duration-300`}>
                   <social.icon 
                     width="32" 

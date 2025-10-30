@@ -52,13 +52,11 @@ export default function LanguageSwitcher() {
 
       {isOpen && (
         <>
-          {/* Backdrop */}
           <div 
             className="fixed inset-0 z-10" 
             onClick={() => setIsOpen(false)}
           />
           
-          {/* Dropdown */}
           <div className="absolute top-full right-0 mt-2 bg-white rounded-lg shadow-lg border border-gray-200 z-20 min-w-[120px]">
             <button
               onClick={() => switchLocale('en')}

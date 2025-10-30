@@ -103,7 +103,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-gradient-to-br from-[#FDF7EC] to-orange-50">
+      <section className="pt-24 lg:pt-32 pb-16 lg:pb-24 bg-linear-to-br from-[#FDF7EC] to-orange-50">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -157,25 +157,25 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="relative"
             >
-              <div className="bg-gradient-to-r from-[#b65d37] to-orange-500 rounded-2xl p-8 text-white">
+              <div className="bg-linear-to-r from-[#b65d37] to-orange-500 rounded-2xl p-8 text-white">
                 <h3 className="text-2xl font-bold mb-4">
                   {t("about.whyFielmedina.title")}
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-orange-200 rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-orange-200 rounded-full mt-2 shrink-0" />
                     <span>{t("about.whyFielmedina.feature1")}</span>
                   </li>
                   <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-orange-200 rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-orange-200 rounded-full mt-2 shrink-0" />
                     <span>{t("about.whyFielmedina.feature2")}</span>
                   </li>
                   <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-orange-200 rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-orange-200 rounded-full mt-2 shrink-0" />
                     <span>{t("about.whyFielmedina.feature3")}</span>
                   </li>
                   <li className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-orange-200 rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-orange-200 rounded-full mt-2 shrink-0" />
                     <span>{t("about.whyFielmedina.feature4")}</span>
                   </li>
                 </ul>
@@ -217,7 +217,7 @@ export default function About() {
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 <div
-                  className={`w-14 h-14 mb-6 rounded-xl bg-gradient-to-r ${value.gradient} 
+                  className={`w-14 h-14 mb-6 rounded-xl bg-linear-to-r ${value.gradient} 
                               flex items-center justify-center text-white group-hover:scale-110 
                               transition-transform duration-300`}
                 >
@@ -351,7 +351,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-r from-[#b65d37] to-[#b65c37] text-white">
+      <section className="py-16 lg:py-24 bg-linear-to-r from-[#b65d37] to-[#b65c37] text-white">
         <div className="container mx-auto px-4 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 40 }}

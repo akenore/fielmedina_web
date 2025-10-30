@@ -10,11 +10,7 @@ type Props = {
 export async function generateMetadata({params}: Props): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: 'metadata.privacyPolicy'});
-
-  // Set canonical URL based on the actual routing configuration
   const canonicalPath = locale === 'en' ? '/privacy-policy' : `/${locale}/privacy-policy`;
-
-  // Only include alternate languages in hreflang, not the current language
   const alternateLanguages = locale === 'en' 
     ? { 'fr': '/fr/privacy-policy' } 
     : { 'en': '/privacy-policy' };

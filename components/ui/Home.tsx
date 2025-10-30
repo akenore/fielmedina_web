@@ -205,7 +205,7 @@ export default function Home() {
             >
               {/* Glow effect */}
               <div
-                className="absolute inset-0 bg-gradient-to-r from-[#b65d37]/20 to-blue-500/20 
+                className="absolute inset-0 bg-linear-to-r from-[#b65d37]/20 to-blue-500/20 
                             rounded-full blur-3xl scale-75 opacity-60"
               />
 
@@ -226,7 +226,7 @@ export default function Home() {
                       {sliderImages.map((image, index) => (
                         <div
                           key={index}
-                          className="w-full h-full flex-shrink-0 relative"
+                          className="w-full h-full shrink-0 relative"
                         >
                           <Image
                             src={image}
@@ -241,7 +241,7 @@ export default function Home() {
                             loading={index === 0 ? "eager" : "lazy"}
                           />
                           {/* Overlay gradient for better readability */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                          <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent" />
                         </div>
                       ))}
                     </div>
@@ -309,7 +309,7 @@ export default function Home() {
                 className="group text-center"
               >
                 <div
-                  className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r ${feature.gradient} 
+                  className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-linear-to-r ${feature.gradient} 
                               flex items-center justify-center text-white shadow-lg group-hover:scale-110 
                               transition-transform duration-300`}
                 >
@@ -381,7 +381,7 @@ export default function Home() {
 
                 <div className="flex items-center">
                   <div
-                    className="w-12 h-12 bg-gradient-to-r from-[#b65d37] to-orange-500 
+                    className="w-12 h-12 bg-linear-to-r from-[#b65d37] to-orange-500 
                                 rounded-full flex items-center justify-center mr-4"
                   >
                     <span className="text-white font-bold">

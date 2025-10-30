@@ -21,7 +21,7 @@ export default function CTA() {
     transition: { duration: 0.6, ease: "easeOut" },
   };
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-r from-[#b65d37] to-[#b65c37] text-white relative overflow-hidden">
+    <section className="py-16 lg:py-24 bg-linear-to-r from-[#b65d37] to-[#b65c37] text-white relative overflow-hidden">
       <div className="container mx-auto px-4 text-center relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: 40 }}
