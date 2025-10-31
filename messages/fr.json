@@ -99,7 +99,7 @@
   },
   "home": {
     "hero": {
-      "badge": "🧭 Le guide numérique des médinas tunisiennes",
+      "badge": "🧭 Explorez les médinas historiques du monde arabe",
       "title": {
         "line1": "Explorez les médinas patrimoniales de Tunisie",
         "line2": "en commençant par Sousse et Monastir",
@@ -819,6 +819,8 @@
   },
   "footer": {
     "copyright": "© Droits d'auteur 2025. Tous droits réservés.",
+    "supportersHeading": "Soutenu par",
+    "supportersTagline": "FielMedina est soutenu par l’Office National du Tourisme Tunisien (ONTT).",
     "links": {
       "terms": "Conditions Générales",
       "privacy": "Politique de Confidentialité"

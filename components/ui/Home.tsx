@@ -58,7 +58,9 @@ export default function Home() {
       gradient: 'from-[#b65d37] to-gray-800'
     },
     {
-      icon: WorldIcon,
+      icon: (props: { width?: string | number; height?: string | number }) => (
+        <WorldIcon width="32" height="32" {...props} />
+      ),
       title: t('home.features.culturalGuide.title'),
       description: t('home.features.culturalGuide.description'),
       gradient: 'from-gray-700 to-[#b65d37]'
@@ -231,14 +233,15 @@ export default function Home() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1 }}
                       >
-                        <CheckCircle className="mt-1 size-5 text-[#b65d37]" aria-hidden="true" />
+                    <CheckCircle
+                      className="mt-1 h-5 w-5 shrink-0 text-[#b65d37]"
+                      aria-hidden="true"
+                    />
                         <span>{highlight}</span>
                       </motion.li>
                     ))}
                   </ul>
                 </motion.div>
-
-                {/* Stats */}
                 <motion.div
                   variants={fadeInUp}
                   className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10"
