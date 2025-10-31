@@ -2,6 +2,7 @@
   "navigation": {
     "home": "Accueil",
     "features": "Fonctionnalités",
+    "cities": "Médinas",
     "reviews": "Avis",
     "about": "À propos",
     "contact": "Contact",
@@ -10,9 +11,9 @@
   },
   "seo": {
     "home": {
-      "title": "FielMedina – Application de voyage en Tunisie pour la médina de Sousse",
-      "description": "Téléchargez FielMedina et explorez les histoires des médinas tunisiennes via des circuits GPS hors ligne, des récits audio et des itinéraires sur mesure.",
-      "keywords": "FielMedina, application voyage Tunisie, guide médina Sousse, compagnon de voyage numérique, tourisme culturel Tunisie, circuits à pied Sousse, télécharger FielMedina"
+      "title": "FielMedina – Explorez les médinas historiques du monde arabe",
+      "description": "Découvrez la Tunisie, le Maroc, l’Algérie et au-delà avec FielMedina, votre guide digital pour explorer les villes patrimoniales d’Afrique du Nord et du Moyen-Orient.",
+      "keywords": "médinas historiques, monde arabe, villes patrimoniales, Afrique du Nord, Moyen-Orient, application voyage FielMedina"
     },
     "about": {
       "title": "À propos de FielMedina – Le guide intelligent des médinas tunisiennes",
@@ -40,7 +41,7 @@
     "downloadIOS": "Télécharger pour iOS",
     "downloadFree": "Téléchargement Gratuit",
     "watchDemo": "Voir la Démo",
-    "readyToExplore": "Prêt à Explorer Sousse ?",
+    "readyToExplore": "Prêt à explorer les médinas tunisiennes ?",
     "downloadNow": "Télécharger Maintenant",
     "backToHome": "Retour à l'Accueil",
     "goToSlide": "Aller à la diapositive",
@@ -98,45 +99,96 @@
   },
   "home": {
     "hero": {
-      "badge": "🧭 L’application intelligente des médinas tunisiennes",
+      "badge": "🧭 Le guide numérique des médinas tunisiennes",
       "title": {
-        "line1": "Découvrez les histoires des",
-        "line2": "médinas tunisiennes",
-        "line3": "avec l’application FielMedina"
+        "line1": "Explorez les médinas patrimoniales de Tunisie",
+        "line2": "en commençant par Sousse et Monastir",
+        "line3": "grâce à l’application FielMedina"
       },
-      "subtitle": "Découvrez les histoires des médinas tunisiennes avec l’application FielMedina. Profitez de circuits GPS hors ligne, de récits audio et d’itinéraires sur mesure à Sousse.",
+      "subtitle": "FielMedina est le compagnon de voyage numérique qui lance des city packs pour Sousse et Monastir tout en co-créant les prochaines expériences en Tunisie, en Afrique du Nord et au Moyen-Orient.",
       "downloadButton": "Téléchargement Gratuit",
       "watchButton": "Voir la Démo",
       "highlightsTitle": "Pourquoi les voyageurs choisissent FielMedina",
       "highlights": [
-        "Circuits GPS hors ligne conçus pour la médina de Sousse",
-        "Récits audio et éclairages culturels en français et en anglais",
-        "Itinéraires intelligents, favoris sauvegardés et alertes pendant le voyage"
+        "Circuits GPS hors ligne, récits audio et coups de cœur artisans pour Sousse et Monastir",
+        "Feuille de route 2024 : Tunis, Sfax, Kairouan, Mahdia, Hammamet et Tozeur arrivent bientôt",
+        "Co-création 2025–2026 : Maroc (Fès, Marrakech, Chefchaouen), Algérie (Alger, Constantine), Liban, Jordanie, Arabie saoudite, Égypte et Qatar"
       ]
     },
     "stats": {
       "rating": "4,8",
-      "ratingLabel": "Note moyenne sur les boutiques d’applications",
-      "locations": "30+",
-      "locationsLabel": "Points d’intérêt sélectionnés",
+      "ratingLabel": "Note moyenne auprès des voyageurs pilotes",
+      "locations": "40+",
+      "locationsLabel": "Lieux sélectionnés à Sousse et Monastir",
       "languages": "2",
-      "languagesLabel": "Langues avec contenus culturels"
+      "languagesLabel": "Langues disponibles au lancement"
     },
     "features": {
-      "title": "Tout pour une visite inoubliable de la médina",
-      "subtitle": "Notre technologie touristique mêle récits authentiques et navigation intuitive afin que chaque voyageur découvre les villes patrimoniales de Tunisie en toute confiance.",
+      "title": "Tout pour des expériences inoubliables dans les médinas",
+      "subtitle": "FielMedina associe technologie intuitive et expertise de terrain pour que chaque voyageur explore plusieurs médinas en toute confiance.",
       "smartNavigation": {
-        "title": "Navigation GPS hors ligne",
-        "description": "Suivez des circuits à pied conçus avec des historiens locaux et optimisés pour la médina de Sousse."
+        "title": "Navigation intelligente, même hors ligne",
+        "description": "Suivez des circuits GPS adaptés aux ruelles des médinas et aux spécificités de chaque ville."
       },
       "localInsights": {
-        "title": "Anecdotes d’initiés",
-        "description": "Écoutez les témoignages des experts locaux, trouvez des artisans et profitez de recommandations exclusives pour la gastronomie, l’artisanat et les événements."
+        "title": "Anecdotes locales vérifiées",
+        "description": "Accédez à des conseils culturels, portraits d’artisans et actualités quotidiennes co-créés avec historiens, conteurs et habitants."
       },
       "culturalGuide": {
-        "title": "Guide culturel immersif",
-        "description": "Profitez de récits audio, de contenus prêts pour la réalité augmentée et de parcours thématiques qui donnent vie aux médinas de Tunisie."
+        "title": "Un guide culturel dans votre poche",
+        "description": "Profitez de récits audio multilingues, de couches prêtes pour la réalité augmentée et de parcours thématiques pour chaque destination FielMedina."
       }
+    },
+    "cities": {
+      "title": "La Tunisie d’abord, un réseau de médinas en expansion",
+      "subtitle": "Téléchargez dès maintenant les packs Sousse et Monastir et suivez notre feuille de route alors que nous ouvrons de nouvelles expériences en Tunisie, en Afrique du Nord et au Moyen-Orient.",
+      "items": [
+        {
+          "name": "Médina de Sousse",
+          "country": "Tunisie (Disponible)",
+          "description": "Notre jumeau numérique phare couvrant les remparts du IXe siècle, le ribat face à la mer et les souks classés par l’UNESCO.",
+          "highlights": [
+            "Circuits GPS hors ligne reliant panoramas côtiers, souks et patios cachés",
+            "Récits multilingues co-créés avec guides, artisans et conservateurs locaux"
+          ]
+        },
+        {
+          "name": "Médina de Monastir",
+          "country": "Tunisie (Disponible)",
+          "description": "Parcourez le quartier historique du port, la forteresse du ribat et les ateliers artisanaux avec des récits riches en contexte et en conseils d’étiquette.",
+          "highlights": [
+            "Parcours pas-à-pas reliant monuments patrimoniaux et adresses créatives contemporaines",
+            "Conseils gourmands, artisanat et programmation culturelle co-curés avec la municipalité"
+          ]
+        },
+        {
+          "name": "Extension Tunisie 2024",
+          "country": "Bientôt disponible",
+          "description": "Nous co-concevons des packs pour Tunis, Sfax, Kairouan, Mahdia, Hammamet et Tozeur avec historiens, guides et offices du tourisme.",
+          "highlights": [
+            "Cercles de bêta-test ouverts aux conteurs et opérateurs culturels",
+            "Filtres intelligents pour mettre en avant artisans, gastronomie et alertes de tourisme responsable"
+          ]
+        },
+        {
+          "name": "Feuille de route Afrique du Nord 2025",
+          "country": "Maroc • Algérie",
+          "description": "Des partenariats sont en discussion pour intégrer Fès, Marrakech, Chefchaouen, Alger et Constantine avec des récits géolocalisés.",
+          "highlights": [
+            "Labos de contenus collaboratifs avec ONG patrimoniales et directions du patrimoine",
+            "Déploiements progressifs alignés sur les calendriers de conservation et la saisonnalité"
+          ]
+        },
+        {
+          "name": "Vision Levant & Golfe 2025–2026",
+          "country": "Liban • Jordanie • Arabie saoudite • Égypte • Qatar",
+          "description": "Notre vision sur deux ans couvre Tripoli, Saïda, Amman, Salt, Jeddah Al-Balad, Le Caire, Louxor et le Souq Waqif de Doha via des programmes communs.",
+          "highlights": [
+            "Résidences de storytelling connectant créatifs locaux et plateforme FielMedina",
+            "Guides de tourisme responsable adaptés à chaque destination avant lancement"
+          ]
+        }
+      ]
     },
     "reviews": {
       "title": "Ce que Disent Nos Utilisateurs",
@@ -161,28 +213,28 @@
       }
     },
     "testimonials": {
-      "title": "Appréciée par les voyageurs en Tunisie",
+      "title": "Appréciée par les voyageurs des médinas tunisiennes",
       "rating": "4,8/5,0",
-      "basedOn": "Plébiscitée par les voyageurs, guides locaux et partenaires culturels en Tunisie.",
+      "basedOn": "Plébiscitée par les voyageurs, guides et partenaires culturels pilotes à Sousse et Monastir.",
       "ahmed": {
         "name": "Ahmed Ben Salem",
-        "role": "Blogueur de Voyage",
-        "text": "FielMedina a transformé mes visites de la médina en récits immersifs. Le GPS hors ligne m’a gardé sur la bonne voie et les histoires ont séduit mon audience."
+        "role": "Guide touristique",
+        "text": "FielMedina a transformé mes parcours à Sousse en récits immersifs. Le GPS hors ligne me guide et les histoires multilingues séduisent ma communauté."
       },
       "sarah": {
         "name": "Sarah Johnson",
-        "role": "Guide Touristique",
-        "text": "Je recommande FielMedina à chaque voyageur : l’application combine un guidage professionnel et un contexte culturel riche dans un seul outil."
+        "role": "Blogueuse de voyage",
+        "text": "Je recommande FielMedina aux visiteurs de Monastir : l’application combine guidage professionnel et conseils culturels qui enrichissent chaque visite."
       },
       "mohamed": {
         "name": "Mohamed Triki",
-        "role": "Résident Local",
-        "text": "Même en tant qu’habitant de Sousse, j’apprends encore de nouvelles anecdotes patrimoniales. Idéal pour faire découvrir la médina à mes proches."
+        "role": "Programmateur culturel",
+        "text": "Alors que nous préparons le pack Tunis, FielMedina nous aide à capter les histoires locales et à les partager de manière responsable."
       }
     },
     "cta": {
       "title": "Emportez les médinas tunisiennes dans votre poche",
-      "subtitle": "Téléchargez FielMedina pour des récits immersifs, une navigation hors ligne et des itinéraires personnalisés dans les villes patrimoniales de Tunisie.",
+      "subtitle": "Téléchargez FielMedina pour des récits multilingues, une navigation hors ligne et des itinéraires qui s’étendent de Sousse et Monastir aux prochaines villes tunisiennes.",
       "downloadButton": "Télécharger pour Android"
     },
     "app": {
@@ -218,7 +270,7 @@
         },
         {
           "question": "Quelles seront les prochaines destinations ?",
-          "answer": "Nous étendons FielMedina à d’autres médinas tunisiennes et préparons des lancements au Maroc, en Algérie, en Arabie saoudite, aux Émirats, en Turquie et en Égypte dans les trois prochaines années."
+          "answer": "Nous étendons FielMedina aux autres médinas tunisiennes (Tunis, Sfax, Kairouan, Mahdia, Hammamet et Tozeur), puis au Maroc, en Algérie, au Liban, en Jordanie, en Arabie saoudite, en Égypte et au Qatar d’ici 2026."
         }
       ]
     }
@@ -809,9 +861,9 @@
   },
   "metadata": {
     "home": {
-      "title": "FielMedina – Application de voyage en Tunisie pour la médina de Sousse",
-      "description": "Téléchargez FielMedina et explorez les histoires des médinas tunisiennes via des circuits GPS hors ligne, des récits audio et des itinéraires sur mesure.",
-      "keywords": "FielMedina, application voyage Tunisie, guide médina Sousse, compagnon de voyage numérique, tourisme culturel Tunisie, circuits à pied Sousse, télécharger FielMedina"
+      "title": "FielMedina – Explorez les médinas historiques du monde arabe",
+      "description": "Découvrez la Tunisie, le Maroc, l’Algérie et au-delà avec FielMedina, votre guide digital pour explorer les villes patrimoniales d’Afrique du Nord et du Moyen-Orient.",
+      "keywords": "médinas historiques, monde arabe, villes patrimoniales, Afrique du Nord, Moyen-Orient, application voyage FielMedina"
     },
     "about": {
       "title": "À propos de FielMedina – Le guide intelligent des médinas tunisiennes",

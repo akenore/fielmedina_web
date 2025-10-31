@@ -19,6 +19,7 @@ export default function Header() {
 
   const anchorNavItems = [
     { name: t('home'), href: '/#home', key: 'home' },
+    { name: t('cities'), href: '/#cities', key: 'cities' },
     { name: t('features'), href: '/#features', key: 'features' },
     { name: t('reviews'), href: '/#reviews', key: 'reviews' }
   ];

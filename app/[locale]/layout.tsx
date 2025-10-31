@@ -24,6 +24,11 @@ const geistMono = Geist_Mono({
   preload: false // Only preload the primary font
 });
 
+const OG_LOCALE_MAP: Record<string, string> = {
+  en: 'en_US',
+  fr: 'fr_FR'
+};
+
 type Props = {
   children: React.ReactNode;
   params: Promise<{locale: string}>;
@@ -32,6 +37,7 @@ type Props = {
 export async function generateMetadata({params}: Props): Promise<Metadata> {
   const {locale} = await params;
   const t = await getTranslations({locale, namespace: 'metadata.home'});
+  const ogLocale = OG_LOCALE_MAP[locale] ?? OG_LOCALE_MAP.en;
 
   const canonicalPath = getPathname({ locale, href: '/' });
   const alternateLanguagesEntries = routing.locales.map((alternateLocale) => [
@@ -67,7 +73,10 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
       description: t('description'),
       url: `https://www.fielmedina.com${canonicalPath}`,
       siteName: 'FielMedina',
-      locale: locale,
+      locale: ogLocale,
+      alternateLocale: routing.locales
+        .filter((code) => code !== locale)
+        .map((code) => OG_LOCALE_MAP[code] ?? OG_LOCALE_MAP.en),
       type: 'website',
       images: [
         {
@@ -83,6 +92,8 @@ export async function generateMetadata({params}: Props): Promise<Metadata> {
       title: t('title'),
       description: t('description'),
       images: ['/logo.png'],
+      site: '@FielMedina',
+      creator: '@FielMedina'
     },
     robots: {
       index: true,
