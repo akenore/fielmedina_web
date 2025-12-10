@@ -1,4 +1,4 @@
-import {NextConfig} from 'next';
+import { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 import path from 'path';
 
@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
-  
+
   experimental: {
     gzipSize: true,
   },
@@ -19,6 +19,21 @@ const nextConfig: NextConfig = {
   },
 
   async headers() {
+    const cspHeader = `
+      default-src 'self';
+      script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      img-src 'self' blob: data: https://www.googletagmanager.com;
+      font-src 'self' https://fonts.gstatic.com;
+      connect-src 'self' https://formspree.io https://www.googletagmanager.com https://mystory.fielmedina.com/graphql;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      frame-ancestors 'none';
+      block-all-mixed-content;
+      upgrade-insecure-requests;
+    `.replace(/\s{2,}/g, ' ').trim();
+
     return [
       {
         source: '/(.*)',
@@ -35,7 +50,14 @@ const nextConfig: NextConfig = {
             key: 'Referrer-Policy',
             value: 'origin-when-cross-origin',
           },
-          
+          {
+            key: 'Content-Security-Policy',
+            value: cspHeader,
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+          },
           {
             key: 'Cache-Control',
             value: 'public, max-age=0, stale-while-revalidate=86400',
