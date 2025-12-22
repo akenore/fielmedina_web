@@ -4,17 +4,18 @@ import { motion } from 'framer-motion';
 import { FileText, Users, Shield, AlertTriangle, Clock, Mail } from 'lucide-react';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePage } from '@/lib/hooks/usePages';
-import {Link} from '../../i18n/navigation';
+// import {Link} from '../../i18n/navigation';
 import Footer from './Footer';
 import CTA from './CTA';
 
 function TermsConditionsContent() {
   const locale = useLocale();
   const t = useTranslations('common.api');
-  // Map Next.js locale to Django API language codes and slugs
+  
   const apiLanguage = locale === 'fr' ? 'fr' : 'en';
-  const apiSlug = locale === 'fr' ? 'termes-conditions' : 'terms-conditions';
-  const { data: pageData, loading, error } = usePage(apiSlug, apiLanguage);
+  const apiSlug = locale === 'fr' ? 'conditions-generales-dutilisation' : 'terms-and-conditions';
+  
+  const { data: pageData, loading, error } = usePage(apiSlug);
 
   if (loading) {
     return (
@@ -40,11 +41,12 @@ function TermsConditionsContent() {
       </div>
     );
   }
+  const content = locale === 'fr' ? pageData.page.contentFr : pageData.page.contentEn;
 
   return (
     <div 
       className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-900"
-      dangerouslySetInnerHTML={{ __html: pageData.page.content }}
+      dangerouslySetInnerHTML={{ __html: content }}
     />
   );
 }

@@ -1,12 +1,13 @@
 export interface Page {
-  id: string;
-  slug: string;
-  language: string;
-  title: string;
-  content: string;
   isActive: boolean;
-  createdAt: string;
-  updatedAt: string;
+  slugEn: string;
+  slugFr: string;
+  titleEn: string;
+  titleFr: string;
+  contentEn: string;
+  contentFr: string;
+  createdAt?: string; 
+  updatedAt?: string;
 }
 
 // Query response types

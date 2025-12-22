@@ -13,7 +13,7 @@ function PrivacyPolicyContent() {
   // Map Next.js locale to Django API language codes and slugs
   const apiLanguage = locale === 'fr' ? 'fr' : 'en';
   const apiSlug = locale === 'fr' ? 'politique-de-confidentialite' : 'privacy-policy';
-  const { data: pageData, loading, error } = usePage(apiSlug, apiLanguage);
+  const { data: pageData, loading, error } = usePage(apiSlug);
 
   if (loading) {
     return (
@@ -39,11 +39,12 @@ function PrivacyPolicyContent() {
       </div>
     );
   }
+  const content = locale === 'fr' ? pageData.page.contentFr : pageData.page.contentEn;
 
   return (
     <div 
       className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-900"
-      dangerouslySetInnerHTML={{ __html: pageData.page.content }}
+      dangerouslySetInnerHTML={{ __html: content }}
     />
   );
 }
