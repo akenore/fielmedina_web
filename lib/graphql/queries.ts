@@ -21,3 +21,25 @@ export const GET_PAGE = gql`
     }
   }
 `;
+
+export const GET_PARTNERS = gql`
+  query GetPartners {
+    partners {
+      id
+      name
+      image
+      link
+    }
+  }
+`;
+
+export const GET_SPONSORS = gql`
+  query GetSponsors {
+    sponsors {
+      id
+      name
+      image
+      link
+    }
+  }
+`;

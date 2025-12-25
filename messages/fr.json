@@ -232,6 +232,9 @@
         "text": "Alors que nous préparons le pack Tunis, FielMedina nous aide à capter les histoires locales et à les partager de manière responsable."
       }
     },
+    "partners": {
+      "msg": "Aucun partenaire ou sponsor à afficher"
+    },
     "cta": {
       "title": "Emportez les médinas tunisiennes dans votre poche",
       "subtitle": "Téléchargez FielMedina pour des récits multilingues, une navigation hors ligne et des itinéraires qui s’étendent de Sousse et Monastir aux prochaines villes tunisiennes.",

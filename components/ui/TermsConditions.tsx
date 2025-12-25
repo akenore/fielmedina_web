@@ -12,8 +12,10 @@ function TermsConditionsContent() {
   const locale = useLocale();
   const t = useTranslations('common.api');
   
-  const apiLanguage = locale === 'fr' ? 'fr' : 'en';
-  const apiSlug = locale === 'fr' ? 'conditions-generales-dutilisation' : 'terms-and-conditions';
+  // const apiLanguage = locale === 'fr' ? 'fr' : 'en';
+  const apiSlug = locale === 'fr' 
+    ? 'conditions-generales-dutilisation' 
+    : 'terms-and-conditions';
   
   const { data: pageData, loading, error } = usePage(apiSlug);
 

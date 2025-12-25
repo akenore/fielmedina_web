@@ -23,9 +23,9 @@ const nextConfig: NextConfig = {
       default-src 'self';
       script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com;
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
-      img-src 'self' blob: data: https://www.googletagmanager.com;
+      img-src 'self' blob: data: https://www.googletagmanager.com http://localhost:8000 https://mystory.fielmedina.com;
       font-src 'self' https://fonts.gstatic.com;
-      connect-src 'self' https://formspree.io https://www.googletagmanager.com https://mystory.fielmedina.com/graphql;
+      connect-src 'self' https://formspree.io https://www.googletagmanager.com https://mystory.fielmedina.com/graphql http://localhost:8000/graphql;
       object-src 'none';
       base-uri 'self';
       form-action 'self';
@@ -97,6 +97,19 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 60,
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '8000',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'mystory.fielmedina.com',
+        pathname: '/**',
+      },
+    ],
   },
 
   poweredByHeader: false,

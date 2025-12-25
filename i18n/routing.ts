@@ -22,7 +22,7 @@ export const routing = defineRouting({
       fr: '/politique-de-confidentialite'
     },
     '/terms-conditions': {
-      fr: '/conditions-generales'
+      fr: '/conditions-generales-dutilisation'
     }
   }
 });

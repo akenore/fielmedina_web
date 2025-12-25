@@ -14,3 +14,23 @@ export interface Page {
 export interface GetPageResponse {
   page: Page | null;
 }
+
+export interface PartnerType {
+  id: string;
+  name: string;
+  image: string;
+  link: string;
+}
+export interface GetPartnersResponse {
+  partners: PartnerType[];
+}
+
+export interface SponsorType {
+  id: string;
+  name: string;
+  image: string;
+  link: string;
+}
+export interface GetSponsorsResponse {
+  sponsors: SponsorType[];
+}

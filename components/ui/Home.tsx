@@ -10,6 +10,7 @@ import BubbleIcon from '../icons/BubbleIcon';
 import WorldIcon from '../icons/WorldIcon';
 import NavigatorIcon from '../icons/NavigatorIcon';
 import CTA from './CTA';
+import Partners from './Partners';
 
 export default function Home() {
   const t = useTranslations();
@@ -585,6 +586,10 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </section>
+        <section className="bg-white">
+          <div className="footer-decoration"></div>
+          <Partners />
         </section>
 
         <CTA />

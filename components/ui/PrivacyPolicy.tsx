@@ -11,7 +11,7 @@ function PrivacyPolicyContent() {
   const locale = useLocale();
   const t = useTranslations('common.api');
   // Map Next.js locale to Django API language codes and slugs
-  const apiLanguage = locale === 'fr' ? 'fr' : 'en';
+  // const apiLanguage = locale === 'fr' ? 'fr' : 'en';
   const apiSlug = locale === 'fr' ? 'politique-de-confidentialite' : 'privacy-policy';
   const { data: pageData, loading, error } = usePage(apiSlug);
 
