@@ -413,7 +413,7 @@ export default function About() {
                   alt="Play Store"
                   width={220}
                   height={100}
-                  className="w-auto h-auto"
+                  className="h-[40px] w-auto object-contain"
                 />
               </motion.a>
             </motion.div>
@@ -434,7 +434,7 @@ export default function About() {
                   alt="Apple Store"
                   width={205}
                   height={100}
-                  className="w-auto h-auto"
+                  className="h-[40px] w-auto object-contain"
                 />
               </motion.a>
             </motion.div>

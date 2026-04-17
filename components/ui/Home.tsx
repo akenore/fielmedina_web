@@ -195,7 +195,7 @@ export default function Home() {
                         alt={t('common.badges.googlePlayAlt')}
                         width={220}
                         height={100}
-                        className="w-auto h-auto"
+                        className="h-[40px] w-auto object-contain"
                       />
                     </motion.a>
                   </motion.div>
@@ -216,7 +216,7 @@ export default function Home() {
                         alt={t('common.badges.appStoreAlt')}
                         width={205}
                         height={100}
-                        className="w-auto h-auto"
+                        className="h-[40px] w-auto object-contain"
                       />
                     </motion.a>
                   </motion.div>
